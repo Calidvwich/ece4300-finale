@@ -1,5 +1,7 @@
 # EEC 4300 Final Project — Breaking Sublinear Coverage in HypoSpace via Two-Stage Diversity-Aware GRPO-LoRA
 
+> **Language**: **English** | [简体中文](README_ZH.md)
+
 This repository contains our **EEC 4300** group project on **HypoSpace** (*ICML 2026*, [PMLR Vol. 306](https://proceedings.mlr.press/v306/chen26bz.html)), which evaluates LLMs as samplers over **underdetermined scientific hypothesis spaces** using three metrics: **Validity**, **Uniqueness**, and **Recovery**.
 
 ---
@@ -88,7 +90,8 @@ Evaluated zero-shot on unseen 5-node causal systems ([n5_obs5_hybrid80.json](Hyp
 
 ```text
 .
-├── README.md                                  # Global project overview (this file)
+├── README.md                                  # Global project overview (English)
+├── README_ZH.md                               # Global project overview (Simplified Chinese)
 ├── .gitignore                                 # Excludes large binaries (>100MB), logs, caches, local notes
 ├── results_analysis/
 │   ├── generate_charts.py                     # Reproduces all 4 figures directly from saved JSON/JSONL logs
