@@ -1,0 +1,59 @@
+# ==============================================================================
+# 1. Local agent/process notes & course handouts (do not push to teammate repo)
+# ==============================================================================
+/AGENT.md
+/CONTEXT.md
+/WORKLOG.md
+/QUICKSTART_OVERVIEW.md
+/PROJECT_DIRECTORY.md
+/METHOD_OVERVIEW.md
+/docs/
+/EEC 4300 graded items and instruction.pdf
+/EEC 4300 graded items and instruction.docx
+/settings.json
+/.vscode/
+
+# ==============================================================================
+# 2. Packaging bundles, local model weights, smoke runs & oversized files
+# ==============================================================================
+/server_upload/
+results_analysis/.mpl_cache/
+HypoSpace-release/causal/grpo_lora/local_models/
+HypoSpace-release/causal/grpo_lora/outputs/smoke_*/
+HypoSpace-release/causal/grpo_lora/results/smoke_*
+qwen7b_results_and_logs/qwen7b_results_and_logs.tar.gz
+qwen7b_results_and_logs/server_run_qwen7b.log
+qwen7b_results_and_logs/causal/grpo_lora/outputs/qwen7b_grpo/best_policy/
+
+# Exceeds GitHub 100 MB file limit (125.65 MB); regenerate locally if needed
+HypoSpace-release/causal/benchmark_obs_count/n5_obs1to5_80each.json
+
+# ==============================================================================
+# 3. Checkpoints, logs, model binaries & Python environments
+# ==============================================================================
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.tar.gz
+*.zip
+*.log
+*.err
+*.heartbeat
+
+HypoSpace-release/checkpoints/
+HypoSpace-release/**/checkpoints/
+
+.venv/
+venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ==============================================================================
+# 4. Secrets & OS artifacts
+# ==============================================================================
+.env
+*.key
+.DS_Store
+Thumbs.db

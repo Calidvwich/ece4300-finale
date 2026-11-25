@@ -1,0 +1,284 @@
+{
+  "method": "numpy_logistic_ground_truth_reranker",
+  "target": "recover ground-truth graph",
+  "split": "train n_observations<=3; test >=4; exact graph hashes disjoint",
+  "train_candidates": 1664,
+  "test_candidates": 233,
+  "test_instances": 6,
+  "metrics": {
+    "baseline": {
+      "precision@1": 1.0,
+      "precision@5": 1.0,
+      "precision@10": 1.0,
+      "precision@20": 1.0,
+      "MRR": 1.0
+    },
+    "ml": {
+      "precision@1": 1.0,
+      "precision@5": 1.0,
+      "precision@10": 1.0,
+      "precision@20": 1.0,
+      "MRR": 1.0
+    }
+  },
+  "per_instance": [
+    {
+      "id": "n4_022",
+      "nobs": 4,
+      "candidates": 1,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    },
+    {
+      "id": "n4_032",
+      "nobs": 4,
+      "candidates": 48,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    },
+    {
+      "id": "n4_080",
+      "nobs": 4,
+      "candidates": 87,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    },
+    {
+      "id": "n5_003",
+      "nobs": 5,
+      "candidates": 1,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    },
+    {
+      "id": "n5_039",
+      "nobs": 5,
+      "candidates": 2,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 2.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    },
+    {
+      "id": "n5_072",
+      "nobs": 5,
+      "candidates": 64,
+      "baseline": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "ml": {
+        "1": {
+          "precision": 1.0,
+          "valid_found": 1.0
+        },
+        "5": {
+          "precision": 1.0,
+          "valid_found": 5.0
+        },
+        "10": {
+          "precision": 1.0,
+          "valid_found": 10.0
+        },
+        "20": {
+          "precision": 1.0,
+          "valid_found": 20.0
+        }
+      },
+      "mrr_baseline": 1.0,
+      "mrr_ml": 1.0
+    }
+  ]
+}

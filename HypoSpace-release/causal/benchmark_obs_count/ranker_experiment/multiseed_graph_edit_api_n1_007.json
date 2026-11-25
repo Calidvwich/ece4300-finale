@@ -1,0 +1,9159 @@
+{
+  "experiment": "fresh DeepSeek API pool; native vs ML-ranked one-edge edits",
+  "target_id": "n1_007",
+  "ground_truth_count": 1600,
+  "api_pool_budget": 100,
+  "final_output_budget_per_arm": 100,
+  "training": "logistic regression on n_observations>=2; held-out n1_006 excluded",
+  "train_rows": 3753,
+  "arms": {
+    "deepseek_native": [
+      {
+        "query": 1,
+        "response": "Graph: A->B, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 294,
+          "completion_tokens": 913,
+          "total_tokens": 1207
+        },
+        "cost": 0.03033
+      },
+      {
+        "query": 2,
+        "response": "Graph: C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 302,
+          "completion_tokens": 1495,
+          "total_tokens": 1797
+        },
+        "cost": 0.04787
+      },
+      {
+        "query": 3,
+        "response": "Graph: B->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 308,
+          "completion_tokens": 725,
+          "total_tokens": 1033
+        },
+        "cost": 0.02483
+      },
+      {
+        "query": 4,
+        "response": "Graph: A->B, B->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 318,
+          "completion_tokens": 710,
+          "total_tokens": 1028
+        },
+        "cost": 0.02448
+      },
+      {
+        "query": 5,
+        "response": "Graph: C->D, A->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 332,
+          "completion_tokens": 824,
+          "total_tokens": 1156
+        },
+        "cost": 0.02804
+      },
+      {
+        "query": 6,
+        "response": "Graph: B->A, A->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 342,
+          "completion_tokens": 743,
+          "total_tokens": 1085
+        },
+        "cost": 0.02571
+      },
+      {
+        "query": 7,
+        "response": "Graph: C->D, B->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 356,
+          "completion_tokens": 863,
+          "total_tokens": 1219
+        },
+        "cost": 0.02945
+      },
+      {
+        "query": 8,
+        "response": "Graph: A->B, A->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 366,
+          "completion_tokens": 623,
+          "total_tokens": 989
+        },
+        "cost": 0.02235
+      },
+      {
+        "query": 9,
+        "response": "Graph: A->B, A->E, B->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 380,
+          "completion_tokens": 1013,
+          "total_tokens": 1393
+        },
+        "cost": 0.03419
+      },
+      {
+        "query": 10,
+        "response": "Graph: A->B, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 398,
+          "completion_tokens": 1114,
+          "total_tokens": 1512
+        },
+        "cost": 0.0374
+      },
+      {
+        "query": 11,
+        "response": "Graph: C->D, B->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 412,
+          "completion_tokens": 605,
+          "total_tokens": 1017
+        },
+        "cost": 0.02227
+      },
+      {
+        "query": 12,
+        "response": "Graph: C->D, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 422,
+          "completion_tokens": 593,
+          "total_tokens": 1015
+        },
+        "cost": 0.02201
+      },
+      {
+        "query": 13,
+        "response": "Graph: C->D, A->B, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 432,
+          "completion_tokens": 907,
+          "total_tokens": 1339
+        },
+        "cost": 0.03153
+      },
+      {
+        "query": 14,
+        "response": "Graph: A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 446,
+          "completion_tokens": 547,
+          "total_tokens": 993
+        },
+        "cost": 0.02087
+      },
+      {
+        "query": 15,
+        "response": "Graph: C->D, A->B, B->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 456,
+          "completion_tokens": 1918,
+          "total_tokens": 2374
+        },
+        "cost": 0.0621
+      },
+      {
+        "query": 16,
+        "response": "Graph: C->D, A->C, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 470,
+          "completion_tokens": 1730,
+          "total_tokens": 2200
+        },
+        "cost": 0.0566
+      },
+      {
+        "query": 17,
+        "response": "Graph: C->D, A->E, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 484,
+          "completion_tokens": 1207,
+          "total_tokens": 1691
+        },
+        "cost": 0.04105
+      },
+      {
+        "query": 18,
+        "response": "Graph: C->D, B->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 498,
+          "completion_tokens": 1335,
+          "total_tokens": 1833
+        },
+        "cost": 0.04503
+      },
+      {
+        "query": 19,
+        "response": "Graph: C->D, A->B, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 508,
+          "completion_tokens": 1301,
+          "total_tokens": 1809
+        },
+        "cost": 0.04411
+      },
+      {
+        "query": 20,
+        "response": "Graph: C->D, A->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 522,
+          "completion_tokens": 1493,
+          "total_tokens": 2015
+        },
+        "cost": 0.05001
+      },
+      {
+        "query": 21,
+        "response": "Graph: C->D, A->B, A->E, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 532,
+          "completion_tokens": 1081,
+          "total_tokens": 1613
+        },
+        "cost": 0.03775
+      },
+      {
+        "query": 22,
+        "response": "Graph: C->D, E->C, A->B, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 550,
+          "completion_tokens": 1034,
+          "total_tokens": 1584
+        },
+        "cost": 0.03652
+      },
+      {
+        "query": 23,
+        "response": "Graph: B->A, B->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 568,
+          "completion_tokens": 1737,
+          "total_tokens": 2305
+        },
+        "cost": 0.05779
+      },
+      {
+        "query": 24,
+        "response": "Graph: C->D, E->B, B->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 582,
+          "completion_tokens": 1125,
+          "total_tokens": 1707
+        },
+        "cost": 0.03957
+      },
+      {
+        "query": 25,
+        "response": "Graph: C->D, A->E, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 596,
+          "completion_tokens": 1103,
+          "total_tokens": 1699
+        },
+        "cost": 0.03905
+      },
+      {
+        "query": 26,
+        "response": "Graph: C->D, A->B, E->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 610,
+          "completion_tokens": 4373,
+          "total_tokens": 4983
+        },
+        "cost": 0.13729
+      },
+      {
+        "query": 27,
+        "response": "Graph: C->D, A->D, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 624,
+          "completion_tokens": 1586,
+          "total_tokens": 2210
+        },
+        "cost": 0.05382
+      },
+      {
+        "query": 28,
+        "response": "Graph: C->D, A->D, B->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 638,
+          "completion_tokens": 1420,
+          "total_tokens": 2058
+        },
+        "cost": 0.04898
+      },
+      {
+        "query": 29,
+        "response": "Graph: C->D, E->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 652,
+          "completion_tokens": 1071,
+          "total_tokens": 1723
+        },
+        "cost": 0.03865
+      },
+      {
+        "query": 30,
+        "response": "Graph: A->C, C->D, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 662,
+          "completion_tokens": 467,
+          "total_tokens": 1129
+        },
+        "cost": 0.02063
+      },
+      {
+        "query": 31,
+        "response": "Graph: A->C, C->D, B->D, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 676,
+          "completion_tokens": 737,
+          "total_tokens": 1413
+        },
+        "cost": 0.02887
+      },
+      {
+        "query": 32,
+        "response": "Graph: C->D, B->E, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 694,
+          "completion_tokens": 1229,
+          "total_tokens": 1923
+        },
+        "cost": 0.04381
+      },
+      {
+        "query": 33,
+        "response": "Graph: C->D, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 708,
+          "completion_tokens": 1412,
+          "total_tokens": 2120
+        },
+        "cost": 0.04944
+      },
+      {
+        "query": 34,
+        "response": "Graph: C->D, E->A, B->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 718,
+          "completion_tokens": 1659,
+          "total_tokens": 2377
+        },
+        "cost": 0.05695
+      },
+      {
+        "query": 35,
+        "response": "Graph: C->D, A->E, B->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 732,
+          "completion_tokens": 1970,
+          "total_tokens": 2702
+        },
+        "cost": 0.06642
+      },
+      {
+        "query": 36,
+        "response": "Graph: C->D, A->B, A->E, B->E, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 746,
+          "completion_tokens": 1681,
+          "total_tokens": 2427
+        },
+        "cost": 0.05789
+      },
+      {
+        "query": 37,
+        "response": "Graph: A->E, E->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 768,
+          "completion_tokens": 2401,
+          "total_tokens": 3169
+        },
+        "cost": 0.07971
+      },
+      {
+        "query": 38,
+        "response": "Graph: C->D, A->B, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 782,
+          "completion_tokens": 1759,
+          "total_tokens": 2541
+        },
+        "cost": 0.06059
+      },
+      {
+        "query": 39,
+        "response": "Graph: C->D, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 796,
+          "completion_tokens": 2679,
+          "total_tokens": 3475
+        },
+        "cost": 0.08833
+      },
+      {
+        "query": 40,
+        "response": "Graph: C->D, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 806,
+          "completion_tokens": 1744,
+          "total_tokens": 2550
+        },
+        "cost": 0.06038
+      },
+      {
+        "query": 41,
+        "response": "Graph: A->B, A->C, B->E, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 816,
+          "completion_tokens": 3168,
+          "total_tokens": 3984
+        },
+        "cost": 0.1032
+      },
+      {
+        "query": 42,
+        "response": "Graph: C->D, E->A, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 834,
+          "completion_tokens": 2096,
+          "total_tokens": 2930
+        },
+        "cost": 0.07122
+      },
+      {
+        "query": 43,
+        "response": "Graph: C->D, A->D, B->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 848,
+          "completion_tokens": 2386,
+          "total_tokens": 3234
+        },
+        "cost": 0.08006
+      },
+      {
+        "query": 44,
+        "response": "Graph: C->D, B->D, A->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 862,
+          "completion_tokens": 3526,
+          "total_tokens": 4388
+        },
+        "cost": 0.1144
+      },
+      {
+        "query": 45,
+        "response": "Graph: C->D, A->B, B->E, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 876,
+          "completion_tokens": 1729,
+          "total_tokens": 2605
+        },
+        "cost": 0.06063
+      },
+      {
+        "query": 46,
+        "response": "Graph: C->D, A->B, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 894,
+          "completion_tokens": 2566,
+          "total_tokens": 3460
+        },
+        "cost": 0.08592
+      },
+      {
+        "query": 47,
+        "response": "Graph: C->D, B->A, A->E, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 908,
+          "completion_tokens": 2390,
+          "total_tokens": 3298
+        },
+        "cost": 0.08078
+      },
+      {
+        "query": 48,
+        "response": "Graph: E->A, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "E",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 926,
+          "completion_tokens": 2806,
+          "total_tokens": 3732
+        },
+        "cost": 0.09344
+      },
+      {
+        "query": 49,
+        "response": "Graph: C->D, A->B, A->E, E->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 940,
+          "completion_tokens": 1696,
+          "total_tokens": 2636
+        },
+        "cost": 0.06028
+      },
+      {
+        "query": 50,
+        "response": "Graph: C->D, A->B, B->C, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 958,
+          "completion_tokens": 3428,
+          "total_tokens": 4386
+        },
+        "cost": 0.11242
+      },
+      {
+        "query": 51,
+        "response": "Graph: B->A, C->D, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 976,
+          "completion_tokens": 3611,
+          "total_tokens": 4587
+        },
+        "cost": 0.11809
+      },
+      {
+        "query": 52,
+        "response": "Graph: C->D, A->B, A->E, B->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 990,
+          "completion_tokens": 2059,
+          "total_tokens": 3049
+        },
+        "cost": 0.07167
+      },
+      {
+        "query": 53,
+        "response": "Graph: C->D, A->B, B->E, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1008,
+          "completion_tokens": 1781,
+          "total_tokens": 2789
+        },
+        "cost": 0.06351
+      },
+      {
+        "query": 54,
+        "response": "Graph: C->D, A->C, B->E, A->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1026,
+          "completion_tokens": 1178,
+          "total_tokens": 2204
+        },
+        "cost": 0.0456
+      },
+      {
+        "query": 55,
+        "response": "Graph: C->D, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1044,
+          "completion_tokens": 1700,
+          "total_tokens": 2744
+        },
+        "cost": 0.06144
+      },
+      {
+        "query": 56,
+        "response": "Graph: C->D, A->E, E->B, A->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1054,
+          "completion_tokens": 2550,
+          "total_tokens": 3604
+        },
+        "cost": 0.08704
+      },
+      {
+        "query": 57,
+        "response": "Graph: A->C, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1072,
+          "completion_tokens": 2486,
+          "total_tokens": 3558
+        },
+        "cost": 0.0853
+      },
+      {
+        "query": 58,
+        "response": "Graph: A->D, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1086,
+          "completion_tokens": 1873,
+          "total_tokens": 2959
+        },
+        "cost": 0.06705
+      },
+      {
+        "query": 59,
+        "response": "Graph: C->D, A->D, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1100,
+          "completion_tokens": 2165,
+          "total_tokens": 3265
+        },
+        "cost": 0.07595
+      },
+      {
+        "query": 60,
+        "response": "Graph: A->C, C->D, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1114,
+          "completion_tokens": 2971,
+          "total_tokens": 4085
+        },
+        "cost": 0.10027
+      },
+      {
+        "query": 61,
+        "response": "Graph: C->D, A->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1128,
+          "completion_tokens": 1002,
+          "total_tokens": 2130
+        },
+        "cost": 0.04134
+      },
+      {
+        "query": 62,
+        "response": "Graph: C->D, A->B, E->A, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 1921,
+          "total_tokens": 3059
+        },
+        "cost": 0.06901
+      },
+      {
+        "query": 63,
+        "response": "Graph: C->D, A->D, B->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1156,
+          "completion_tokens": 1507,
+          "total_tokens": 2663
+        },
+        "cost": 0.05677
+      },
+      {
+        "query": 64,
+        "response": "Graph: C->D, A->D, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1170,
+          "completion_tokens": 2970,
+          "total_tokens": 4140
+        },
+        "cost": 0.1008
+      },
+      {
+        "query": 65,
+        "response": "Graph: B->A, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1184,
+          "completion_tokens": 822,
+          "total_tokens": 2006
+        },
+        "cost": 0.0365
+      },
+      {
+        "query": 66,
+        "response": "Graph: C->D, A->E, E->B, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1198,
+          "completion_tokens": 2736,
+          "total_tokens": 3934
+        },
+        "cost": 0.09406
+      },
+      {
+        "query": 67,
+        "response": "Graph: C->D, A->E, B->A, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1216,
+          "completion_tokens": 3467,
+          "total_tokens": 4683
+        },
+        "cost": 0.11617
+      },
+      {
+        "query": 68,
+        "response": "Graph: C->D, A->E, E->B, B->D, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1234,
+          "completion_tokens": 2463,
+          "total_tokens": 3697
+        },
+        "cost": 0.08623
+      },
+      {
+        "query": 69,
+        "response": "Graph: A->B, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1256,
+          "completion_tokens": 2929,
+          "total_tokens": 4185
+        },
+        "cost": 0.10043
+      },
+      {
+        "query": 70,
+        "response": "Graph: A->B, B->E, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1270,
+          "completion_tokens": 5346,
+          "total_tokens": 6616
+        },
+        "cost": 0.17308
+      },
+      {
+        "query": 71,
+        "response": "Graph: A->B, A->D, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1288,
+          "completion_tokens": 4618,
+          "total_tokens": 5906
+        },
+        "cost": 0.15142
+      },
+      {
+        "query": 72,
+        "response": "Graph: A->E, E->B, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1302,
+          "completion_tokens": 2568,
+          "total_tokens": 3870
+        },
+        "cost": 0.09006
+      },
+      {
+        "query": 73,
+        "response": "Graph: A->C, E->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1320,
+          "completion_tokens": 2565,
+          "total_tokens": 3885
+        },
+        "cost": 0.09015
+      },
+      {
+        "query": 74,
+        "response": "Graph: A->E, E->B, B->D, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1334,
+          "completion_tokens": 2590,
+          "total_tokens": 3924
+        },
+        "cost": 0.09104
+      },
+      {
+        "query": 75,
+        "response": "Graph: B->A, B->E, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1352,
+          "completion_tokens": 1374,
+          "total_tokens": 2726
+        },
+        "cost": 0.05474
+      },
+      {
+        "query": 76,
+        "response": "Graph: A->E, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1370,
+          "completion_tokens": 4447,
+          "total_tokens": 5817
+        },
+        "cost": 0.14711
+      },
+      {
+        "query": 77,
+        "response": "Graph: C->D, B->A, B->E, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1384,
+          "completion_tokens": 2517,
+          "total_tokens": 3901
+        },
+        "cost": 0.08935
+      },
+      {
+        "query": 78,
+        "response": "Graph: C->D, E->C, A->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 2794,
+          "total_tokens": 4196
+        },
+        "cost": 0.09784
+      },
+      {
+        "query": 79,
+        "response": "Graph: C->D, A->D, B->D, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1416,
+          "completion_tokens": 2504,
+          "total_tokens": 3920
+        },
+        "cost": 0.08928
+      },
+      {
+        "query": 80,
+        "response": "Graph: A->B, B->E, B->D, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1434,
+          "completion_tokens": 3287,
+          "total_tokens": 4721
+        },
+        "cost": 0.11295
+      },
+      {
+        "query": 81,
+        "response": "Graph: A->C, C->D, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1452,
+          "completion_tokens": 1640,
+          "total_tokens": 3092
+        },
+        "cost": 0.06372
+      },
+      {
+        "query": 82,
+        "response": "Graph: B->C, E->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1466,
+          "completion_tokens": 1856,
+          "total_tokens": 3322
+        },
+        "cost": 0.07034
+      },
+      {
+        "query": 83,
+        "response": "Graph: B->C, C->D, A->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1480,
+          "completion_tokens": 1766,
+          "total_tokens": 3246
+        },
+        "cost": 0.06778
+      },
+      {
+        "query": 84,
+        "response": "Graph: A->B, A->E, B->E, E->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1494,
+          "completion_tokens": 3841,
+          "total_tokens": 5335
+        },
+        "cost": 0.13017
+      },
+      {
+        "query": 85,
+        "response": "Graph: E->A, A->B, B->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "E",
+              "A"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1516,
+          "completion_tokens": 1925,
+          "total_tokens": 3441
+        },
+        "cost": 0.07291
+      },
+      {
+        "query": 86,
+        "response": "Graph: C->D, A->B, A->C, A->E, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1534,
+          "completion_tokens": 3252,
+          "total_tokens": 4786
+        },
+        "cost": 0.1129
+      },
+      {
+        "query": 87,
+        "response": "Graph: C->D, B->E, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1556,
+          "completion_tokens": 1686,
+          "total_tokens": 3242
+        },
+        "cost": 0.06614
+      },
+      {
+        "query": 88,
+        "response": "Graph: B->C, C->D, E->A",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1570,
+          "completion_tokens": 5204,
+          "total_tokens": 6774
+        },
+        "cost": 0.17182
+      },
+      {
+        "query": 89,
+        "response": "Graph: C->D, E->A, A->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1584,
+          "completion_tokens": 3465,
+          "total_tokens": 5049
+        },
+        "cost": 0.11979
+      },
+      {
+        "query": 90,
+        "response": "Graph: C->D, A->C, B->A, E->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1598,
+          "completion_tokens": 2354,
+          "total_tokens": 3952
+        },
+        "cost": 0.0866
+      },
+      {
+        "query": 91,
+        "response": "Graph: C->D, A->B, B->E, A->D, B->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1616,
+          "completion_tokens": 3144,
+          "total_tokens": 4760
+        },
+        "cost": 0.11048
+      },
+      {
+        "query": 92,
+        "response": "Graph: A->C, B->D, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1638,
+          "completion_tokens": 3439,
+          "total_tokens": 5077
+        },
+        "cost": 0.11955
+      },
+      {
+        "query": 93,
+        "response": "Graph: C->D, B->C, E->B, A->B",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1652,
+          "completion_tokens": 6613,
+          "total_tokens": 8265
+        },
+        "cost": 0.21491
+      },
+      {
+        "query": 94,
+        "response": "Graph: C->D, A->D, B->D, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1670,
+          "completion_tokens": 3297,
+          "total_tokens": 4967
+        },
+        "cost": 0.11561
+      },
+      {
+        "query": 95,
+        "response": "Graph: C->D, A->B, B->E, A->E, E->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1688,
+          "completion_tokens": 2147,
+          "total_tokens": 3835
+        },
+        "cost": 0.08129
+      },
+      {
+        "query": 96,
+        "response": "Graph: C->D, A->B, A->E, B->E",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1710,
+          "completion_tokens": 1321,
+          "total_tokens": 3031
+        },
+        "cost": 0.05673
+      },
+      {
+        "query": 97,
+        "response": "Graph: B->E, E->A, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1728,
+          "completion_tokens": 4101,
+          "total_tokens": 5829
+        },
+        "cost": 0.14031
+      },
+      {
+        "query": 98,
+        "response": "Graph: A->B, A->D, B->E, C->D, E->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1746,
+          "completion_tokens": 5680,
+          "total_tokens": 7426
+        },
+        "cost": 0.18786
+      },
+      {
+        "query": 99,
+        "response": "Graph: A->B, B->E, E->C, A->C, C->D",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1768,
+          "completion_tokens": 2433,
+          "total_tokens": 4201
+        },
+        "cost": 0.09067
+      },
+      {
+        "query": 100,
+        "response": "Graph: C->D, A->B, A->C, B->C",
+        "graph": {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        "usage": {
+          "prompt_tokens": 1790,
+          "completion_tokens": 2275,
+          "total_tokens": 4065
+        },
+        "cost": 0.08615
+      }
+    ],
+    "ml_ranked_edit": {
+      "graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "metrics": {
+        "final_outputs": 100,
+        "valid_outputs": 100,
+        "validity": 1.0,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "recovered_gt": 100,
+        "recovery": 0.0625
+      },
+      "scorer": "learned logistic compatibility prior"
+    },
+    "random_edit_control": {
+      "graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "B"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "B"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ],
+            [
+              "E",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "C",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "E"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "B"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "B"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "D"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "B",
+              "D"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "B",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "A"
+            ],
+            [
+              "E",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "edges": [
+            [
+              "A",
+              "E"
+            ],
+            [
+              "C",
+              "D"
+            ],
+            [
+              "D",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "metrics": {
+        "final_outputs": 100,
+        "valid_outputs": 40,
+        "validity": 0.4,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "recovered_gt": 40,
+        "recovery": 0.025
+      },
+      "scorer": "random sample from same candidate pool"
+    }
+  },
+  "api_cost": 7.494999999999998,
+  "api_prompt_tokens": 98626,
+  "api_completion_tokens": 216958,
+  "native_metrics": {
+    "final_outputs": 100,
+    "valid_outputs": 100,
+    "validity": 1.0,
+    "unique_all": 86,
+    "uniqueness": 0.86,
+    "recovered_gt": 86,
+    "recovery": 0.05375
+  },
+  "candidate_pool": {
+    "seed_count": 86,
+    "dag_edit_candidates": 738,
+    "all_unique": true
+  },
+  "comparison": {
+    "ml_ranked_edit": {
+      "validity": 0.0,
+      "uniqueness": 0.14,
+      "recovery": 0.00875
+    },
+    "random_edit_control": {
+      "validity": -0.6,
+      "uniqueness": 0.14,
+      "recovery": -0.028749999999999998
+    }
+  },
+  "evaluation_note": "Same fresh 100-call API pool seeds both arms; ML edits and outputs are local computations. Report API spend separately from final hypothesis count."
+}

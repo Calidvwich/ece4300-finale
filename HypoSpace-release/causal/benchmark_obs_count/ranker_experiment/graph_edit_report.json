@@ -1,0 +1,119 @@
+{
+  "method": "learned compatibility-guided DAG edit search",
+  "train_split": "observation counts >=2, sampled 40 observation sets",
+  "test_split": "held-out nobs=1 tasks n1_004/n1_006/n1_007",
+  "negative_examples": "one-edge DAG mutations labeled by exact training-task compatibility",
+  "budget": "99 local graph edit proposals plus one DeepSeek seed (100 hypotheses); baseline first 100 cached DeepSeek calls",
+  "train_rows": 3753,
+  "train_positives_sampled": 1251,
+  "test": [
+    {
+      "id": "n1_004",
+      "n_ground_truths": 960,
+      "baseline_calls": 100,
+      "baseline_validity": 0.99,
+      "baseline_unique_all": 90,
+      "baseline_novelty_rate": 0.9,
+      "baseline_unique_valid": 90,
+      "baseline_recovered_gt": 90,
+      "baseline_recovery": 0.09375,
+      "edit_seed_count": 1,
+      "learned_edit": {
+        "proposals": 99,
+        "unique_valid": 65,
+        "validity": 0.65,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 65,
+        "recovery": 0.06770833333333333,
+        "new_unique_vs_baseline": 28,
+        "new_gt_vs_baseline": 28,
+        "augmented_recovered_gt": 118,
+        "augmented_recovery": 0.12291666666666666
+      },
+      "random_edit_control": {
+        "proposals": 99,
+        "unique_valid": 53,
+        "validity": 0.53,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 53,
+        "recovery": 0.05520833333333333,
+        "new_gt_vs_baseline": 24
+      },
+      "model_generated_train_rows": 3753
+    },
+    {
+      "id": "n1_006",
+      "n_ground_truths": 8688,
+      "baseline_calls": 100,
+      "baseline_validity": 1.0,
+      "baseline_unique_all": 97,
+      "baseline_novelty_rate": 0.97,
+      "baseline_unique_valid": 97,
+      "baseline_recovered_gt": 97,
+      "baseline_recovery": 0.011164825046040515,
+      "edit_seed_count": 1,
+      "learned_edit": {
+        "proposals": 99,
+        "unique_valid": 74,
+        "validity": 0.74,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 74,
+        "recovery": 0.008517495395948435,
+        "new_unique_vs_baseline": 56,
+        "new_gt_vs_baseline": 56,
+        "augmented_recovered_gt": 153,
+        "augmented_recovery": 0.01761049723756906
+      },
+      "random_edit_control": {
+        "proposals": 99,
+        "unique_valid": 68,
+        "validity": 0.68,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 68,
+        "recovery": 0.007826887661141806,
+        "new_gt_vs_baseline": 48
+      },
+      "model_generated_train_rows": 3753
+    },
+    {
+      "id": "n1_007",
+      "n_ground_truths": 1600,
+      "baseline_calls": 100,
+      "baseline_validity": 1.0,
+      "baseline_unique_all": 89,
+      "baseline_novelty_rate": 0.89,
+      "baseline_unique_valid": 89,
+      "baseline_recovered_gt": 89,
+      "baseline_recovery": 0.055625,
+      "edit_seed_count": 1,
+      "learned_edit": {
+        "proposals": 99,
+        "unique_valid": 54,
+        "validity": 0.54,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 54,
+        "recovery": 0.03375,
+        "new_unique_vs_baseline": 17,
+        "new_gt_vs_baseline": 17,
+        "augmented_recovered_gt": 106,
+        "augmented_recovery": 0.06625
+      },
+      "random_edit_control": {
+        "proposals": 99,
+        "unique_valid": 56,
+        "validity": 0.56,
+        "unique_all": 100,
+        "novelty_rate": 1.0,
+        "recovered_gt": 56,
+        "recovery": 0.035,
+        "new_gt_vs_baseline": 20
+      },
+      "model_generated_train_rows": 3753
+    }
+  ]
+}

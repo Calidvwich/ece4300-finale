@@ -1,0 +1,11 @@
+llm:
+  type: deepseek
+  models:
+    deepseek: deepseek-flash
+  api_keys:
+    deepseek: ""
+  temperature: 0.7
+benchmark:
+  checkpoint: checkpoints/full_api_3d
+  verbose: false
+  output_pattern: results/full_repo_3d_deepseek.json

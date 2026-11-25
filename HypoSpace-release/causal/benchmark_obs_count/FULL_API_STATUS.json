@@ -1,0 +1,98 @@
+{
+  "status": "completed_requested_runs; no_benchmark_processes_running",
+  "recorded_at_local": "2026-11-25",
+  "provider": "DeepSeek API",
+  "model": "deepseek-flash",
+  "causal_dataset": "causal/datasets/n4_obs3_all.json",
+  "causal_task_count": 392,
+  "ground_truth_query_budget_per_pass": 2172,
+  "causal_fixed_prompt": {
+    "status": "completed",
+    "output": "causal/benchmark_obs_count/full_repo_causal_n4_obs3_deepseek.json",
+    "tasks": 392,
+    "queries": 2172,
+    "errors": 0,
+    "local_code_cost_estimate_usd": 63.07605,
+    "deepseek_offpeak_estimate_usd": {"all_input_cached_lower_bound": 1.121602932, "all_input_uncached_upper_bound": 1.2260088},
+    "macro_validity": 0.9974489795918368,
+    "macro_uniqueness": 0.45301162131519274,
+    "macro_recovery": 0.4504606009070295,
+    "micro_validity": 0.9995395948434622,
+    "micro_uniqueness": 0.24171270718232044,
+    "micro_recovery": 0.24125230202578268
+  },
+  "causal_clone_default_history": {
+    "status": "completed",
+    "output": "causal/benchmark_obs_count/full_repo_causal_n4_obs3_deepseek_history.json",
+    "tasks": 392,
+    "queries": 2172,
+    "errors": 0,
+    "local_code_cost_estimate_usd": 106.36534,
+    "deepseek_offpeak_estimate_usd": {"all_input_cached_lower_bound": 1.959954315, "all_input_uncached_upper_bound": 2.084831549},
+    "macro_validity": 1.0,
+    "macro_uniqueness": 0.9927543934240363,
+    "macro_recovery": 0.9927543934240363,
+    "micro_validity": 1.0,
+    "micro_uniqueness": 0.9857274401473296,
+    "micro_recovery": 0.9857274401473296
+  },
+  "3d_quickstart": {
+    "status": "completed",
+    "output": "causal/benchmark_obs_count/full_repo_3d_deepseek.json",
+    "tasks": 9,
+    "queries": 27,
+    "errors": 0,
+    "local_code_cost_estimate_usd": 0.034862,
+    "deepseek_offpeak_estimate_usd": {"all_input_cached_lower_bound": 0.008650641, "all_input_uncached_upper_bound": 0.011671049},
+    "mean_validity": 1.0,
+    "mean_uniqueness": 1.0,
+    "mean_recovery": 1.0,
+    "settings": "grid=3, height=3, one top-view observation, one occupied position"
+  },
+  "boolean_basic_quickstart": {
+    "status": "completed",
+    "output": "results/full_repo_boolean_deepseek.json",
+    "tasks": 35,
+    "queries": 150,
+    "errors": 0,
+    "local_code_cost_estimate_usd": 0.253404,
+    "deepseek_offpeak_estimate_usd": {"all_input_cached_lower_bound": 0.102865719, "all_input_uncached_upper_bound": 0.11497455},
+    "mean_validity": 1.0,
+    "mean_uniqueness": 1.0,
+    "mean_recovery": 1.0,
+    "settings": "basic operators, max depth 2"
+  },
+  "local_code_cost_estimate_total_usd": 169.729656,
+  "deepseek_offpeak_cost_estimate_total_usd": {"all_input_cached_lower_bound": 3.193073607, "all_input_uncached_upper_bound": 3.43748595},
+  "pending_unrun_datasets": {
+    "n5_exact_gt160": {
+      "dataset": "causal/benchmark_obs_count/paper_scale/causal_n5_gt160.json",
+      "tasks": 7,
+      "queries_if_N_equals_HO": 1120
+    },
+    "boolean_extended_d2": {
+      "dataset": "causal/benchmark_obs_count/paper_scale/boolean_extended_d2.json",
+      "tasks": 78,
+      "queries_if_N_equals_HO": 510
+    },
+    "boolean_full_d2": {
+      "dataset": "causal/benchmark_obs_count/paper_scale/boolean_full_d2.json",
+      "tasks": 80,
+      "queries_if_N_equals_HO": 975
+    },
+    "3d_multi_view": "not supported by the cloned generator/runner; it accepts only a single top view",
+    "causal_n6": "no n6 dataset is present in the clone"
+  },
+  "checkpoint_and_raw_result_locations": [
+    "causal/benchmark_obs_count/checkpoints/full_api_causal_n4_obs3/",
+    "causal/benchmark_obs_count/full_api_causal_n4_obs3_parallel/",
+    "causal/benchmark_obs_count/full_api_causal_n4_obs3_history/"
+  ],
+  "notes": [
+    "Successful workers preserve complete per-task output in result JSON files; the cloned runner deletes each worker checkpoint after a successful shard completion.",
+    "The first fixed-prompt pass was resumed from its preserved 10-task serial checkpoint and merged with the remaining shards.",
+    "The code's displayed cost is not the provider invoice: the OpenAI-compatible adapter falls back to OpenAI default prices for model deepseek-flash ($10/$30 per 1M input/output tokens).",
+    "DeepSeek off-peak estimate uses the official current rate card ($0.003-$0.15 per 1M input tokens depending on cache hit/miss; $0.60 per 1M output tokens); actual bill cannot be recovered exactly because cached-token counts were not saved.",
+    "Any request interrupted before checkpointing is not represented in the token totals."
+  ]
+}

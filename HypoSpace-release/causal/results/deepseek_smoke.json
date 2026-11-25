@@ -1,0 +1,135 @@
+{
+  "run_id": "20261112_203548",
+  "llm_name": "OpenAI(deepseek-flash)",
+  "n_samples": 1,
+  "n_queries_per_sample": 1,
+  "query_multiplier": null,
+  "query_mode": "fixed",
+  "seed": 7,
+  "timestamp": "2026-11-12T20:35:52.653946",
+  "max_edges_constraint": 3,
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": null
+    },
+    "valid_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": null
+    },
+    "novelty_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": null
+    },
+    "recovery_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": null
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 500,
+    "total_tokens": 816,
+    "avg_tokens_per_sample": 816.0,
+    "avg_tokens_per_query": 816.0
+  },
+  "cost": {
+    "total_cost": 0.01816,
+    "avg_cost_per_sample": 0.01816,
+    "avg_cost_per_query": 0.01816
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {},
+    "error_rate": 0.0
+  },
+  "per_sample_results": [
+    {
+      "observation_set_id": "n3_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 316,
+        "completion_tokens": 500,
+        "total_tokens": 816
+      },
+      "cost": 0.01816,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "method": "logistic regression trained on recovered_gt labels from nobs>=2 API outputs",
+  "train_rows": 847,
+  "train_positive_rate": 1.0,
+  "test_tasks": "held-out nobs=1; first 100 cached API candidates; rank top 50 vs first 50",
+  "results": [
+    {
+      "id": "n1_004",
+      "pool_candidates": 90,
+      "final_budget": 50,
+      "baseline_first_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.052083333333333336
+      },
+      "ml_top_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.052083333333333336
+      }
+    },
+    {
+      "id": "n1_006",
+      "pool_candidates": 97,
+      "final_budget": 50,
+      "baseline_first_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.005755064456721915
+      },
+      "ml_top_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.005755064456721915
+      }
+    },
+    {
+      "id": "n1_007",
+      "pool_candidates": 89,
+      "final_budget": 50,
+      "baseline_first_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.03125
+      },
+      "ml_top_k": {
+        "n": 50,
+        "validity": 1.0,
+        "uniqueness": 1.0,
+        "recovered_gt": 50,
+        "recovery": 0.03125
+      }
+    }
+  ]
+}

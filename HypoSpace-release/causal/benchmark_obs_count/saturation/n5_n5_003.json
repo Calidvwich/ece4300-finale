@@ -1,0 +1,235 @@
+{
+  "n_observations": 5,
+  "id": "n5_003",
+  "n_ground_truths": 1,
+  "n_queries": 6,
+  "n_valid_unique": 1,
+  "recovery": 1.0,
+  "prompt_tokens": 2492,
+  "completion_tokens": 8569,
+  "cost": 0.28199,
+  "records": [
+    {
+      "query": 1,
+      "response": "Graph: D->A, D->C, B->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 382,
+        "completion_tokens": 506,
+        "total_tokens": 888
+      },
+      "cost": 0.019
+    },
+    {
+      "query": 2,
+      "response": "Graph: D->A, D->C, B->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 394,
+        "completion_tokens": 1483,
+        "total_tokens": 1877
+      },
+      "cost": 0.04843
+    },
+    {
+      "query": 3,
+      "response": "Graph: D->A, D->C, B->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 2,
+      "usage": {
+        "prompt_tokens": 408,
+        "completion_tokens": 1609,
+        "total_tokens": 2017
+      },
+      "cost": 0.05235
+    },
+    {
+      "query": 4,
+      "response": "Graph: B->C, D->A, D->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "B",
+            "C"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 3,
+      "usage": {
+        "prompt_tokens": 422,
+        "completion_tokens": 1613,
+        "total_tokens": 2035
+      },
+      "cost": 0.05261
+    },
+    {
+      "query": 5,
+      "response": "Graph: D->A, D->C, B->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 4,
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 1387,
+        "total_tokens": 1823
+      },
+      "cost": 0.04597
+    },
+    {
+      "query": 6,
+      "response": "Graph: B->C, D->A, D->C",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "B",
+            "C"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "D",
+            "C"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 5,
+      "usage": {
+        "prompt_tokens": 450,
+        "completion_tokens": 1971,
+        "total_tokens": 2421
+      },
+      "cost": 0.06363
+    }
+  ]
+}

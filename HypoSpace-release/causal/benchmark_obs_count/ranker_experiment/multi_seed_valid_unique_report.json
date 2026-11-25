@@ -1,0 +1,94 @@
+{
+  "method": "multi-seed one-edge DAG edit proposal ranking; logistic prior trained on other observation sets",
+  "train_rows": 3753,
+  "selection": "same pool of DAG edits excluding seed graphs; compare top 100 by learned score vs random order, validator labels proposals",
+  "results": [
+    {
+      "id": "n1_004",
+      "seed_count": 90,
+      "dag_edit_pool": 717,
+      "baseline_first100": {
+        "validity": 0.99,
+        "uniqueness": 0.9,
+        "recovered_gt": 90,
+        "recovery": 0.09375
+      },
+      "ml_top100": {
+        "proposals": 100,
+        "validity": 1.0,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 100,
+        "recovered_gt": 100,
+        "recovery": 0.10416666666666667
+      },
+      "random100": {
+        "proposals": 100,
+        "validity": 0.4,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 40,
+        "recovered_gt": 40,
+        "recovery": 0.041666666666666664
+      }
+    },
+    {
+      "id": "n1_006",
+      "seed_count": 97,
+      "dag_edit_pool": 944,
+      "baseline_first100": {
+        "validity": 1.0,
+        "uniqueness": 0.97,
+        "recovered_gt": 97,
+        "recovery": 0.011164825046040515
+      },
+      "ml_top100": {
+        "proposals": 100,
+        "validity": 1.0,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 100,
+        "recovered_gt": 100,
+        "recovery": 0.01151012891344383
+      },
+      "random100": {
+        "proposals": 100,
+        "validity": 0.64,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 64,
+        "recovered_gt": 64,
+        "recovery": 0.007366482504604052
+      }
+    },
+    {
+      "id": "n1_007",
+      "seed_count": 89,
+      "dag_edit_pool": 758,
+      "baseline_first100": {
+        "validity": 1.0,
+        "uniqueness": 0.89,
+        "recovered_gt": 89,
+        "recovery": 0.055625
+      },
+      "ml_top100": {
+        "proposals": 100,
+        "validity": 1.0,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 100,
+        "recovered_gt": 100,
+        "recovery": 0.0625
+      },
+      "random100": {
+        "proposals": 100,
+        "validity": 0.45,
+        "unique_all": 100,
+        "uniqueness": 1.0,
+        "unique_valid": 45,
+        "recovered_gt": 45,
+        "recovery": 0.028125
+      }
+    }
+  ]
+}

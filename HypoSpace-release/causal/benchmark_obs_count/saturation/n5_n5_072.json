@@ -1,0 +1,3705 @@
+{
+  "n_observations": 5,
+  "id": "n5_072",
+  "n_ground_truths": 64,
+  "n_queries": 82,
+  "n_valid_unique": 64,
+  "recovery": 1.0,
+  "prompt_tokens": 118240,
+  "completion_tokens": 368485,
+  "cost": 12.236949999999993,
+  "records": [
+    {
+      "query": 1,
+      "response": "Graph: E->C, C->B, B->D, D->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 382,
+        "completion_tokens": 1619,
+        "total_tokens": 2001
+      },
+      "cost": 0.05239
+    },
+    {
+      "query": 2,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 398,
+        "completion_tokens": 1353,
+        "total_tokens": 1751
+      },
+      "cost": 0.04457
+    },
+    {
+      "query": 3,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 1602,
+        "total_tokens": 2022
+      },
+      "cost": 0.05226
+    },
+    {
+      "query": 4,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 442,
+        "completion_tokens": 1226,
+        "total_tokens": 1668
+      },
+      "cost": 0.0412
+    },
+    {
+      "query": 5,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 464,
+        "completion_tokens": 1981,
+        "total_tokens": 2445
+      },
+      "cost": 0.06407
+    },
+    {
+      "query": 6,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 486,
+        "completion_tokens": 1280,
+        "total_tokens": 1766
+      },
+      "cost": 0.04326
+    },
+    {
+      "query": 7,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 508,
+        "completion_tokens": 1051,
+        "total_tokens": 1559
+      },
+      "cost": 0.03661
+    },
+    {
+      "query": 8,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 530,
+        "completion_tokens": 1992,
+        "total_tokens": 2522
+      },
+      "cost": 0.06506
+    },
+    {
+      "query": 9,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 556,
+        "completion_tokens": 2030,
+        "total_tokens": 2586
+      },
+      "cost": 0.06646
+    },
+    {
+      "query": 10,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": false,
+      "recovered_gt": true,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 582,
+        "completion_tokens": 2109,
+        "total_tokens": 2691
+      },
+      "cost": 0.06909
+    },
+    {
+      "query": 11,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 604,
+        "completion_tokens": 2470,
+        "total_tokens": 3074
+      },
+      "cost": 0.08014
+    },
+    {
+      "query": 12,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 630,
+        "completion_tokens": 1949,
+        "total_tokens": 2579
+      },
+      "cost": 0.06477
+    },
+    {
+      "query": 13,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 656,
+        "completion_tokens": 1889,
+        "total_tokens": 2545
+      },
+      "cost": 0.06323
+    },
+    {
+      "query": 14,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 682,
+        "completion_tokens": 1230,
+        "total_tokens": 1912
+      },
+      "cost": 0.04372
+    },
+    {
+      "query": 15,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 708,
+        "completion_tokens": 1736,
+        "total_tokens": 2444
+      },
+      "cost": 0.05916
+    },
+    {
+      "query": 16,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 2077,
+        "total_tokens": 2811
+      },
+      "cost": 0.06965
+    },
+    {
+      "query": 17,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 760,
+        "completion_tokens": 2135,
+        "total_tokens": 2895
+      },
+      "cost": 0.07165
+    },
+    {
+      "query": 18,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 1639,
+        "total_tokens": 2425
+      },
+      "cost": 0.05703
+    },
+    {
+      "query": 19,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 816,
+        "completion_tokens": 1817,
+        "total_tokens": 2633
+      },
+      "cost": 0.06267
+    },
+    {
+      "query": 20,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 842,
+        "completion_tokens": 2345,
+        "total_tokens": 3187
+      },
+      "cost": 0.07877
+    },
+    {
+      "query": 21,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 2747,
+        "total_tokens": 3615
+      },
+      "cost": 0.09109
+    },
+    {
+      "query": 22,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->D, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2617,
+        "total_tokens": 3511
+      },
+      "cost": 0.08745
+    },
+    {
+      "query": 23,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 936,
+        "completion_tokens": 2350,
+        "total_tokens": 3286
+      },
+      "cost": 0.07986
+    },
+    {
+      "query": 24,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 962,
+        "completion_tokens": 3403,
+        "total_tokens": 4365
+      },
+      "cost": 0.11171
+    },
+    {
+      "query": 25,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 992,
+        "completion_tokens": 2610,
+        "total_tokens": 3602
+      },
+      "cost": 0.08822
+    },
+    {
+      "query": 26,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1022,
+        "completion_tokens": 2921,
+        "total_tokens": 3943
+      },
+      "cost": 0.09785
+    },
+    {
+      "query": 27,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1048,
+        "completion_tokens": 2040,
+        "total_tokens": 3088
+      },
+      "cost": 0.07168
+    },
+    {
+      "query": 28,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1078,
+        "completion_tokens": 2315,
+        "total_tokens": 3393
+      },
+      "cost": 0.08023
+    },
+    {
+      "query": 29,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1104,
+        "completion_tokens": 2466,
+        "total_tokens": 3570
+      },
+      "cost": 0.08502
+    },
+    {
+      "query": 30,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, E->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1134,
+        "completion_tokens": 3409,
+        "total_tokens": 4543
+      },
+      "cost": 0.11361
+    },
+    {
+      "query": 31,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1164,
+        "completion_tokens": 2787,
+        "total_tokens": 3951
+      },
+      "cost": 0.09525
+    },
+    {
+      "query": 32,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1194,
+        "completion_tokens": 2336,
+        "total_tokens": 3530
+      },
+      "cost": 0.08202
+    },
+    {
+      "query": 33,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 1868,
+        "total_tokens": 3092
+      },
+      "cost": 0.06828
+    },
+    {
+      "query": 34,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->D, B->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1254,
+        "completion_tokens": 4057,
+        "total_tokens": 5311
+      },
+      "cost": 0.13425
+    },
+    {
+      "query": 35,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1284,
+        "completion_tokens": 4838,
+        "total_tokens": 6122
+      },
+      "cost": 0.15798
+    },
+    {
+      "query": 36,
+      "response": "Graph: E->C, E->B, C->B, C->D, C->A, B->D, D->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1318,
+        "completion_tokens": 3761,
+        "total_tokens": 5079
+      },
+      "cost": 0.12601
+    },
+    {
+      "query": 37,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 1348,
+        "completion_tokens": 8192,
+        "total_tokens": 9540
+      },
+      "cost": 0.25924
+    },
+    {
+      "query": 38,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1348,
+        "completion_tokens": 4827,
+        "total_tokens": 6175
+      },
+      "cost": 0.15829
+    },
+    {
+      "query": 39,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, E->D, C->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1378,
+        "completion_tokens": 2975,
+        "total_tokens": 4353
+      },
+      "cost": 0.10303
+    },
+    {
+      "query": 40,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A, C->D, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1408,
+        "completion_tokens": 5376,
+        "total_tokens": 6784
+      },
+      "cost": 0.17536
+    },
+    {
+      "query": 41,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1438,
+        "completion_tokens": 3253,
+        "total_tokens": 4691
+      },
+      "cost": 0.11197
+    },
+    {
+      "query": 42,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1468,
+        "completion_tokens": 3624,
+        "total_tokens": 5092
+      },
+      "cost": 0.1234
+    },
+    {
+      "query": 43,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, B->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1506,
+        "completion_tokens": 4534,
+        "total_tokens": 6040
+      },
+      "cost": 0.15108
+    },
+    {
+      "query": 44,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, E->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1540,
+        "completion_tokens": 4306,
+        "total_tokens": 5846
+      },
+      "cost": 0.14458
+    },
+    {
+      "query": 45,
+      "response": "Graph: E->C, C->B, B->D, D->A, C->D, C->A, E->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1570,
+        "completion_tokens": 3216,
+        "total_tokens": 4786
+      },
+      "cost": 0.11218
+    },
+    {
+      "query": 46,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, B->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1600,
+        "completion_tokens": 3801,
+        "total_tokens": 5401
+      },
+      "cost": 0.13003
+    },
+    {
+      "query": 47,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1634,
+        "completion_tokens": 4607,
+        "total_tokens": 6241
+      },
+      "cost": 0.15455
+    },
+    {
+      "query": 48,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1664,
+        "completion_tokens": 5997,
+        "total_tokens": 7661
+      },
+      "cost": 0.19655
+    },
+    {
+      "query": 49,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1694,
+        "completion_tokens": 3614,
+        "total_tokens": 5308
+      },
+      "cost": 0.12536
+    },
+    {
+      "query": 50,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1728,
+        "completion_tokens": 3756,
+        "total_tokens": 5484
+      },
+      "cost": 0.12996
+    },
+    {
+      "query": 51,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, E->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1762,
+        "completion_tokens": 5827,
+        "total_tokens": 7589
+      },
+      "cost": 0.19243
+    },
+    {
+      "query": 52,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->A, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1796,
+        "completion_tokens": 6649,
+        "total_tokens": 8445
+      },
+      "cost": 0.21743
+    },
+    {
+      "query": 53,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A, C->A, C->D, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1826,
+        "completion_tokens": 4952,
+        "total_tokens": 6778
+      },
+      "cost": 0.16682
+    },
+    {
+      "query": 54,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A, C->D, C->A, E->D",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1860,
+        "completion_tokens": 6208,
+        "total_tokens": 8068
+      },
+      "cost": 0.20484
+    },
+    {
+      "query": 55,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1894,
+        "completion_tokens": 3067,
+        "total_tokens": 4961
+      },
+      "cost": 0.11095
+    },
+    {
+      "query": 56,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1928,
+        "completion_tokens": 7389,
+        "total_tokens": 9317
+      },
+      "cost": 0.24095
+    },
+    {
+      "query": 57,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1962,
+        "completion_tokens": 3947,
+        "total_tokens": 5909
+      },
+      "cost": 0.13803
+    },
+    {
+      "query": 58,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 1996,
+        "completion_tokens": 8192,
+        "total_tokens": 10188
+      },
+      "cost": 0.26572
+    },
+    {
+      "query": 59,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 1996,
+        "completion_tokens": 6497,
+        "total_tokens": 8493
+      },
+      "cost": 0.21487
+    },
+    {
+      "query": 60,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->D, C->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2030,
+        "completion_tokens": 4113,
+        "total_tokens": 6143
+      },
+      "cost": 0.14369
+    },
+    {
+      "query": 61,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2064,
+        "completion_tokens": 8192,
+        "total_tokens": 10256
+      },
+      "cost": 0.2664
+    },
+    {
+      "query": 62,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 2,
+      "usage": {
+        "prompt_tokens": 2064,
+        "completion_tokens": 8192,
+        "total_tokens": 10256
+      },
+      "cost": 0.2664
+    },
+    {
+      "query": 63,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 3,
+      "usage": {
+        "prompt_tokens": 2064,
+        "completion_tokens": 8192,
+        "total_tokens": 10256
+      },
+      "cost": 0.2664
+    },
+    {
+      "query": 64,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2064,
+        "completion_tokens": 4899,
+        "total_tokens": 6963
+      },
+      "cost": 0.16761
+    },
+    {
+      "query": 65,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2102,
+        "completion_tokens": 8192,
+        "total_tokens": 10294
+      },
+      "cost": 0.26678
+    },
+    {
+      "query": 66,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, E->A, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2102,
+        "completion_tokens": 6813,
+        "total_tokens": 8915
+      },
+      "cost": 0.22541
+    },
+    {
+      "query": 67,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2136,
+        "completion_tokens": 8192,
+        "total_tokens": 10328
+      },
+      "cost": 0.26712
+    },
+    {
+      "query": 68,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->D, E->A, C->D, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2136,
+        "completion_tokens": 7781,
+        "total_tokens": 9917
+      },
+      "cost": 0.25479
+    },
+    {
+      "query": 69,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2170,
+        "completion_tokens": 8192,
+        "total_tokens": 10362
+      },
+      "cost": 0.26746
+    },
+    {
+      "query": 70,
+      "response": "Graph: E->C, C->B, B->D, D->A, B->A, C->D, C->A, E->D, E->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2170,
+        "completion_tokens": 6474,
+        "total_tokens": 8644
+      },
+      "cost": 0.21592
+    },
+    {
+      "query": 71,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2208,
+        "completion_tokens": 8192,
+        "total_tokens": 10400
+      },
+      "cost": 0.26784
+    },
+    {
+      "query": 72,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, E->A, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2208,
+        "completion_tokens": 7647,
+        "total_tokens": 9855
+      },
+      "cost": 0.25149
+    },
+    {
+      "query": 73,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2246,
+        "completion_tokens": 8192,
+        "total_tokens": 10438
+      },
+      "cost": 0.26822
+    },
+    {
+      "query": 74,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 2,
+      "usage": {
+        "prompt_tokens": 2246,
+        "completion_tokens": 8192,
+        "total_tokens": 10438
+      },
+      "cost": 0.26822
+    },
+    {
+      "query": 75,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->D, C->D, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "D"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2246,
+        "completion_tokens": 5586,
+        "total_tokens": 7832
+      },
+      "cost": 0.19004
+    },
+    {
+      "query": 76,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2284,
+        "completion_tokens": 8192,
+        "total_tokens": 10476
+      },
+      "cost": 0.2686
+    },
+    {
+      "query": 77,
+      "response": "Graph: E->C, C->B, B->D, D->A, E->B, E->A, C->D, C->A, B->A",
+      "graph": {
+        "nodes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "edges": [
+          [
+            "E",
+            "C"
+          ],
+          [
+            "C",
+            "B"
+          ],
+          [
+            "B",
+            "D"
+          ],
+          [
+            "D",
+            "A"
+          ],
+          [
+            "E",
+            "B"
+          ],
+          [
+            "E",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "valid": true,
+      "new_valid_unique": true,
+      "recovered_gt": true,
+      "stale_after": 0,
+      "usage": {
+        "prompt_tokens": 2284,
+        "completion_tokens": 5431,
+        "total_tokens": 7715
+      },
+      "cost": 0.18577
+    },
+    {
+      "query": 78,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 1,
+      "usage": {
+        "prompt_tokens": 2322,
+        "completion_tokens": 8192,
+        "total_tokens": 10514
+      },
+      "cost": 0.26898
+    },
+    {
+      "query": 79,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 2,
+      "usage": {
+        "prompt_tokens": 2322,
+        "completion_tokens": 8192,
+        "total_tokens": 10514
+      },
+      "cost": 0.26898
+    },
+    {
+      "query": 80,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 3,
+      "usage": {
+        "prompt_tokens": 2322,
+        "completion_tokens": 8192,
+        "total_tokens": 10514
+      },
+      "cost": 0.26898
+    },
+    {
+      "query": 81,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 4,
+      "usage": {
+        "prompt_tokens": 2322,
+        "completion_tokens": 8192,
+        "total_tokens": 10514
+      },
+      "cost": 0.26898
+    },
+    {
+      "query": 82,
+      "response": "",
+      "graph": null,
+      "valid": false,
+      "new_valid_unique": false,
+      "recovered_gt": false,
+      "stale_after": 5,
+      "usage": {
+        "prompt_tokens": 2322,
+        "completion_tokens": 8192,
+        "total_tokens": 10514
+      },
+      "cost": 0.26898
+    }
+  ]
+}

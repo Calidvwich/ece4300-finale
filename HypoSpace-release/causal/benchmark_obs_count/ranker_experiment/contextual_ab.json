@@ -1,0 +1,2186 @@
+{
+  "dataset_id": "n1_006",
+  "n_observations": 1,
+  "n_ground_truths": 8688,
+  "budget_per_arm": 20,
+  "arm_order": [
+    "linucb",
+    "fixed_0.7"
+  ],
+  "policy": "LinUCB context=[intercept, progress, recent reward, stale streak, obs count, log GT-space]; warm-started from prior UCB trajectory",
+  "warm_start_steps": 50,
+  "arms": {
+    "linucb": {
+      "n_queries": 20,
+      "valid": 20,
+      "unique_valid": 20,
+      "recovered_ground_truths": 20,
+      "recovery": 0.0023020257826887663,
+      "cost": 0.46857,
+      "prompt_tokens": 8148,
+      "completion_tokens": 12903,
+      "records": [
+        {
+          "query": 1,
+          "temperature": 0.3,
+          "context": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 0.9646129804176731,
+            "predicted_reward": 0.7655356492589414,
+            "uncertainty": 0.9953866557936588,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.9646129804176731,
+                "mean": 0.7655356492589414
+              },
+              "0.7": {
+                "ucb": 0.8672183115936986,
+                "mean": 0.6424695682097082
+              },
+              "1.0": {
+                "ucb": 0.501863666420113,
+                "mean": 0.2714566130007667
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, C->E, A->D, E->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "E"
+              ],
+              [
+                "A",
+                "D"
+              ],
+              [
+                "E",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 294,
+            "completion_tokens": 740,
+            "total_tokens": 1034
+          },
+          "cost": 0.02514
+        },
+        {
+          "query": 2,
+          "temperature": 0.3,
+          "context": [
+            1.0,
+            0.05263157894736842,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.283556955364993,
+            "predicted_reward": 1.1057042318720112,
+            "uncertainty": 0.8892636174649097,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.283556955364993,
+                "mean": 1.1057042318720112
+              },
+              "0.7": {
+                "ucb": 1.1169746156571585,
+                "mean": 0.914350873521609
+              },
+              "1.0": {
+                "ucb": 1.0278959710730309,
+                "mean": 0.809077870110744
+              }
+            }
+          },
+          "response": "Graph: No edges",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": []
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 314,
+            "completion_tokens": 522,
+            "total_tokens": 836
+          },
+          "cost": 0.0188
+        },
+        {
+          "query": 3,
+          "temperature": 0.3,
+          "context": [
+            1.0,
+            0.10526315789473684,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.1599681135470123,
+            "predicted_reward": 1.029294103837444,
+            "uncertainty": 0.6533700485478421,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.1599681135470123,
+                "mean": 1.029294103837444
+              },
+              "0.7": {
+                "ucb": 1.1101067540645622,
+                "mean": 0.9084752557303621
+              },
+              "1.0": {
+                "ucb": 1.0251936395919978,
+                "mean": 0.808763627862096
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, C->D, A->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "A",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 319,
+            "completion_tokens": 407,
+            "total_tokens": 726
+          },
+          "cost": 0.0154
+        },
+        {
+          "query": 4,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.15789473684210525,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.1034096045533237,
+            "predicted_reward": 0.9025996379391152,
+            "uncertainty": 1.004049833071042,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.098817512590009,
+                "mean": 0.9909355727415501
+              },
+              "0.7": {
+                "ucb": 1.1034096045533237,
+                "mean": 0.9025996379391152
+              },
+              "1.0": {
+                "ucb": 1.0229347222634613,
+                "mean": 0.808449385613448
+              }
+            }
+          },
+          "response": "Graph: A->B, B->E, C->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 337,
+            "completion_tokens": 558,
+            "total_tokens": 895
+          },
+          "cost": 0.02011
+        },
+        {
+          "query": 5,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.21052631578947367,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0867526887281835,
+            "predicted_reward": 0.9454419503294225,
+            "uncertainty": 0.7065536919938057,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.0681446792223501,
+                "mean": 0.9613411437675704
+              },
+              "0.7": {
+                "ucb": 1.0867526887281835,
+                "mean": 0.9454419503294225
+              },
+              "1.0": {
+                "ucb": 1.0211313646696243,
+                "mean": 0.8081351433648001
+              }
+            }
+          },
+          "response": "Graph: A->C, B->D, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "D"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 351,
+            "completion_tokens": 576,
+            "total_tokens": 927
+          },
+          "cost": 0.02079
+        },
+        {
+          "query": 6,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.2631578947368421,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0728575634537059,
+            "predicted_reward": 0.9575192161721575,
+            "uncertainty": 0.5766917364077415,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.037918742352834,
+                "mean": 0.9317467147935906
+              },
+              "0.7": {
+                "ucb": 1.0728575634537059,
+                "mean": 0.9575192161721575
+              },
+              "1.0": {
+                "ucb": 1.019793168014909,
+                "mean": 0.8078209011161521
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 365,
+            "completion_tokens": 458,
+            "total_tokens": 823
+          },
+          "cost": 0.01739
+        },
+        {
+          "query": 7,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.3157894736842105,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.062197184163062,
+            "predicted_reward": 0.96203881717064,
+            "uncertainty": 0.5007918349621102,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 1.0081476899495432,
+                "mean": 0.9021522858196109
+              },
+              "0.7": {
+                "ucb": 1.062197184163062,
+                "mean": 0.96203881717064
+              },
+              "1.0": {
+                "ucb": 1.0189268910357199,
+                "mean": 0.8075066588675042
+              }
+            }
+          },
+          "response": "Graph: A->B",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 379,
+            "completion_tokens": 435,
+            "total_tokens": 814
+          },
+          "cost": 0.01684
+        },
+        {
+          "query": 8,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.3684210526315789,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0537226604667618,
+            "predicted_reward": 0.9635996461404981,
+            "uncertainty": 0.4506150716313189,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.9788337899985377,
+                "mean": 0.8725578568456313
+              },
+              "0.7": {
+                "ucb": 1.0537226604667618,
+                "mean": 0.9635996461404981
+              },
+              "1.0": {
+                "ucb": 1.0185362317583744,
+                "mean": 0.8071924166188562
+              }
+            }
+          },
+          "response": "Graph: A->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 385,
+            "completion_tokens": 658,
+            "total_tokens": 1043
+          },
+          "cost": 0.02359
+        },
+        {
+          "query": 9,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.42105263157894735,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.046809590279698,
+            "predicted_reward": 0.9637444643614479,
+            "uncertainty": 0.4153256295912512,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.9499734472558239,
+                "mean": 0.8429634278716516
+              },
+              "0.7": {
+                "ucb": 1.046809590279698,
+                "mean": 0.9637444643614479
+              },
+              "1.0": {
+                "ucb": 1.0186217051266198,
+                "mean": 0.8068781743702083
+              }
+            }
+          },
+          "response": "Graph: A->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 391,
+            "completion_tokens": 473,
+            "total_tokens": 864
+          },
+          "cost": 0.0181
+        },
+        {
+          "query": 10,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.47368421052631576,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.041097346380681,
+            "predicted_reward": 0.9631502730727952,
+            "uncertainty": 0.389735366539429,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.9215574296095892,
+                "mean": 0.8133689988976718
+              },
+              "0.7": {
+                "ucb": 1.041097346380681,
+                "mean": 0.9631502730727952
+              },
+              "1.0": {
+                "ucb": 1.0191806257946023,
+                "mean": 0.8065639321215603
+              }
+            }
+          },
+          "response": "Graph: A->B, A->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 397,
+            "completion_tokens": 626,
+            "total_tokens": 1023
+          },
+          "cost": 0.02275
+        },
+        {
+          "query": 11,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.5263157894736842,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0363662512996763,
+            "predicted_reward": 0.9621716348169721,
+            "uncertainty": 0.37097308241352056,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.8935714316340354,
+                "mean": 0.7837745699236921
+              },
+              "0.7": {
+                "ucb": 1.0363662512996763,
+                "mean": 0.9621716348169721
+              },
+              "1.0": {
+                "ucb": 1.0202071974100895,
+                "mean": 0.8062496898729126
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, B->D, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "B",
+                "D"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 407,
+            "completion_tokens": 706,
+            "total_tokens": 1113
+          },
+          "cost": 0.02525
+        },
+        {
+          "query": 12,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.5789473684210527,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0324728534515086,
+            "predicted_reward": 0.9610200260693764,
+            "uncertainty": 0.3572641369106615,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.8659968979819196,
+                "mean": 0.7541801409497123
+              },
+              "0.7": {
+                "ucb": 1.0324728534515086,
+                "mean": 0.9610200260693764
+              },
+              "1.0": {
+                "ucb": 1.0216927015611512,
+                "mean": 0.8059354476242646
+              }
+            }
+          },
+          "response": "Graph: B->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 425,
+            "completion_tokens": 1505,
+            "total_tokens": 1930
+          },
+          "cost": 0.0494
+        },
+        {
+          "query": 13,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.631578947368421,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0293155487564383,
+            "predicted_reward": 0.959834255692691,
+            "uncertainty": 0.3474064653187367,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.8388120026236636,
+                "mean": 0.7245857119757326
+              },
+              "0.7": {
+                "ucb": 1.0293155487564383,
+                "mean": 0.959834255692691
+              },
+              "1.0": {
+                "ucb": 1.0236257723301907,
+                "mean": 0.8056212053756167
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, A->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "A",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 431,
+            "completion_tokens": 807,
+            "total_tokens": 1238
+          },
+          "cost": 0.02852
+        },
+        {
+          "query": 14,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.6842105263157895,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0268156817048706,
+            "predicted_reward": 0.9587113387115518,
+            "uncertainty": 0.3405217149665941,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.8119926753327762,
+                "mean": 0.6949912830017528
+              },
+              "0.7": {
+                "ucb": 1.0268156817048706,
+                "mean": 0.9587113387115518
+              },
+              "1.0": {
+                "ucb": 1.0259927370035753,
+                "mean": 0.8053069631269687
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C, C->E, E->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "E"
+              ],
+              [
+                "E",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 640,
+            "total_tokens": 1085
+          },
+          "cost": 0.02365
+        },
+        {
+          "query": 15,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            0.7368421052631579,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0287780004696785,
+            "predicted_reward": 0.8049927208783207,
+            "uncertainty": 1.1189263979567885,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.7855135812136109,
+                "mean": 0.6653968540277732
+              },
+              "0.7": {
+                "ucb": 1.0249069418341694,
+                "mean": 0.9577210188392455
+              },
+              "1.0": {
+                "ucb": 1.0287780004696785,
+                "mean": 0.8049927208783207
+              }
+            }
+          },
+          "response": "Graph: B->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 463,
+            "completion_tokens": 430,
+            "total_tokens": 893
+          },
+          "cost": 0.01753
+        },
+        {
+          "query": 16,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            0.7894736842105263,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0663144030479967,
+            "predicted_reward": 0.914692871555099,
+            "uncertainty": 0.7581076574644886,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.7593489851131591,
+                "mean": 0.6358024250537935
+              },
+              "0.7": {
+                "ucb": 1.0226963131919822,
+                "mean": 0.9524405366045638
+              },
+              "1.0": {
+                "ucb": 1.0663144030479967,
+                "mean": 0.914692871555099
+              }
+            }
+          },
+          "response": "Graph: A->B, B->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 469,
+            "completion_tokens": 691,
+            "total_tokens": 1160
+          },
+          "cost": 0.02542
+        },
+        {
+          "query": 17,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            0.8421052631578947,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0710864194289882,
+            "predicted_reward": 0.9476860142955235,
+            "uncertainty": 0.6170020256673235,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.7334734621945237,
+                "mean": 0.6062079960798138
+              },
+              "0.7": {
+                "ucb": 1.0207945551083843,
+                "mean": 0.9471600543698822
+              },
+              "1.0": {
+                "ucb": 1.0710864194289882,
+                "mean": 0.9476860142955235
+              }
+            }
+          },
+          "response": "Graph: A->B, A->D, B->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "D"
+              ],
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 479,
+            "completion_tokens": 537,
+            "total_tokens": 1016
+          },
+          "cost": 0.0209
+        },
+        {
+          "query": 18,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            0.8947368421052632,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.07220117119392,
+            "predicted_reward": 0.9643102879629823,
+            "uncertainty": 0.5394544161546883,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.7078624422953488,
+                "mean": 0.576613567105834
+              },
+              "0.7": {
+                "ucb": 1.0191611670592287,
+                "mean": 0.9418795721352006
+              },
+              "1.0": {
+                "ucb": 1.07220117119392,
+                "mean": 0.9643102879629823
+              }
+            }
+          },
+          "response": "Graph: B->A",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "A"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 493,
+            "completion_tokens": 698,
+            "total_tokens": 1191
+          },
+          "cost": 0.02587
+        },
+        {
+          "query": 19,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            0.9473684210526315,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0730140431337807,
+            "predicted_reward": 0.974797409601706,
+            "uncertainty": 0.4910831676603733,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.6824925953914143,
+                "mean": 0.5470191381318543
+              },
+              "0.7": {
+                "ucb": 1.0177599781958089,
+                "mean": 0.936599089900519
+              },
+              "1.0": {
+                "ucb": 1.0730140431337807,
+                "mean": 0.974797409601706
+              }
+            }
+          },
+          "response": "Graph: A->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 499,
+            "completion_tokens": 899,
+            "total_tokens": 1398
+          },
+          "cost": 0.03196
+        },
+        {
+          "query": 20,
+          "temperature": 1.0,
+          "context": [
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "ucb": 1.0741573680361467,
+            "predicted_reward": 0.9823185579066714,
+            "uncertainty": 0.4591940506473764,
+            "arm_scores": {
+              "0.3": {
+                "ucb": 0.6573420776845491,
+                "mean": 0.5174247091578745
+              },
+              "0.7": {
+                "ucb": 1.0165592923395619,
+                "mean": 0.9313186076658373
+              },
+              "1.0": {
+                "ucb": 1.0741573680361467,
+                "mean": 0.9823185579066714
+              }
+            }
+          },
+          "response": "Graph: A->B, B->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 505,
+            "completion_tokens": 537,
+            "total_tokens": 1042
+          },
+          "cost": 0.02116
+        }
+      ]
+    },
+    "fixed_0.7": {
+      "n_queries": 20,
+      "valid": 20,
+      "unique_valid": 20,
+      "recovered_ground_truths": 20,
+      "recovery": 0.0023020257826887663,
+      "cost": 0.38422000000000006,
+      "prompt_tokens": 7951,
+      "completion_tokens": 10157,
+      "records": [
+        {
+          "query": 1,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, A->C, B->D, C->D, E->B",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "D"
+              ],
+              [
+                "C",
+                "D"
+              ],
+              [
+                "E",
+                "B"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 294,
+            "completion_tokens": 679,
+            "total_tokens": 973
+          },
+          "cost": 0.02331
+        },
+        {
+          "query": 2,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.05263157894736842,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, A->C, E->B",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "E",
+                "B"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 314,
+            "completion_tokens": 414,
+            "total_tokens": 728
+          },
+          "cost": 0.01556
+        },
+        {
+          "query": 3,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.10526315789473684,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->E, B->A, C->B",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "E"
+              ],
+              [
+                "B",
+                "A"
+              ],
+              [
+                "C",
+                "B"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 328,
+            "completion_tokens": 655,
+            "total_tokens": 983
+          },
+          "cost": 0.02293
+        },
+        {
+          "query": 4,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.15789473684210525,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->D, B->D, C->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "D"
+              ],
+              [
+                "B",
+                "D"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 342,
+            "completion_tokens": 458,
+            "total_tokens": 800
+          },
+          "cost": 0.01716
+        },
+        {
+          "query": 5,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.21052631578947367,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: No edges",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": []
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 356,
+            "completion_tokens": 538,
+            "total_tokens": 894
+          },
+          "cost": 0.0197
+        },
+        {
+          "query": 6,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.2631578947368421,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 361,
+            "completion_tokens": 532,
+            "total_tokens": 893
+          },
+          "cost": 0.01957
+        },
+        {
+          "query": 7,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.3157894736842105,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 367,
+            "completion_tokens": 461,
+            "total_tokens": 828
+          },
+          "cost": 0.0175
+        },
+        {
+          "query": 8,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.3684210526315789,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, B->C, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 373,
+            "completion_tokens": 458,
+            "total_tokens": 831
+          },
+          "cost": 0.01747
+        },
+        {
+          "query": 9,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.42105263157894735,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, A->C, B->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 387,
+            "completion_tokens": 628,
+            "total_tokens": 1015
+          },
+          "cost": 0.02271
+        },
+        {
+          "query": 10,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.47368421052631576,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, B->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 401,
+            "completion_tokens": 357,
+            "total_tokens": 758
+          },
+          "cost": 0.01472
+        },
+        {
+          "query": 11,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.5263157894736842,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: B->A",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "A"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 411,
+            "completion_tokens": 547,
+            "total_tokens": 958
+          },
+          "cost": 0.02052
+        },
+        {
+          "query": 12,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.5789473684210527,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: E->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "E",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 417,
+            "completion_tokens": 519,
+            "total_tokens": 936
+          },
+          "cost": 0.01974
+        },
+        {
+          "query": 13,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.631578947368421,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: B->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 423,
+            "completion_tokens": 454,
+            "total_tokens": 877
+          },
+          "cost": 0.01785
+        },
+        {
+          "query": 14,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.6842105263157895,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: B->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "B",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 429,
+            "completion_tokens": 684,
+            "total_tokens": 1113
+          },
+          "cost": 0.02481
+        },
+        {
+          "query": 15,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.7368421052631579,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: C->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 435,
+            "completion_tokens": 398,
+            "total_tokens": 833
+          },
+          "cost": 0.01629
+        },
+        {
+          "query": 16,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.7894736842105263,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->C",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "C"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 441,
+            "completion_tokens": 396,
+            "total_tokens": 837
+          },
+          "cost": 0.01629
+        },
+        {
+          "query": 17,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.8421052631578947,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, A->C, B->E, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "A",
+                "C"
+              ],
+              [
+                "B",
+                "E"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 444,
+            "total_tokens": 891
+          },
+          "cost": 0.01779
+        },
+        {
+          "query": 18,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.8947368421052632,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: C->A, A->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "C",
+                "A"
+              ],
+              [
+                "A",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 465,
+            "completion_tokens": 479,
+            "total_tokens": 944
+          },
+          "cost": 0.01902
+        },
+        {
+          "query": 19,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            0.9473684210526315,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, C->E",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "C",
+                "E"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 475,
+            "completion_tokens": 593,
+            "total_tokens": 1068
+          },
+          "cost": 0.02254
+        },
+        {
+          "query": 20,
+          "temperature": 0.7,
+          "context": [
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.2,
+            0.9847317582510473
+          ],
+          "decision": {
+            "control": "fixed"
+          },
+          "response": "Graph: A->B, B->C, C->D",
+          "graph": {
+            "nodes": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "D"
+              ]
+            ]
+          },
+          "valid": true,
+          "new_valid_unique": true,
+          "recovered_gt": true,
+          "reward": 1.0,
+          "usage": {
+            "prompt_tokens": 485,
+            "completion_tokens": 463,
+            "total_tokens": 948
+          },
+          "cost": 0.01874
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "recovery_delta": 0.0,
+    "valid_delta": 0.0,
+    "unique_delta": 0,
+    "cost_delta": 0.08434999999999993
+  }
+}
