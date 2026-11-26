@@ -143,7 +143,7 @@ def plot_fig1_id_ablation(id_stats: Dict[str, Any]) -> None:
     width = 0.195
     offsets = np.linspace(-1.5 * width, 1.5 * width, len(method_specs))
 
-    fig, ax = plt.subplots(figsize=(10.6, 5.8))
+    fig, ax = plt.subplots(figsize=(10.6, 5.7))
     for idx, (key, label, color) in enumerate(method_specs):
         m_data = models[key]
         vals = [fn(m_data, key) for _, fn in metric_specs]
@@ -160,11 +160,11 @@ def plot_fig1_id_ablation(id_stats: Dict[str, Any]) -> None:
         for bar, v in zip(bars, vals):
             ax.text(
                 bar.get_x() + bar.get_width() / 2.0,
-                v + 1.4,
+                v + 1.2,
                 f"{v:.1f}%",
                 ha="center",
                 va="bottom",
-                fontsize=8.4,
+                fontsize=8.3,
                 fontweight="bold" if key == "diversity" else "normal",
                 color="#0F172A",
             )
@@ -172,11 +172,19 @@ def plot_fig1_id_ablation(id_stats: Dict[str, Any]) -> None:
     ax.set_xticks(x)
     ax.set_xticklabels([m[0] for m in metric_specs], fontsize=10.5)
     ax.set_ylabel("Score (%)")
-    ax.set_ylim(0, 126)
-    ax.set_title(
-        "Unseen-Structure 4-Node ID Test (76 Tasks / 5 Groups, Zero Isomorphism Leakage)"
+    ax.set_ylim(0, 108)
+    ax.legend(
+        loc="lower center",
+        bbox_to_anchor=(0.5, 1.01),
+        ncol=2,
+        fontsize=8.8,
     )
-    ax.legend(loc="upper right", fontsize=8.8)
+    fig.suptitle(
+        "Unseen-Structure 4-Node ID Test (76 Tasks / 5 Groups, Zero Isomorphism Leakage)",
+        fontsize=12.8,
+        fontweight="bold",
+        y=0.985,
+    )
 
     ds_pair = pairs["diversity - deepseek"]["metrics"]["recovery_rate"]
     sft_rec = pairs["diversity - sft"]["metrics"]["recovery_rate"]
@@ -184,38 +192,39 @@ def plot_fig1_id_ablation(id_stats: Dict[str, Any]) -> None:
     ds_ci = ds_pair["group_level"]["bootstrap_ci_95"]
     sft_vci = sft_val["group_level"]["bootstrap_ci_95"]
     callout = (
-        f"vs. DeepSeek-Flash: +{ds_pair['task_level_descriptive']['mean_delta']*100:.1f}% Task "
+        f"vs. DeepSeek-Flash (T=0.7): +{ds_pair['task_level_descriptive']['mean_delta']*100:.1f}% Task "
         f"/ +{ds_pair['group_level']['mean_delta']*100:.1f}% Group Rec "
         f"(95% CI [{ds_ci[0]*100:+.1f}%, {ds_ci[1]*100:+.1f}%])\n"
         f"vs. SFT-LoRA: +{sft_val['task_level_descriptive']['mean_delta']*100:.1f}% Valid "
         f"(Group CI [{sft_vci[0]*100:+.1f}%, {sft_vci[1]*100:+.1f}%]), "
-        f"+{sft_rec['task_level_descriptive']['mean_delta']*100:.1f}% Task Rec"
+        f"+{sft_rec['task_level_descriptive']['mean_delta']*100:.1f}% Task Rec (Group CI crosses 0)"
     )
     ax.text(
-        0.018,
-        0.965,
+        0.985,
+        0.96,
         callout,
         transform=ax.transAxes,
-        ha="left",
+        ha="right",
         va="top",
-        fontsize=8.6,
+        fontsize=8.3,
         bbox={"boxstyle": "round,pad=0.38", "facecolor": "#ECFDF5", "edgecolor": "#10B981"},
+        zorder=5,
     )
     fig.text(
         0.012,
         0.01,
-        "*Note: Validity-Only GRPO collapsed on val recovery and reverted to best_step=0 (SFT init), yielding identical test scores.",
-        fontsize=8.4,
+        "*Note: Validity-Only GRPO collapsed on val recovery and reverted to best_step=0 (SFT init); its final checkpoint was not test-evaluated.",
+        fontsize=8.3,
         color="#475569",
     )
 
-    fig.tight_layout(rect=[0, 0.035, 1, 1])
+    fig.tight_layout(rect=[0, 0.035, 1, 0.94])
     fig.savefig(FIG_DIR / "fig1_id_ablation.png", dpi=300)
     plt.close(fig)
 
 
 def plot_fig2_difficulty_scaling(id_stats: Dict[str, Any]) -> None:
-    """Plot |H_O| difficulty bucket scaling alongside finite-sample theoretical ceilings."""
+    """Plot |H_O| difficulty bucket scaling alongside finite-sample reference ceilings."""
     models = index_models(id_stats)
     buckets = ["1", "2-4", "5-8", "9+"]
     ref_buckets = models["diversity"]["by_bucket"]
@@ -225,14 +234,13 @@ def plot_fig2_difficulty_scaling(id_stats: Dict[str, Any]) -> None:
     ]
 
     x = np.arange(len(buckets))
-    fig, ax = plt.subplots(figsize=(9.4, 5.4))
+    fig, ax = plt.subplots(figsize=(9.6, 5.8))
 
-    # Plot theoretical ceiling first so it sits cleanly behind highlighted series
     ceilings = [ref_buckets[b]["ceiling"] * 100.0 for b in buckets]
     ax.plot(
         x,
         ceilings,
-        label="Finite-Sample Ceiling 1-(1-1/K)^K",
+        label="i.i.d. Uniform Reference Ceiling 1-(1-1/K)^K",
         color=COLORS["ceiling"],
         linestyle=":",
         marker="*",
@@ -254,16 +262,16 @@ def plot_fig2_difficulty_scaling(id_stats: Dict[str, Any]) -> None:
 
     series = [
         ("base", "Qwen2.5-7B Base", COLORS["base"], "o", "--"),
-        ("deepseek", "DeepSeek-Flash (API)", COLORS["deepseek"], "s", "-."),
+        ("deepseek", "DeepSeek-Flash (API, T=0.7)", COLORS["deepseek"], "s", "-."),
         ("sft", "SFT-LoRA (Stage 1)", COLORS["sft"], "^", "-"),
         ("diversity", "Diversity-GRPO-LoRA (Ours)", COLORS["grpo"], "D", "-"),
     ]
 
     offset_table = {
-        "base": [(0, -14), (0, 7), (0, -14), (0, -14)],
-        "deepseek": [(18, 4), (0, -14), (0, -14), (0, 8)],
-        "sft": [(-24, 2), (0, -14), (0, 8), (-22, -14)],
-        "diversity": [(22, -12), (0, 8), (0, -14), (20, 8)],
+        "base": [(0, -14), (0, 8), (0, -14), (0, -14)],
+        "deepseek": [(10, 4), (0, -14), (0, -14), (0, -15)],
+        "sft": [None, (14, 3), (0, 8), (-22, -14)],
+        "diversity": [(0, -18), (0, 9), (0, -14), (20, 8)],
     }
 
     for key, label, color, marker, ls in series:
@@ -281,28 +289,37 @@ def plot_fig2_difficulty_scaling(id_stats: Dict[str, Any]) -> None:
             zorder=4 if is_ours else 3,
         )
         for xi, yi in zip(x, ys):
-            dx, dy = offset_table[key][xi]
+            off = offset_table[key][xi]
+            if off is None:
+                continue
+            dx, dy = off
+            txt = f"{yi:.1f}%\n(SFT & Ours)" if (is_ours and xi == 0) else f"{yi:.1f}%"
+            ha_mode = "left" if (xi == 0 and key == "deepseek") else "center"
+            va_mode = "top" if (is_ours and xi == 0) else "baseline"
+            xy_off = (0, -10) if (is_ours and xi == 0) else (dx, dy)
             ax.annotate(
-                f"{yi:.1f}%",
+                txt,
                 (xi, yi),
                 textcoords="offset points",
-                xytext=(dx, dy),
-                ha="center",
-                fontsize=8.4,
+                xytext=xy_off,
+                ha=ha_mode,
+                va=va_mode,
+                fontsize=8.3,
                 fontweight="bold" if is_ours else "normal",
                 color=color if key != "base" else "#475569",
             )
 
     grpo_hard = models["diversity"]["by_bucket"]["9+"]["recovery_rate"] * 100.0
     grpo_hard_norm = models["diversity"]["by_bucket"]["9+"]["recovery_norm"] * 100.0
+    sft_hard = models["sft"]["by_bucket"]["9+"]["recovery_rate"] * 100.0
     ds_hard = models["deepseek"]["by_bucket"]["9+"]["recovery_rate"] * 100.0
     ratio = grpo_hard / max(1e-6, ds_hard)
     ax.annotate(
-        f"{ratio:.1f}x DeepSeek on |H_O|>=9\n({grpo_hard_norm:.1f}% of ceiling)",
+        f"SFT ({sft_hard:.1f}%) & Ours ({grpo_hard:.1f}%): ~{ratio:.1f}x DeepSeek\non |H_O|>=9 (n=12, g=1; {grpo_hard_norm:.1f}% of ref ceiling)",
         xy=(3, grpo_hard),
-        xytext=(1.95, 79),
+        xytext=(1.72, 82),
         arrowprops={"arrowstyle": "->", "color": COLORS["grpo"], "lw": 1.6},
-        fontsize=9.2,
+        fontsize=8.8,
         fontweight="bold",
         color="#065F46",
         bbox={"boxstyle": "round,pad=0.32", "facecolor": "#ECFDF5", "edgecolor": COLORS["grpo"]},
@@ -310,13 +327,14 @@ def plot_fig2_difficulty_scaling(id_stats: Dict[str, Any]) -> None:
 
     ax.set_xticks(x)
     ax.set_xticklabels(bucket_labels)
+    ax.set_xlim(-0.28, 3.28)
     ax.set_ylabel("Macro Recovery Rate (%)")
-    ax.set_ylim(-4, 114)
-    ax.set_title("Recovery Breakdown by |H_O| vs. Theoretical Finite-Sample Ceiling (4-Node Test)")
-    ax.legend(loc="lower left", bbox_to_anchor=(0.01, 0.14), fontsize=8.6)
+    ax.set_ylim(-4, 112)
+    ax.set_title("Recovery Breakdown by |H_O| vs. Finite-Sample Reference Ceiling (4-Node Test)")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=3, fontsize=8.5)
 
     fig.tight_layout()
-    fig.savefig(FIG_DIR / "fig2_difficulty_scaling.png", dpi=300)
+    fig.savefig(FIG_DIR / "fig2_difficulty_scaling.png", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
 
