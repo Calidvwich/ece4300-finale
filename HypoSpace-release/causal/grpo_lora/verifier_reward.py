@@ -1,16 +1,20 @@
 """
-Causal 任务精确解析器、DAG 验证器与集合级多样性 GRPO 奖励模块。
+Causal 任务精确解析器、DAG 验证器与集合级多样性 GRPO 奖励模块（v2.0）。
 
-设计说明：
-1. 严格复用官方 `CausalGraph` 数据模型及干预可达性语义，保证训练奖励与最终评测零偏差。
-2. 对每个样本群（Group of size G）计算集合级奖励（Set-Level Diversity Reward）：
-   - 合法且唯一的新解：基础高分 + 与组内其他唯一有效解的平均边 Jaccard 距离奖励；
-   - 合法但与组内已有解重复：明确惩罚，抑制模式崩塌；
-   - 非法 DAG 或观测冲突：给予平滑或惩罚性负分，引导模型同时学到“格式/合法性”与“多样性”。
+v2.0 核心修复与改进：
+1. **严格单调奖惩层级**：确保任意合法解（即使在组内重复）奖励 >= `valid_floor_reward` (+0.1)，
+   严格高于所有不满足观测的非法 DAG（<= -0.4）与无法解析的输出（-1.0），杜绝激励倒挂。
+2. **排列不变的逆频次覆盖奖励（Order-Invariant Inverse-Frequency Reward）**：
+   旧版仅惩罚“第 2 次及以后出现”，导致同一张图的首个样本得高正分、其余同图样本得负分，
+   使模型梯度受采样顺序影响；v2.0 改为按整组出现频次 `count(g)` 均摊：
+   `reward = valid_floor + (valid_unique_bonus + diversity_weight * jaccard_dist) / count(g)`，
+   既严格奖励覆盖更多不同合法图、惩罚过度集中，又做到 100% 排列顺序无关。
+3. **支持 `validity_only` 消融模式**：用于对照验证“无多样性奖励的普通 RL”是否加剧模式崩塌。
 """
 
 import re
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Set, Tuple
@@ -187,25 +191,32 @@ def compute_group_diversity_rewards(
     cfg: Optional[RewardConfig] = None,
 ) -> GroupRewardResult:
     """
-    计算 GRPO 单组采样响应的集合级多样性奖励。
+    计算 GRPO 单组采样响应的集合级奖励（v2.0：严格层级 + 排列不变逆频次衰减）。
 
-    核心机制：
-    - 解析出组内所有合法且互不重复的图集合 U_valid；
-    - 对组内首次出现的每个唯一有效解，奖励基础分 + 结构新颖度分（与组内其余唯一解的平均 Jaccard 距离）；
-    - 对组内后续重复出现的相同有效解，给予负惩罚（duplicate_valid_reward），迫使策略分散采样概率质量。
+    公式说明：
+    - `diversity` 模式：对合法图 g，设其在组内出现次数为 c = count(g) >= 1，
+      平均边 Jaccard 距离为 d_bar(g)（若组内仅有 1 种合法图则 d_bar=0）：
+      r(g) = valid_floor_reward + (valid_unique_bonus + diversity_weight * d_bar(g)) / c
+      注意：总组内合法奖励之和 = c * valid_floor + (valid_unique_bonus + diversity_weight * d_bar)
+      既确保所有合法解严格高于所有非法解，又使“采样出 N 种不同合法解”比“重复采样同一合法解 N 次”
+      获得高得多的组内与个体优势。
+    - `validity_only` 模式：所有合法解均获得固定 `valid_floor_reward + valid_unique_bonus` (+1.0)。
     """
     reward_cfg = cfg if cfg is not None else RewardConfig()
-    n_resp = len(responses)
+    if reward_cfg.mode not in ("diversity", "validity_only"):
+        raise ValueError(f"Unsupported reward mode: {reward_cfg.mode}")
 
+    n_resp = len(responses)
     parsed_graphs: List[Optional[CausalGraph]] = []
     parse_flags: List[bool] = []
     valid_flags: List[bool] = []
     obs_match_ratios: List[float] = []
     unique_valid_flags: List[bool] = [False] * n_resp
+    row_hashes: List[Optional[str]] = [None] * n_resp
 
-    # 先解析与验证所有响应，并记录每张有效图的首次出现下标
-    seen_valid_hashes: Set[str] = set()
-    unique_valid_items: List[Tuple[int, CausalGraph]] = []
+    # 1) 解析与验证组内全部响应，统计各有效图哈希的出现频次
+    valid_counts: Counter = Counter()
+    unique_valid_graphs: Dict[str, CausalGraph] = {}
 
     for idx, text in enumerate(responses):
         graph = parse_causal_graph(text, nodes=nodes, max_edges=max_edges)
@@ -223,26 +234,29 @@ def compute_group_diversity_rewards(
 
         if is_valid:
             g_hash = graph.get_hash()
-            if g_hash not in seen_valid_hashes:
-                seen_valid_hashes.add(g_hash)
+            row_hashes[idx] = g_hash
+            valid_counts[g_hash] += 1
+            if g_hash not in unique_valid_graphs:
+                unique_valid_graphs[g_hash] = graph
                 unique_valid_flags[idx] = True
-                unique_valid_items.append((idx, graph))
 
-    # 预先计算每个唯一有效解相对组内其他唯一有效解的平均结构距离
-    diversity_scores: Dict[int, float] = {}
-    if len(unique_valid_items) <= 1:
-        for idx, _ in unique_valid_items:
-            diversity_scores[idx] = 0.0
+    # 2) 计算每个唯一有效图相对组内其余唯一有效图的平均 Jaccard 距离
+    diversity_by_hash: Dict[str, float] = {}
+    unique_keys = list(unique_valid_graphs.keys())
+    if len(unique_keys) <= 1:
+        for k in unique_keys:
+            diversity_by_hash[k] = 0.0
     else:
-        for idx, g_i in unique_valid_items:
+        for k_i in unique_keys:
+            g_i = unique_valid_graphs[k_i]
             dists = [
-                edge_jaccard_distance(g_i, g_j)
-                for other_idx, g_j in unique_valid_items
-                if other_idx != idx
+                edge_jaccard_distance(g_i, unique_valid_graphs[k_j])
+                for k_j in unique_keys
+                if k_j != k_i
             ]
-            diversity_scores[idx] = float(np.mean(dists))
+            diversity_by_hash[k_i] = float(np.mean(dists))
 
-    # 汇总每条响应的最终标量奖励
+    # 3) 按严格层级与排列不变公式赋分
     rewards: List[float] = []
     for idx in range(n_resp):
         if not parse_flags[idx]:
@@ -253,14 +267,18 @@ def compute_group_diversity_rewards(
                 + reward_cfg.invalid_match_bonus * obs_match_ratios[idx]
             )
             rewards.append(float(partial))
-        elif unique_valid_flags[idx]:
-            r = (
-                reward_cfg.valid_unique_base
-                + reward_cfg.diversity_weight * diversity_scores[idx]
-            )
-            rewards.append(float(r))
+        elif reward_cfg.mode == "validity_only":
+            flat_valid = reward_cfg.valid_floor_reward + reward_cfg.valid_unique_bonus
+            rewards.append(float(flat_valid))
         else:
-            rewards.append(float(reward_cfg.duplicate_valid_reward))
+            g_hash = row_hashes[idx]
+            assert g_hash is not None
+            freq = valid_counts[g_hash]
+            div_bonus = reward_cfg.diversity_weight * diversity_by_hash[g_hash]
+            r = reward_cfg.valid_floor_reward + (
+                reward_cfg.valid_unique_bonus + div_bonus
+            ) / float(freq)
+            rewards.append(float(r))
 
     denom = max(1, n_resp)
     return GroupRewardResult(

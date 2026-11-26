@@ -1,9 +1,10 @@
-# Causal Diversity-Aware GRPO-LoRA 启动指南
+# Causal Diversity-Aware GRPO-LoRA 启动指南（v2.0 零同构泄露版）
 
-本目录实现了针对 HypoSpace Causal 任务的 **两阶段微调与评测框架**：
-1. **Stage 1（`train_sft.py`）**：轻量 SFT-LoRA 冷启动，同时产出重要消融对照基线 `SFT-LoRA`；
-2. **Stage 2（`train_grpo.py`）**：**Diversity-Aware GRPO-LoRA**，利用集合级多样性奖励（Unique Valid 基础分 + 边结构 Jaccard 新颖度 − 重复惩罚）抑制模式崩塌，直接优化 Recovery 与 Uniqueness；
-3. **统一评测（`evaluate_lora.py`）**：严格按 Fixed-Prompt（`N = |H_O|`）协议评测，并自动与队友保存的 `DeepSeek-Flash` 结果做逐题配对对比。
+本目录实现了针对 HypoSpace Causal 任务的 **两阶段微调与严格消融评测框架（v2.0）**：
+1. **零同构泄露切分（`data_utils.py`）**：将 4 节点 392 题先按节点置换（24 种重命名）归并为 **22 个因果结构同构类**，再按 `|H_O|` 难度桶整组切分为 `Train` / `Val` / `Unseen-Structure Test`，彻底杜绝测试结构换名泄露。
+2. **Stage 1（`train_sft.py`）**：轻量去偏 SFT-LoRA 冷启动，同时产出监督微调基线 `SFT-LoRA`。
+3. **Stage 2（`train_grpo.py`）**：**严格层级 + 排列不变的逆频次 Diversity-GRPO-LoRA**（与 `Validity-Only GRPO` 消融对照，Zero-Dropout + 多任务梯度累积 + 确定性分批验证）。
+4. **统一评测（`evaluate_lora.py`）**：严格按 Fixed-Prompt（`N = |H_O|`）协议评测，并自动与 `DeepSeek-Flash` 在同一批未见结构测试题上逐题配对对比。
 
 ---
 

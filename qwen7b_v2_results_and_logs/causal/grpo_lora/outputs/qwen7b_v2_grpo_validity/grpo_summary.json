@@ -1,0 +1,15 @@
+{
+  "model_name": "/opt/data/private/machine-learning/hf_cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "reward_mode": "validity_only",
+  "total_opt_steps": 102,
+  "best_step": 0,
+  "best_val_recovery_group_mean": 0.5581597222222222,
+  "step0_val_recovery_group_mean": 0.5581597222222222,
+  "sampling": {
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "max_new_tokens": 64
+  },
+  "val_tasks_count": 48,
+  "val_tasks_per_group": 12
+}

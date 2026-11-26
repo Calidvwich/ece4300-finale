@@ -51,10 +51,12 @@ def evaluate_model(args: argparse.Namespace) -> Dict[str, Any]:
     if args.dataset_path is not None:
         _, tasks = load_causal_dataset(args.dataset_path)
         eval_source = str(args.dataset_path)
+        default_source_name = args.dataset_path.stem
     else:
         splits_payload = json.loads(Path(args.splits_path).read_text(encoding="utf-8"))
         tasks = splits_payload["splits"][args.split_name]
         eval_source = f"{args.splits_path}:{args.split_name}"
+        default_source_name = args.split_name
 
     if args.max_tasks is not None:
         tasks = tasks[: args.max_tasks]
@@ -151,9 +153,12 @@ def evaluate_model(args: argparse.Namespace) -> Dict[str, Any]:
                 unique_valid.add(edge_key)
 
         recovered_gt = len(unique_valid & gt_edge_sets)
+        source_dataset = str(task.get("source_dataset", default_source_name))
+        task_uid = f"{source_dataset}:{task['observation_set_id']}"
         per_task_results.append(
             {
                 "observation_set_id": task["observation_set_id"],
+                "task_uid": task_uid,
                 "n_observations": int(task.get("n_observations", len(task["observations"]))),
                 "n_ground_truths": n_gt,
                 "n_queries": n_queries,
@@ -202,6 +207,12 @@ def evaluate_model(args: argparse.Namespace) -> Dict[str, Any]:
         "model_name": args.model_name,
         "adapter_dir": str(args.adapter_dir) if args.adapter_dir else None,
         "eval_source": eval_source,
+        "sampling": {
+            "temperature": args.temperature,
+            "top_p": args.top_p,
+            "max_new_tokens": args.max_new_tokens,
+            "seed": args.seed,
+        },
         "n_tasks": n_tasks,
         "total_queries": total_q,
         "total_ground_truths": total_gt,
@@ -247,7 +258,7 @@ def evaluate_model(args: argparse.Namespace) -> Dict[str, Any]:
     return output_payload
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     cfg = EvalConfig()
     parser = argparse.ArgumentParser(description="Evaluate Base/SFT/GRPO LoRA under Fixed-Prompt")
     parser.add_argument("--model_name", type=str, default=cfg.model_name)
@@ -266,7 +277,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=cfg.seed)
     parser.add_argument("--bf16", action="store_true", default=cfg.bf16)
     parser.add_argument("--no_bf16", dest="bf16", action="store_false")
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 if __name__ == "__main__":

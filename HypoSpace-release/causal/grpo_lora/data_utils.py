@@ -1,15 +1,19 @@
 """
-因果图数据集加载、Fixed-Prompt 构造、无泄露数据切分与 DeepSeek 基线统计工具。
+因果图数据集加载、Fixed-Prompt 构造、零同构泄露切分与 DeepSeek 基线统计工具（v2.0）。
 
-核心原则：
-1. Prompt 格式与官方 `HypoSpace-release/causal/run_causal_benchmark.py` 的
-   `independent_samples=True`（Fixed Prompt）完全一致，确保实验协议严格对齐。
-2. 训练 / 验证 / 测试集严格按 `observation_set_id` 隔离，零重叠、零泄露。
+核心升级（解决节点置换同构泄露）：
+- 4 节点 `n4_obs3_all.json` 的 392 题本质上仅由 22 个因果观测同构类（在 A/B/C/D 节点重命名置换下等价）
+  构成；若仅按 `observation_set_id` 随机切分，全部 22 个结构类都会落入训练集。
+- 本模块通过 `canonical_isomorphism_key` 计算每道题在全节点置换群 S_n 下的字典序最小规范签名，
+  以**同构结构类**为最小不可分割单元按 |H_O| 分桶整组切分，确保 Train / Val / Test 之间
+  既无 `observation_set_id` 重合，也无节点换名等价结构重合（零同构泄露）。
 """
 
 import argparse
+import itertools
 import json
 import random
+from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
@@ -42,7 +46,6 @@ def load_causal_dataset(path: Path) -> Tuple[Dict[str, Any], List[Dict[str, Any]
     else:
         raise ValueError(f"Unsupported causal dataset schema in {path}")
 
-    # 若 metadata 未显式提供 max_edges，按官方逻辑从 ground truth 推断
     inferred_max_edges = default_max_edges
     if inferred_max_edges is None and tasks:
         max_gt_edges = 0
@@ -63,6 +66,36 @@ def load_causal_dataset(path: Path) -> Tuple[Dict[str, Any], List[Dict[str, Any]
         normalized.append(rec)
 
     return metadata, normalized
+
+
+def canonical_isomorphism_key(task: Dict[str, Any]) -> Tuple[Any, ...]:
+    """
+    计算任务在节点名称全置换群（如 A/B/C/D 的 4!=24 种重命名）下的规范同构签名。
+
+    包含 `(节点数, max_edges, 规范化观测元组)`：
+    两道题若仅差节点字母重命名，其返回的签名严格相同。
+    """
+    nodes = list(task["nodes"])
+    observations = task["observations"]
+    if len(nodes) > 6:
+        raise ValueError(f"Permutation canonicalization supports <=6 nodes, got {len(nodes)}")
+
+    best_obs: Optional[Tuple[Any, ...]] = None
+    for perm in itertools.permutations(nodes):
+        mapping = dict(zip(nodes, perm))
+        obs_tuples = tuple(
+            sorted(
+                (
+                    mapping[obs["perturbed_node"]],
+                    tuple(sorted((mapping[n], int(obs["effects"].get(n, 0))) for n in nodes)),
+                )
+                for obs in observations
+            )
+        )
+        if best_obs is None or obs_tuples < best_obs:
+            best_obs = obs_tuples
+
+    return (len(nodes), task.get("max_edges"), best_obs)
 
 
 def build_fixed_prompt(
@@ -162,53 +195,92 @@ def create_leakage_free_splits(
     n3_path: Path,
     n4_path: Path,
     output_path: Path,
-    val_ratio: float = 0.10,
-    test_ratio: float = 0.20,
     seed: int = 33550336,
 ) -> Dict[str, Any]:
     """
-    构建严格无泄露的 Train / Val / Test 切分并保存到 JSON。
+    构建**零同构泄露**的 Train / Val / Test 分层整组切分并保存到 JSON。
 
-    切分策略：
-    - `n4_obs3_all.json`（392 题）按 |H_O| 桶（1, 2-4, 5-8, 9+）分层切分为 Train / Val / Test；
-    - `n3_all_observations.json`（19 题，3 节点）全部放入 Train，提供小图热身；
-    - 严格校验 `n4` 内部 `train / val / test` 的 `observation_set_id` 两两交集为空。
+    切分策略（以 22 个 4 节点同构结构类为最小分配单元）：
+    - 先用 `canonical_isomorphism_key` 把 `n4_obs3_all.json` 的 392 题聚类为 22 个同构结构组；
+    - 按 |H_O| 桶（`1`, `2-4`, `5-8`, `9+`）分层分配整组结构：
+      - 每个桶分配 1 个完整结构组进入 `Val`（共 4 组，覆盖全难度桶）；
+      - 每个桶分配 1 个完整结构组进入 `Test`（另在组数最多的 `2-4` 桶多分配 1 组，共 5 组，覆盖全难度桶）；
+      - 其余 13 个完整结构组全部进入 `Train`；
+    - `n3_all_observations.json`（19 题，3 节点）全部加入 `Train`；
+    - 严格断言 `n4` 的 `Train / Val / Test` 之间在 **题目 ID** 和 **同构结构键** 两个层级上交集均为 0。
     """
     rng = random.Random(seed)
     _, n3_tasks = load_causal_dataset(n3_path)
     _, n4_tasks = load_causal_dataset(n4_path)
 
-    buckets: Dict[str, List[Dict[str, Any]]] = {"1": [], "2-4": [], "5-8": [], "9+": []}
+    iso_groups_map: Dict[Tuple[Any, ...], List[Dict[str, Any]]] = defaultdict(list)
     for task in n4_tasks:
         t = dict(task)
         t["source_dataset"] = "n4_obs3_all"
-        buckets[get_gt_bucket(int(t["n_compatible_graphs"]))].append(t)
+        iso_groups_map[canonical_isomorphism_key(t)].append(t)
+
+    # 按组内代表 ID 稳定排序后，根据 |H_O| 分桶
+    bucket_groups: Dict[str, List[Tuple[Tuple[Any, ...], List[Dict[str, Any]]]]] = {
+        "1": [],
+        "2-4": [],
+        "5-8": [],
+        "9+": [],
+    }
+    for key, grp_tasks in iso_groups_map.items():
+        grp_tasks_sorted = sorted(grp_tasks, key=lambda x: x["observation_set_id"])
+        bucket = get_gt_bucket(int(grp_tasks_sorted[0]["n_compatible_graphs"]))
+        bucket_groups[bucket].append((key, grp_tasks_sorted))
+
+    # 每个桶内：保证 Test / Val 覆盖全桶，同时 Train 保留多数结构组学习规律
+    test_group_quota = {"1": 1, "2-4": 2, "5-8": 1, "9+": 1}
+    val_group_quota = {"1": 1, "2-4": 1, "5-8": 1, "9+": 1}
 
     n4_train: List[Dict[str, Any]] = []
     n4_val: List[Dict[str, Any]] = []
     n4_test: List[Dict[str, Any]] = []
+    group_counts_by_split: Dict[str, Dict[str, int]] = {
+        "train": {"1": 0, "2-4": 0, "5-8": 0, "9+": 0},
+        "val": {"1": 0, "2-4": 0, "5-8": 0, "9+": 0},
+        "test": {"1": 0, "2-4": 0, "5-8": 0, "9+": 0},
+    }
 
     for bucket_name in ("1", "2-4", "5-8", "9+"):
-        items = buckets[bucket_name]
-        rng.shuffle(items)
-        total = len(items)
-        n_test = max(1, round(total * test_ratio))
-        n_val = max(1, round(total * val_ratio))
-        if n_test + n_val >= total:
-            raise ValueError(f"Bucket {bucket_name} too small ({total}) for split ratios")
+        groups = sorted(
+            bucket_groups[bucket_name],
+            key=lambda item: item[1][0]["observation_set_id"],
+        )
+        rng.shuffle(groups)
+        n_test_g = test_group_quota[bucket_name]
+        n_val_g = val_group_quota[bucket_name]
+        if n_test_g + n_val_g >= len(groups):
+            raise ValueError(
+                f"Bucket {bucket_name} only has {len(groups)} isomorphism groups."
+            )
 
-        n4_test.extend(items[:n_test])
-        n4_val.extend(items[n_test : n_test + n_val])
-        n4_train.extend(items[n_test + n_val :])
+        for _, grp in groups[:n_test_g]:
+            n4_test.extend(grp)
+            group_counts_by_split["test"][bucket_name] += 1
+        for _, grp in groups[n_test_g : n_test_g + n_val_g]:
+            n4_val.extend(grp)
+            group_counts_by_split["val"][bucket_name] += 1
+        for _, grp in groups[n_test_g + n_val_g :]:
+            n4_train.extend(grp)
+            group_counts_by_split["train"][bucket_name] += 1
 
+    # 双重零泄露断言：题目 ID 不重叠 + 同构结构键不重叠
     train_ids_n4 = {t["observation_set_id"] for t in n4_train}
     val_ids_n4 = {t["observation_set_id"] for t in n4_val}
     test_ids_n4 = {t["observation_set_id"] for t in n4_test}
-
-    # 强制断言零泄露
     assert not (train_ids_n4 & val_ids_n4), "Train/Val ID overlap detected!"
     assert not (train_ids_n4 & test_ids_n4), "Train/Test ID overlap detected!"
     assert not (val_ids_n4 & test_ids_n4), "Val/Test ID overlap detected!"
+
+    train_iso_n4 = {canonical_isomorphism_key(t) for t in n4_train}
+    val_iso_n4 = {canonical_isomorphism_key(t) for t in n4_val}
+    test_iso_n4 = {canonical_isomorphism_key(t) for t in n4_test}
+    assert not (train_iso_n4 & val_iso_n4), "Train/Val isomorphism leakage detected!"
+    assert not (train_iso_n4 & test_iso_n4), "Train/Test isomorphism leakage detected!"
+    assert not (val_iso_n4 & test_iso_n4), "Val/Test isomorphism leakage detected!"
 
     n3_train: List[Dict[str, Any]] = []
     for task in n3_tasks:
@@ -216,15 +288,13 @@ def create_leakage_free_splits(
         t["source_dataset"] = "n3_all_observations"
         n3_train.append(t)
 
-    # 按 ID 排序保证可复现与可读性
     n3_train.sort(key=lambda x: x["observation_set_id"])
     n4_train.sort(key=lambda x: x["observation_set_id"])
     n4_val.sort(key=lambda x: x["observation_set_id"])
     n4_test.sort(key=lambda x: x["observation_set_id"])
-
     train_tasks = n3_train + n4_train
 
-    def _bucket_counts(items: Sequence[Dict[str, Any]]) -> Dict[str, int]:
+    def _bucket_task_counts(items: Sequence[Dict[str, Any]]) -> Dict[str, int]:
         counts = {"1": 0, "2-4": 0, "5-8": 0, "9+": 0}
         for it in items:
             counts[get_gt_bucket(int(it["n_compatible_graphs"]))] += 1
@@ -232,22 +302,26 @@ def create_leakage_free_splits(
 
     payload: Dict[str, Any] = {
         "metadata": {
+            "split_strategy": "isomorphism_group_stratified",
             "seed": seed,
-            "val_ratio": val_ratio,
-            "test_ratio": test_ratio,
             "n3_source": str(n3_path.name),
             "n4_source": str(n4_path.name),
+            "total_n4_isomorphism_groups": len(iso_groups_map),
             "counts": {
                 "train_total": len(train_tasks),
                 "train_n3": len(n3_train),
                 "train_n4": len(n4_train),
                 "val_n4": len(n4_val),
                 "test_n4": len(n4_test),
+                "train_n4_groups": len(train_iso_n4),
+                "val_n4_groups": len(val_iso_n4),
+                "test_n4_groups": len(test_iso_n4),
             },
+            "group_distribution_n4": group_counts_by_split,
             "bucket_distribution_n4": {
-                "train": _bucket_counts(n4_train),
-                "val": _bucket_counts(n4_val),
-                "test": _bucket_counts(n4_test),
+                "train": _bucket_task_counts(n4_train),
+                "val": _bucket_task_counts(n4_val),
+                "test": _bucket_task_counts(n4_test),
             },
         },
         "split_ids": {
@@ -332,14 +406,12 @@ def summarize_baseline_on_split(
 
 
 def main() -> None:
-    """命令行入口：生成无泄露切分文件并打印配对 DeepSeek 基线指标。"""
+    """命令行入口：生成零同构泄露切分文件并打印配对 DeepSeek 基线指标。"""
     cfg = DataConfig()
-    parser = argparse.ArgumentParser(description="Create leakage-free causal splits")
+    parser = argparse.ArgumentParser(description="Create zero-isomorphism-leakage causal splits")
     parser.add_argument("--n3", type=Path, default=cfg.n3_dataset_path)
     parser.add_argument("--n4", type=Path, default=cfg.n4_dataset_path)
     parser.add_argument("--output", type=Path, default=cfg.splits_output_path)
-    parser.add_argument("--val-ratio", type=float, default=cfg.val_ratio)
-    parser.add_argument("--test-ratio", type=float, default=cfg.test_ratio)
     parser.add_argument("--seed", type=int, default=cfg.seed)
     parser.add_argument("--baseline", type=Path, default=cfg.deepseek_baseline_path)
     args = parser.parse_args()
@@ -348,8 +420,6 @@ def main() -> None:
         n3_path=args.n3,
         n4_path=args.n4,
         output_path=args.output,
-        val_ratio=args.val_ratio,
-        test_ratio=args.test_ratio,
         seed=args.seed,
     )
     print(f"Saved splits to: {args.output}")
@@ -358,7 +428,7 @@ def main() -> None:
     if args.baseline.exists():
         test_ids = payload["split_ids"]["test"]
         baseline_stats = summarize_baseline_on_split(args.baseline, test_ids)
-        print("\nPaired DeepSeek-Flash (Fixed-Prompt) on ID Test split:")
+        print("\nPaired DeepSeek-Flash (Fixed-Prompt) on Unseen-Structure Test split:")
         print(json.dumps(baseline_stats, indent=2))
 
 
