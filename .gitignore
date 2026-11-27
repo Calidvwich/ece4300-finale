@@ -1,12 +1,11 @@
 # ==============================================================================
-# 1. Internal docs, plans, logs & course rubric in /docs/ (do not push)
+# 1. Internal docs, exploration folder & local configs (do not push)
 # ==============================================================================
-# /docs/ holds AGENT.md, CONTEXT.md, WORKLOG.md, METHOD_OVERVIEW.md,
-# PROJECT_DIRECTORY.md, QUICKSTART_OVERVIEW.md, EXTENSION_TASKS_3D_BOOLEAN.md,
-# FINAL_FIX_PLAN.md, GRPO_V2_FIX_PLAN.md, and EEC 4300 graded items.*
+# /docs/ holds AGENT.md, CONTEXT.md, METHOD_OVERVIEW.md, PROJECT_DIRECTORY.md,
+# PPT_METHOD_REVISION_AND_SCRIPT.md, presentation PDF/PPTX, and EEC 4300 rubric.
 /docs/
 /Part-B-Boolean-handoff/
-/temp.md
+/HypoSpace_ML_Results_2026-11-27/
 /settings.json
 /.vscode/
 
