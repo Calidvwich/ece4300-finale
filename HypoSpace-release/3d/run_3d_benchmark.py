@@ -515,7 +515,8 @@ class Benchmark3D:
         observation_set: Dict,
         n_queries: int = 10,
         verbose: bool = True,
-        max_retries: int = 3
+        max_retries: int = 3,
+        independent_samples: bool = False
     ) -> Dict:
         """Evaluate LLM on a single observation set with enhanced tracking."""
         
@@ -565,8 +566,9 @@ class Benchmark3D:
         error_counts = {}
         
         for i in range(n_queries):
-            # Pass prior unique structures as history to avoid repetition
-            prompt = self.create_prompt(observations, prior_structures=unique_structures)
+            # Pass prior unique structures as history unless independent fixed-prompt sampling is requested
+            prompt_history = None if independent_samples else unique_structures
+            prompt = self.create_prompt(observations, prior_structures=prompt_history)
             
             # Try to get a valid response with retries
             structure = None
@@ -694,7 +696,8 @@ class Benchmark3D:
         verbose: bool = True,
         checkpoint_dir: str = "checkpoints",
         run_id: Optional[str] = None,
-        max_retries: int = 3
+        max_retries: int = 3,
+        independent_samples: bool = False
     ) -> Dict:
         """Run enhanced benchmark with comprehensive tracking.
         
@@ -815,7 +818,12 @@ class Benchmark3D:
                 
                 # Evaluate
                 result = self.evaluate_single_observation_set(
-                    llm, obs_set, n_queries, verbose=False, max_retries=max_retries
+                    llm,
+                    obs_set,
+                    n_queries,
+                    verbose=False,
+                    max_retries=max_retries,
+                    independent_samples=independent_samples,
                 )
                 
                 all_results.append(result)
@@ -1062,6 +1070,11 @@ def main():
     parser.add_argument("--output", type=str, default=None, help="Output file path")
     parser.add_argument("--verbose", action="store_true", default=True, help="Verbose output")
     parser.add_argument("--quiet", action="store_true", help="Disable verbose output")
+    parser.add_argument(
+        "--independent-samples",
+        action="store_true",
+        help="Use Fixed-Prompt independent sampling (pass prior_structures=None on every query)",
+    )
     
     args = parser.parse_args()
     
@@ -1150,7 +1163,8 @@ def main():
         verbose=verbose,
         checkpoint_dir=checkpoint_dir,
         run_id=run_id,
-        max_retries=args.max_retries
+        max_retries=args.max_retries,
+        independent_samples=args.independent_samples,
     )
     
     # Save results

@@ -425,7 +425,8 @@ class BooleanBenchmarkRefined:
         observation_set: Dict,
         n_queries: int = 10,
         verbose: bool = True,
-        max_retries: int = 5
+        max_retries: int = 5,
+        independent_samples: bool = False,
     ) -> Dict:
         """
         Evaluate LLM on a single observation set.
@@ -474,8 +475,14 @@ class BooleanBenchmarkRefined:
         errors = []  # List of error details
         error_counts = {}  # Count of each error type
         
+        if independent_samples:
+            from grpo_lora.formula_syntax import is_safe_formula
+            max_retries = 1
+
         for i in range(n_queries):
-            prompt = self.create_prompt(observations, all_hypotheses)
+            prompt = self.create_prompt(
+                observations, [] if independent_samples else all_hypotheses
+            )
             
             # Try to get a valid response
             hypothesis_str = None
@@ -520,6 +527,8 @@ class BooleanBenchmarkRefined:
             elif hypothesis_str:  # Only if we got a valid hypothesis
                 parse_success_count += 1
                 all_hypotheses.append(hypothesis_str)
+                if independent_samples and not is_safe_formula(hypothesis_str, self.variables):
+                    continue
                 
                 # Only count novelty for in-space expressions
                 if self._in_space(hypothesis_str):
@@ -611,7 +620,8 @@ class BooleanBenchmarkRefined:
         seed: Optional[int] = None,
         verbose: bool = True,
         checkpoint_dir: str = "checkpoints",
-        run_id: Optional[str] = None
+        run_id: Optional[str] = None,
+        independent_samples: bool = False,
     ) -> Dict:
         """
         Run the benchmark with sampling.
@@ -637,7 +647,8 @@ class BooleanBenchmarkRefined:
             run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
         # Sanitize LLM name for filename
         safe_llm_name = llm.get_name().replace('/', '_').replace('(', '_').replace(')', '_').replace(' ', '_')
-        checkpoint_file = checkpoint_path / f"checkpoint_{safe_llm_name}_{run_id}.json"
+        protocol = "_fixed_prompt" if independent_samples else ""
+        checkpoint_file = checkpoint_path / f"checkpoint_{safe_llm_name}_{run_id}{protocol}.json"
         
         print(f"\nRunning refined Boolean benchmark")
         print(f"LLM: {llm.get_name()}")
@@ -716,7 +727,8 @@ class BooleanBenchmarkRefined:
                 
                 # Evaluate on this observation set
                 result = self.evaluate_single_observation_set(
-                    llm, obs_set, n_queries, verbose=False
+                    llm, obs_set, n_queries, verbose=False,
+                    independent_samples=independent_samples,
                 )
                 
                 all_results.append(result)
@@ -944,6 +956,9 @@ def main():
     parser.add_argument("--query-multiplier", type=float, default=1.0, help="Multiplier for adaptive queries (n_queries = n_gt * multiplier)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for sampling")
     
+    parser.add_argument("--independent-samples", action="store_true",
+                        help="Query with a fixed prompt, without prior hypotheses or retries")
+
     args = parser.parse_args()
     
     # Load configuration
@@ -961,7 +976,7 @@ def main():
         model = default_models.get(llm_type)
     
     api_key = config.get('llm', {}).get('api_keys', {}).get(llm_type)
-    if not api_key:
+    if args.independent_samples or not api_key:
         env_vars = {
             'deepseek': 'HYPOSPACE_DEEPSEEK_API_KEY',
             'openai': 'OPENAI_API_KEY',
@@ -993,6 +1008,10 @@ def main():
 
     # Initialize benchmark
     benchmark = BooleanBenchmarkRefined(args.dataset)
+    if args.independent_samples:
+        # Match the deterministic operator order used by Boolean LoRA.
+        benchmark.operators = benchmark.metadata["operators"]
+        checkpoint_dir = str(Path(checkpoint_dir) / dataset_name)
      
     # Print configuration
     print("\n" + "=" * 60)
@@ -1025,9 +1044,13 @@ def main():
         seed=args.seed,
         verbose=verbose,
         checkpoint_dir=checkpoint_dir,
-        run_id=run_id
+        run_id=run_id,
+        independent_samples=args.independent_samples,
     )
     
+    if args.independent_samples:
+        results["sampling_protocol"] = "fixed_prompt"
+
     # Save final results
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)

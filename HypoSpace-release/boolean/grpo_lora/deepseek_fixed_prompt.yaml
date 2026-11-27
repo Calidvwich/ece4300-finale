@@ -1,0 +1,10 @@
+llm:
+  type: deepseek
+  models:
+    deepseek: deepseek-flash
+  temperature: 0.7
+benchmark:
+  checkpoint: boolean/grpo_lora/checkpoints/fixed_prompt
+  verbose: false
+  run_id: boolean_fixed_seed33550336
+  output_pattern: boolean/grpo_lora/results/{dataset_name}_{llm_type}_fixed_prompt.json

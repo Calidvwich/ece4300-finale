@@ -84,6 +84,69 @@ Evaluated zero-shot on unseen 5-node causal systems using a **single evaluation 
 
 ---
 
+### 2.4 Cross-Domain Extension: Boolean Genetic Interaction & 3D Voxel Reconstruction
+
+To evaluate whether Two-Stage Diversity-Aware GRPO-LoRA generalizes beyond Causal graphs, we implemented zero-isomorphism-leakage splits and ran full RTX 5090 `Qwen2.5-7B-Instruct` ablations (`Base`, `SFT`, `Validity-Only`, `Diversity-GRPO`, `T=0.9, top_p=0.95`) on **Boolean** and **3D**.
+
+#### 2.4.1 Boolean Genetic Interaction ([id_boolean_stats.md](results_analysis/id_boolean_stats.md), [ood_boolean_stats.md](results_analysis/ood_boolean_stats.md))
+
+- **Zero-overlap splits (`x/y` symmetry)**: `train` (`66` tasks / `30` equiv classes), `val` (`14` tasks / `8` classes), **ID Test** (`19` tasks / `13` classes, 3 eval seeds, ceiling `69.03%`), and **Full-NOR OOD** ([boolean_full_d2.json](HypoSpace-release/causal/benchmark_obs_count/paper_scale/boolean_full_d2.json), `80` tasks / `53` classes including unseen `NOR`, single eval seed, ceiling `66.76%`).
+- **ID Test (19 Tasks / 13 Groups / 3 Eval Seeds)**:
+
+| Model | Eval Seeds | Task Valid | Task Uniq | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** |
+|---|---:|---:|---:|---:|---:|---:|
+| `Qwen2.5-7B Base` | 3 | 20.70% | 24.22% | 7.64% | 11.38% | 7.97% ± 10.03% |
+| `SFT-LoRA` | 3 | 30.89% | **82.44%** | 22.90% | 34.52% | 25.31% ± 19.04% |
+| `Validity-Only (best / step 20)` | 3 | 38.94% | 79.42% | 24.36% | 36.70% | 27.32% ± 18.58% |
+| `Validity-Only (final)` | 3 | **59.12%** | 62.77% | 27.89% | 41.10% | 29.83% ± 14.21% |
+| **`Diversity-GRPO (best / step 80)`** | 3 | 54.16% | 73.50% | **31.16%** | **46.23%** | **32.98% ± 14.99%** |
+| `Diversity-GRPO (final / step 96)` | 3 | 48.78% | 73.00% | 26.37% | 39.75% | 30.11% ± 19.91% |
+
+- **Full-NOR OOD Test (80 Tasks / 53 Groups / Single Eval Seed `33550336`)**:
+
+| Model | Task Valid | Task Uniq | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** |
+|---|---:|---:|---:|---:|---:|
+| `Qwen2.5-7B Base` | 19.01% | 9.56% | 1.80% | 2.76% | 2.09% ± 4.46% |
+| `SFT-LoRA` | 28.86% | **58.01%** | 17.11% | 26.22% | 16.72% ± 11.75% |
+| `Validity-Only (final)` | **50.21%** | 32.29% | 16.19% | 24.66% | 16.21% ± 9.57% |
+| **`Diversity-GRPO (best)`** | 43.36% | 37.79% | **17.66%** | **26.86%** | **17.86% ± 9.19%** |
+
+- **Key takeaways**: On Boolean ID, `Diversity-GRPO` lifts validation group recovery from `27.60%` (`step 0`) to `43.06%` (`step 80`) and beats `SFT-LoRA` by **+8.26% Task / +7.66% Group Recovery** (Cluster Bootstrap 95% CI **`[+1.65%, +13.74%]`**) plus **+23.27% Valid** (sign test **$p = 0.0005$**). Crucially, `Validity-Only` shows clear mode collapse on OOD (`Valid` rises to `50.21%`, while `Uniqueness` drops `58.01% → 32.29%` and Recovery falls below SFT), whereas `Diversity-GRPO` significantly outperforms `Validity-Only final` in **Uniqueness** both ID (**+10.73%**, 95% CI `[+1.53%, +15.54%]`) and OOD (**+5.50% Task / +6.32% Group**, $p = 0.0022$, 95% CI **`[+2.14%, +10.75%]`**).
+
+<p align="center">
+  <img src="results_analysis/figures_boolean/fig1_id_ablation.png" width="49%" alt="Boolean ID Ablation"/>
+  <img src="results_analysis/figures_boolean/fig4_training_curves.png" width="49%" alt="Boolean Training Curves"/>
+</p>
+
+#### 2.4.2 3D Voxel Reconstruction ([id_3d_stats.md](results_analysis/id_3d_stats.md), [ood_3d_b4_stats.md](results_analysis/ood_3d_b4_stats.md))
+
+- **Zero-overlap splits (`D4` symmetry)**: `27` 1–3 block classes partitioned into `train` (`16` classes / `73` tasks), `val` (`4` classes / `16` tasks), **ID Test** (`38` tasks / `7` D4 classes, 3 eval seeds, ceiling `64.81%`), plus **4-Block OOD** ([3d_g3_h3_b4_ood.json](HypoSpace-release/3d/datasets/3d_g3_h3_b4_ood.json), `23` tasks / `23` D4 classes, all `9+` bucket, single eval seed, ceiling `63.44%`).
+- **ID Test (38 Tasks / 7 D4 Groups / 3 Eval Seeds)** & **4-Block OOD (23 Tasks / 23 D4 Groups)**:
+
+| Split | Model | Task Valid | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** | Group Norm Rec |
+|---|---|---:|---:|---:|---:|---:|
+| ID Test (`38` tasks) | `Qwen2.5-7B Base` | 5.10% | 1.59% | 2.41% | 1.50% ± 1.99% | 2.23% ± 2.84% |
+| ID Test (`38` tasks) | `SFT-LoRA` (`= Diversity best`, `best_step=0`) | 99.77% | 61.31% | 94.39% | **63.38% ± 7.95%** | **96.91% ± 8.78%** |
+| ID Test (`38` tasks) | `Validity-Only (best / step 90)` | **100.00%** | 61.08% | 94.03% | 63.12% ± 8.17% | 96.50% ± 9.14% |
+| ID Test (`38` tasks) | `Validity-Only (final)` | **100.00%** | 60.36% | 92.96% | 62.39% ± 7.43% | 95.42% ± 8.26% |
+| ID Test (`38` tasks) | `Diversity-GRPO (final / step 95)` | **100.00%** | **61.70%** | **95.23%** | 61.82% ± 1.70% | 94.80% ± 2.62% |
+| 4-Block OOD (`23` tasks) | `Qwen2.5-7B Base` | 35.59% | 3.92% | 6.18% | 3.92% ± 2.16% | 6.18% ± 3.40% |
+| 4-Block OOD (`23` tasks) | `SFT-LoRA` (`= Diversity best`) | **100.00%** | 52.50% | 82.75% | 52.50% ± 2.63% | 82.75% ± 4.14% |
+| 4-Block OOD (`23` tasks) | `Validity-Only (final)` | **100.00%** | **53.14%** | **83.76%** | **53.14% ± 4.51%** | **83.76% ± 7.10%** |
+
+- **Empirical saturation finding**: On 3D, Stage 1 SFT converges rapidly (`Valid = 99.77%`, **Group Norm Recovery = `96.91%`** on ID; **`82.75%`** of ceiling zero-shot on 4-Block OOD), leaving very little headroom relative to the i.i.d. uniform reference ceiling (`max KL = 0.0068`). Consequently, Step-0 validation protection preserves SFT (`best_step = 0`), while `Diversity best (= SFT)` still outperforms `Validity-Only final` on ID (`+0.94%` Task / `+0.99%` Group, $p = 0.0312$, CI `[+0.40%, +1.72%]`), and `diversity_final` reaches **61.70% Task Recovery (`95.23%` Norm)** on ID (improving the `9+` bucket from `59.37%` to `61.44%`).
+
+<p align="center">
+  <img src="results_analysis/figures_3d/fig1_id_ablation.png" width="49%" alt="3D ID Ablation"/>
+  <img src="results_analysis/figures_3d/fig3_ood_transfer.png" width="49%" alt="3D OOD Transfer"/>
+</p>
+
+#### 2.4.3 Cross-Domain Synthesis
+
+Across all three HypoSpace domains, a consistent boundary emerges: when Stage 1 SFT has not yet saturated the hypothesis space (**Causal** and especially **Boolean**, where SFT ID Valid is `30.89%`), naive `Validity-Only` RL collapses uniqueness while **Stage 2 Diversity-GRPO** simultaneously improves validity and recovery; conversely, when Stage 1 SFT already reaches ~97% of the uniform reference ceiling (**3D**), Step-0 validation selection safely avoids over-optimization.
+
+---
+
 ## 3. Method Architecture (v2.1)
 
 1. **Stage 1 — Epoch-Rotating Debiased SFT-LoRA Warm-up** ([train_sft.py](HypoSpace-release/causal/grpo_lora/train_sft.py)): Zero-shot 7B achieves only 29.47% valid DAGs on unseen 4-node structures. Stage 1 uses prompt loss masking, edge-order shuffling, and deterministic epoch-rotating target slicing ($\min(K, 8)$ per task per epoch), reaching **100.00% coverage** over all `1,353` ground truths (`275` training tasks) in 2 epochs without overweighting large-$|H_O|$ tasks.
@@ -105,40 +168,57 @@ Evaluated zero-shot on unseen 5-node causal systems using a **single evaluation 
 - **Untested `Validity-Only` final checkpoint**: `Validity-Only GRPO` degraded on validation recovery (`55.82% → 52.17%`, Fig. 4) and triggered `best_step == 0`, so its final collapsed checkpoint was not separately evaluated on the test sets.
 - **Temperature mismatch with closed baseline**: Teammates' `DeepSeek-Flash` baseline used `T = 0.7`, whereas Qwen models used `T = 0.9, top_p = 0.95`.
 - **No baseline on `causal_n5_gt160`**: Only `Diversity-GRPO-LoRA` was run on the 7-task `|H_O|=160` set, serving solely as a large-space stress-test reference.
+- **Pending closed API baselines on 3D & Boolean**: Closed-model (`DeepSeek-Flash`) Fixed-Prompt baselines for the zero-leakage 3D and Boolean test splits are being collected separately by teammates and are omitted from Section 2.4 until aligned.
 
 ---
 
 ## 5. Repository Structure & Quick Start
 
+> **Project Status**: Complete RTX 5090 `Qwen2.5-7B-Instruct` evaluations, cluster-bootstrap statistical reports, and 300 DPI figures are now integrated across all three domains (**Causal v2.1**, **Boolean**, and **3D**).
+
 ```text
 .
-├── README.md / README_ZH.md                   # Bilingual project overview
+├── README.md / README_ZH.md                   # Bilingual project overview (all 3 domains)
+├── docs/                                      # Internal notes, plans, worklog & rubric (local)
 ├── results_analysis/
-│   ├── group_stats.py                         # Isomorphism-group stats, ceilings & cluster bootstrap CI
-│   ├── generate_charts.py                     # Reproduces all 4 figures from v2.1 JSONs
-│   ├── id_v2_stats.md / .json                 # Unseen-structure 4-node statistical report
-│   ├── ood_n5_v2_stats.md / .json             # 5-node OOD statistical report
-│   └── figures/                               # fig1_id_ablation.png .. fig4_training_curves.png
-├── qwen7b_v2_results_and_logs/                # Final v2.1 RTX 5090 evaluation JSONs & training logs
-├── qwen7b_results_and_logs/                   # Archived v1.0 baseline logs
-└── HypoSpace-release/causal/grpo_lora/        # Full implementation & 10-stage server pipeline
+│   ├── group_stats.py / generate_charts.py    # Causal v2.1 stats & charts -> figures/
+│   ├── stats_3d.py / generate_charts_3d.py    # 3D D4-group stats & charts -> figures_3d/
+│   ├── stats_boolean.py / generate_charts_boolean.py  # Boolean stats & charts -> figures_boolean/
+│   ├── id_v2_stats.md / ood_n5_v2_stats.md    # Causal v2.1 statistical reports (.md / .json)
+│   ├── id_3d_stats.md / ood_3d_b4_stats.md    # 3D statistical reports (.md / .json)
+│   ├── id_boolean_stats.md / ood_boolean_stats.md  # Boolean statistical reports (.md / .json)
+│   └── figures{,_3d,_boolean}/               # 4 publication figures per domain
+├── qwen7b_v2_results_and_logs/                # Causal v2.1 RTX 5090 evaluation JSONs & logs
+├── qwen7b_results_and_logs/                   # Archived Causal v1.0 baseline logs
+├── qwen7b_3d_results_and_logs/                # 3D RTX 5090 evaluation JSONs & training logs
+├── qwen7b_boolean_results_and_logs/           # Boolean RTX 5090 evaluation JSONs & training logs
+└── HypoSpace-release/
+    ├── causal/grpo_lora/                      # Causal Diversity-GRPO-LoRA & 10-stage server pipeline
+    ├── 3d/grpo_lora/                          # 3D Voxel Reconstruction pipeline & 10-stage server script
+    └── boolean/grpo_lora/                     # Boolean Genetic Interaction pipeline & server script
 ```
 
 ### Quick Reproduction Commands
 
 ```bash
-# 1. Unit tests & zero-isomorphism-leakage split verification (CPU, ~1 sec)
+# 1. Unit tests & zero-isomorphism-leakage split checks across all 3 domains (CPU)
 python HypoSpace-release/causal/grpo_lora/tests/test_verifier_reward.py
 python HypoSpace-release/causal/grpo_lora/data_utils.py
+python -m unittest discover -s HypoSpace-release/3d/grpo_lora/tests -v
+python HypoSpace-release/3d/grpo_lora/data_utils.py
+python -m unittest discover -s HypoSpace-release/boolean/grpo_lora/tests -v
+python HypoSpace-release/boolean/grpo_lora/data_utils.py
 
-# 2. Recompute both ID and OOD cluster-bootstrap reports & regenerate all 4 figures
+# 2. Recompute Causal v2.1 ID & OOD cluster-bootstrap reports & regenerate all 4 figures
 python results_analysis/group_stats.py --model diversity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_grpo_diversity_seed*.json --model validity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_grpo_validity_seed*.json --model sft=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_sft_seed*.json --model base=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_base_seed*.json --deepseek_baseline HypoSpace-release/causal/benchmark_obs_count/full_repo_causal_n4_obs3_deepseek.json --splits_path HypoSpace-release/causal/grpo_lora/splits/causal_splits.json --pairs diversity:sft --pairs diversity:validity --pairs diversity:deepseek --pairs sft:deepseek --pairs diversity:base --pairs sft:base --output_md results_analysis/id_v2_stats.md --output_json results_analysis/id_v2_stats.json
 
 python results_analysis/group_stats.py --model diversity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_grpo_diversity_seed33550336.json --model validity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_grpo_validity_seed33550336.json --model sft=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_sft_seed33550336.json --model base=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_base_seed33550336.json --dataset_path HypoSpace-release/causal/datasets/n5_obs5_hybrid80.json --pairs diversity:sft --pairs diversity:validity --pairs diversity:base --pairs sft:base --output_md results_analysis/ood_n5_v2_stats.md --output_json results_analysis/ood_n5_v2_stats.json
 
 python results_analysis/generate_charts.py
 
-# 3. Full 10-stage GPU training & multi-seed evaluation pipeline (from HypoSpace-release/)
+# 3. Full GPU training & multi-seed evaluation pipelines (serial execution on one RTX 5090, from HypoSpace-release/)
 bash causal/grpo_lora/run_server_all.sh
+bash 3d/grpo_lora/run_server_all.sh
+bash boolean/grpo_lora/run_server_all.sh
 ```
-For full RTX 5090 deployment details, see [RUN_GUIDE.md](HypoSpace-release/causal/grpo_lora/RUN_GUIDE.md).
+For full RTX 5090 deployment details, see [causal/grpo_lora/RUN_GUIDE.md](HypoSpace-release/causal/grpo_lora/RUN_GUIDE.md), [3d/grpo_lora/RUN_GUIDE.md](HypoSpace-release/3d/grpo_lora/RUN_GUIDE.md), and [boolean/grpo_lora/RUN_GUIDE.md](HypoSpace-release/boolean/grpo_lora/RUN_GUIDE.md).

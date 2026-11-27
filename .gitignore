@@ -1,17 +1,12 @@
 # ==============================================================================
-# 1. Local agent/process notes & course handouts (do not push to teammate repo)
+# 1. Internal docs, plans, logs & course rubric in /docs/ (do not push)
 # ==============================================================================
-/AGENT.md
-/CONTEXT.md
-/WORKLOG.md
-/QUICKSTART_OVERVIEW.md
-/PROJECT_DIRECTORY.md
-/METHOD_OVERVIEW.md
-/FINAL_FIX_PLAN.md
-/GRPO_V2_FIX_PLAN.md
+# /docs/ holds AGENT.md, CONTEXT.md, WORKLOG.md, METHOD_OVERVIEW.md,
+# PROJECT_DIRECTORY.md, QUICKSTART_OVERVIEW.md, EXTENSION_TASKS_3D_BOOLEAN.md,
+# FINAL_FIX_PLAN.md, GRPO_V2_FIX_PLAN.md, and EEC 4300 graded items.*
 /docs/
-/EEC 4300 graded items and instruction.pdf
-/EEC 4300 graded items and instruction.docx
+/Part-B-Boolean-handoff/
+/temp.md
 /settings.json
 /.vscode/
 
@@ -23,6 +18,10 @@ results_analysis/.mpl_cache/
 HypoSpace-release/causal/grpo_lora/local_models/
 HypoSpace-release/causal/grpo_lora/outputs/smoke_*/
 HypoSpace-release/causal/grpo_lora/results/smoke_*
+HypoSpace-release/3d/grpo_lora/outputs/smoke_*/
+HypoSpace-release/3d/grpo_lora/results/smoke_*
+HypoSpace-release/boolean/grpo_lora/outputs/smoke_*/
+HypoSpace-release/boolean/grpo_lora/results/smoke_*
 qwen7b_results_and_logs/qwen7b_results_and_logs.tar.gz
 qwen7b_results_and_logs/server_run_qwen7b.log
 qwen7b_results_and_logs/causal/grpo_lora/outputs/qwen7b_grpo/best_policy/

@@ -1,0 +1,4246 @@
+{
+  "source": "dataset:HypoSpace-release\\causal\\benchmark_obs_count\\paper_scale\\boolean_full_d2.json",
+  "n_common_tasks": 80,
+  "n_common_groups": 53,
+  "theoretical_ceiling_macro": 0.6676318366403078,
+  "bootstrap": {
+    "iterations": 10000,
+    "seed": 33550336
+  },
+  "models": [
+    {
+      "model_name": "base",
+      "n_files": 1,
+      "n_tasks": 80,
+      "n_groups": 53,
+      "task_macro": {
+        "recovery_rate": 0.018044530998478366,
+        "recovery_norm": 0.027635641220474405,
+        "valid_rate": 0.19013470004095004,
+        "uniqueness_rate": 0.09560363277633015,
+        "parse_success_rate": 1.0,
+        "ceiling": 0.6676318366403078
+      },
+      "group_macro": {
+        "recovery_rate": {
+          "mean": 0.02090475129452289,
+          "std": 0.04462762410668724
+        },
+        "recovery_norm": {
+          "mean": 0.03194873924984696,
+          "std": 0.06743894098764587
+        },
+        "valid_rate": {
+          "mean": 0.2070036352819372,
+          "std": 0.38649053996164817
+        },
+        "uniqueness_rate": {
+          "mean": 0.10208528023448579,
+          "std": 0.1033792848526625
+        },
+        "parse_success_rate": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ceiling": {
+          "mean": 0.6728241785947369,
+          "std": 0.06938765778605907
+        }
+      },
+      "by_bucket": {
+        "1": {
+          "n_tasks": 2,
+          "n_groups": 2,
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "2-4": {
+          "n_tasks": 12,
+          "n_groups": 9,
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.19444444444444442,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.700858410493827
+        },
+        "5-8": {
+          "n_tasks": 27,
+          "n_groups": 16,
+          "recovery_rate": 0.02746913580246914,
+          "recovery_norm": 0.04145819489946479,
+          "valid_rate": 0.1527777777777778,
+          "uniqueness_rate": 0.10154320987654322,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6628606494086425
+        },
+        "9+": {
+          "n_tasks": 39,
+          "n_groups": 26,
+          "recovery_rate": 0.017997328543887248,
+          "recovery_norm": 0.027986667573138543,
+          "valid_rate": 0.28425066675066674,
+          "uniqueness_rate": 0.06598181082324131,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6436668838785989
+        }
+      },
+      "per_group": {
+        "G01_6fdc9665": {
+          "group_id": "G01_6fdc9665",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.025,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6367675601121197
+        },
+        "G02_028b55ab": {
+          "group_id": "G02_028b55ab",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_00",
+            "boolean_full_d2:n2_inputs_00_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.038461538461538464,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G03_558adfb7": {
+          "group_id": "G03_558adfb7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G04_eae8b25a": {
+          "group_id": "G04_eae8b25a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.07692307692307693,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G05_571d7e22": {
+          "group_id": "G05_571d7e22",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G06_55a4d335": {
+          "group_id": "G06_55a4d335",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_001",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_010"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.05,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6513215599
+        },
+        "G07_29ce7262": {
+          "group_id": "G07_29ce7262",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G08_abf4d42d": {
+          "group_id": "G08_abf4d42d",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.1,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G09_3996dba2": {
+          "group_id": "G09_3996dba2",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_000",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.05555555555555555,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G10_315d5b21": {
+          "group_id": "G10_315d5b21",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_001",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_001"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G11_2941d150": {
+          "group_id": "G11_2941d150",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_01",
+            "boolean_full_d2:n2_inputs_00_10_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.14285714285714285,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.645664689780141
+        },
+        "G12_734b8400": {
+          "group_id": "G12_734b8400",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_011"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G13_102fc755": {
+          "group_id": "G13_102fc755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0110"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G14_c0be0a11": {
+          "group_id": "G14_c0be0a11",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0111"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G15_fd558451": {
+          "group_id": "G15_fd558451",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_010",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_010"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.16666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G16_6f6d9423": {
+          "group_id": "G16_6f6d9423",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_011",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_011"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G17_c1486caa": {
+          "group_id": "G17_c1486caa",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.041666666666666664,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6399206107144774
+        },
+        "G18_15210dba": {
+          "group_id": "G18_15210dba",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G19_5f5095c5": {
+          "group_id": "G19_5f5095c5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.04,
+          "recovery_norm": 0.06253876591049427,
+          "valid_rate": 0.52,
+          "uniqueness_rate": 0.04,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.639603283141982
+        },
+        "G20_9621f4a8": {
+          "group_id": "G20_9621f4a8",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_10",
+            "boolean_full_d2:n2_inputs_00_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.08333333333333333,
+          "recovery_norm": 0.1285999553952876,
+          "valid_rate": 0.9583333333333333,
+          "uniqueness_rate": 0.08333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G21_49e88d2a": {
+          "group_id": "G21_49e88d2a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25058812155586346,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.16666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G22_bbf07909": {
+          "group_id": "G22_bbf07909",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1000"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G23_009f3c16": {
+          "group_id": "G23_009f3c16",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1001"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G24_84664f46": {
+          "group_id": "G24_84664f46",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_101",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.08333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G25_fc8b1aea": {
+          "group_id": "G25_fc8b1aea",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1100"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G26_04419a71": {
+          "group_id": "G26_04419a71",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G27_fb874547": {
+          "group_id": "G27_fb874547",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_100",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G28_2d78b3cd": {
+          "group_id": "G28_2d78b3cd",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_101",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G29_6e664a8c": {
+          "group_id": "G29_6e664a8c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_11",
+            "boolean_full_d2:n2_inputs_00_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.07692307692307693,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G30_3981ee5a": {
+          "group_id": "G30_3981ee5a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.660083322910886
+        },
+        "G31_0567948c": {
+          "group_id": "G31_0567948c",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.75
+        },
+        "G32_257dd985": {
+          "group_id": "G32_257dd985",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G33_21a35290": {
+          "group_id": "G33_21a35290",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_110",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.1,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G34_f0103d1c": {
+          "group_id": "G34_f0103d1c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_111",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G35_2b39d72e": {
+          "group_id": "G35_2b39d72e",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.07692307692307693,
+          "recovery_norm": 0.11893944758645865,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.07692307692307693,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G36_d5939d34": {
+          "group_id": "G36_d5939d34",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.08333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G37_54c6d655": {
+          "group_id": "G37_54c6d655",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_0",
+            "boolean_full_d2:n1_inputs_10_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.02631578947368421,
+          "recovery_norm": 0.041311107514508665,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.02631578947368421,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6370148625146874
+        },
+        "G38_e69d817b": {
+          "group_id": "G38_e69d817b",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.045454545454545456,
+          "recovery_norm": 0.07095138799079403,
+          "valid_rate": 0.8636363636363636,
+          "uniqueness_rate": 0.045454545454545456,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6406434989043935
+        },
+        "G39_2b7ef4c7": {
+          "group_id": "G39_2b7ef4c7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.05555555555555555,
+          "recovery_norm": 0.08645665389222841,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.05555555555555555,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G40_d96e1bd5": {
+          "group_id": "G40_d96e1bd5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G41_98858760": {
+          "group_id": "G41_98858760",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_01",
+            "boolean_full_d2:n2_inputs_01_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G42_33bed844": {
+          "group_id": "G42_33bed844",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_010",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G43_714523b1": {
+          "group_id": "G43_714523b1",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_011",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G44_38006f34": {
+          "group_id": "G44_38006f34",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_00",
+            "boolean_full_d2:n2_inputs_10_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.038461538461538464,
+          "recovery_norm": 0.060160942757465724,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.038461538461538464,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G45_05b212a6": {
+          "group_id": "G45_05b212a6",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_01",
+            "boolean_full_d2:n2_inputs_10_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.08333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G46_358fd373": {
+          "group_id": "G46_358fd373",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_1",
+            "boolean_full_d2:n1_inputs_10_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.037037037037037035,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6390402618490858
+        },
+        "G47_3602ca90": {
+          "group_id": "G47_3602ca90",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.18181818181818182,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G48_6f7745f8": {
+          "group_id": "G48_6f7745f8",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G49_11a44642": {
+          "group_id": "G49_11a44642",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.125,
+          "uniqueness_rate": 0.125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G50_07410573": {
+          "group_id": "G50_07410573",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_10",
+            "boolean_full_d2:n2_inputs_10_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.09090909090909091,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G51_14a1d53c": {
+          "group_id": "G51_14a1d53c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_11",
+            "boolean_full_d2:n2_inputs_10_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0625,
+          "recovery_norm": 0.09706086205831643,
+          "valid_rate": 0.28125,
+          "uniqueness_rate": 0.09375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G52_0ea3d755": {
+          "group_id": "G52_0ea3d755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.02702702702702703,
+          "recovery_norm": 0.042418714751443605,
+          "valid_rate": 0.972972972972973,
+          "uniqueness_rate": 0.02702702702702703,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6371486544416634
+        },
+        "G53_fd8e0b00": {
+          "group_id": "G53_fd8e0b00",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.03571428571428571,
+          "recovery_norm": 0.05590932976982733,
+          "valid_rate": 0.25,
+          "uniqueness_rate": 0.03571428571428571,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6387893731031578
+        }
+      }
+    },
+    {
+      "model_name": "sft",
+      "n_files": 1,
+      "n_tasks": 80,
+      "n_groups": 53,
+      "task_macro": {
+        "recovery_rate": 0.1710805237598001,
+        "recovery_norm": 0.2622080023005499,
+        "valid_rate": 0.28860778801568276,
+        "uniqueness_rate": 0.5800944831602726,
+        "parse_success_rate": 1.0,
+        "ceiling": 0.6676318366403078
+      },
+      "group_macro": {
+        "recovery_rate": {
+          "mean": 0.1672269789424705,
+          "std": 0.11754207637204331
+        },
+        "recovery_norm": {
+          "mean": 0.25614842014599226,
+          "std": 0.18020808334186528
+        },
+        "valid_rate": {
+          "mean": 0.2828322297910183,
+          "std": 0.22524780062529023
+        },
+        "uniqueness_rate": {
+          "mean": 0.5748137975521292,
+          "std": 0.19827933223967847
+        },
+        "parse_success_rate": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ceiling": {
+          "mean": 0.6728241785947369,
+          "std": 0.06938765778605907
+        }
+      },
+      "by_bucket": {
+        "1": {
+          "n_tasks": 2,
+          "n_groups": 2,
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "2-4": {
+          "n_tasks": 12,
+          "n_groups": 9,
+          "recovery_rate": 0.09722222222222221,
+          "recovery_norm": 0.1398997493734336,
+          "valid_rate": 0.14583333333333334,
+          "uniqueness_rate": 0.736111111111111,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.700858410493827
+        },
+        "5-8": {
+          "n_tasks": 27,
+          "n_groups": 16,
+          "recovery_rate": 0.16203703703703703,
+          "recovery_norm": 0.24552365554423172,
+          "valid_rate": 0.22222222222222227,
+          "uniqueness_rate": 0.683862433862434,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6628606494086425
+        },
+        "9+": {
+          "n_tasks": 39,
+          "n_groups": 26,
+          "recovery_rate": 0.20884039061839332,
+          "recovery_norm": 0.3248385767145779,
+          "valid_rate": 0.39329802669883646,
+          "uniqueness_rate": 0.4643574257744298,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6436668838785989
+        }
+      },
+      "per_group": {
+        "G01_6fdc9665": {
+          "group_id": "G01_6fdc9665",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.39260793994590576,
+          "valid_rate": 0.6,
+          "uniqueness_rate": 0.375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6367675601121197
+        },
+        "G02_028b55ab": {
+          "group_id": "G02_028b55ab",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_00",
+            "boolean_full_d2:n2_inputs_00_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2692307692307693,
+          "recovery_norm": 0.42112659930226004,
+          "valid_rate": 0.6346153846153846,
+          "uniqueness_rate": 0.4807692307692308,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G03_558adfb7": {
+          "group_id": "G03_558adfb7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2911825861749493,
+          "valid_rate": 0.375,
+          "uniqueness_rate": 0.5625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G04_eae8b25a": {
+          "group_id": "G04_eae8b25a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.46153846153846156,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G05_571d7e22": {
+          "group_id": "G05_571d7e22",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.3333333333333333,
+          "recovery_norm": 0.4736842105263158,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.6666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G06_55a4d335": {
+          "group_id": "G06_55a4d335",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_001",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_010"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15000000000000002,
+          "recovery_norm": 0.23030098991814446,
+          "valid_rate": 0.3,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6513215599
+        },
+        "G07_29ce7262": {
+          "group_id": "G07_29ce7262",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1,
+          "recovery_norm": 0.14873869585911473,
+          "valid_rate": 0.1,
+          "uniqueness_rate": 0.8,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G08_abf4d42d": {
+          "group_id": "G08_abf4d42d",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.7,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G09_3996dba2": {
+          "group_id": "G09_3996dba2",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_000",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.19444444444444442,
+          "recovery_norm": 0.30259828862279947,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.5833333333333334,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G10_315d5b21": {
+          "group_id": "G10_315d5b21",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_001",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_001"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.375,
+          "recovery_norm": 0.5713057490114566,
+          "valid_rate": 0.625,
+          "uniqueness_rate": 0.75,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G11_2941d150": {
+          "group_id": "G11_2941d150",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_01",
+            "boolean_full_d2:n2_inputs_00_10_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.14285714285714285,
+          "recovery_norm": 0.2212559322483439,
+          "valid_rate": 0.2857142857142857,
+          "uniqueness_rate": 0.3571428571428571,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.645664689780141
+        },
+        "G12_734b8400": {
+          "group_id": "G12_734b8400",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_011"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3657142857142857,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.75,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G13_102fc755": {
+          "group_id": "G13_102fc755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0110"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G14_c0be0a11": {
+          "group_id": "G14_c0be0a11",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0111"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.6666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G15_fd558451": {
+          "group_id": "G15_fd558451",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_010",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_010"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.6666666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G16_6f6d9423": {
+          "group_id": "G16_6f6d9423",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_011",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_011"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.3125,
+          "recovery_norm": 0.4760881241762138,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.8125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G17_c1486caa": {
+          "group_id": "G17_c1486caa",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.20833333333333334,
+          "recovery_norm": 0.32556121782157826,
+          "valid_rate": 0.4166666666666667,
+          "uniqueness_rate": 0.4166666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6399206107144774
+        },
+        "G18_15210dba": {
+          "group_id": "G18_15210dba",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.375,
+          "recovery_norm": 0.5823651723498986,
+          "valid_rate": 0.625,
+          "uniqueness_rate": 0.4375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G19_5f5095c5": {
+          "group_id": "G19_5f5095c5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16,
+          "recovery_norm": 0.2501550636419771,
+          "valid_rate": 0.4,
+          "uniqueness_rate": 0.36,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.639603283141982
+        },
+        "G20_9621f4a8": {
+          "group_id": "G20_9621f4a8",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_10",
+            "boolean_full_d2:n2_inputs_00_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2571999107905752,
+          "valid_rate": 0.20833333333333331,
+          "uniqueness_rate": 0.5833333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G21_49e88d2a": {
+          "group_id": "G21_49e88d2a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G22_bbf07909": {
+          "group_id": "G22_bbf07909",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1000"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.8,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G23_009f3c16": {
+          "group_id": "G23_009f3c16",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1001"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G24_84664f46": {
+          "group_id": "G24_84664f46",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_101",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.6666666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G25_fc8b1aea": {
+          "group_id": "G25_fc8b1aea",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1100"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2368421052631579,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G26_04419a71": {
+          "group_id": "G26_04419a71",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G27_fb874547": {
+          "group_id": "G27_fb874547",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_100",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2856528745057283,
+          "valid_rate": 0.3125,
+          "uniqueness_rate": 0.6875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G28_2d78b3cd": {
+          "group_id": "G28_2d78b3cd",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_101",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G29_6e664a8c": {
+          "group_id": "G29_6e664a8c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_11",
+            "boolean_full_d2:n2_inputs_00_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.11538461538461539,
+          "recovery_norm": 0.17840917137968798,
+          "valid_rate": 0.11538461538461539,
+          "uniqueness_rate": 0.34615384615384615,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G30_3981ee5a": {
+          "group_id": "G30_3981ee5a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.7142857142857143,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.660083322910886
+        },
+        "G31_0567948c": {
+          "group_id": "G31_0567948c",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.75
+        },
+        "G32_257dd985": {
+          "group_id": "G32_257dd985",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.6,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G33_21a35290": {
+          "group_id": "G33_21a35290",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_110",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1,
+          "recovery_norm": 0.14873869585911473,
+          "valid_rate": 0.1,
+          "uniqueness_rate": 0.8,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G34_f0103d1c": {
+          "group_id": "G34_f0103d1c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_111",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.125,
+          "uniqueness_rate": 0.5625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G35_2b39d72e": {
+          "group_id": "G35_2b39d72e",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15384615384615385,
+          "recovery_norm": 0.2378788951729173,
+          "valid_rate": 0.15384615384615385,
+          "uniqueness_rate": 0.46153846153846156,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G36_d5939d34": {
+          "group_id": "G36_d5939d34",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.08333333333333333,
+          "recovery_norm": 0.1285999553952876,
+          "valid_rate": 0.08333333333333333,
+          "uniqueness_rate": 0.4166666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G37_54c6d655": {
+          "group_id": "G37_54c6d655",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_0",
+            "boolean_full_d2:n1_inputs_10_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.23684210526315788,
+          "recovery_norm": 0.371799967630578,
+          "valid_rate": 0.5526315789473684,
+          "uniqueness_rate": 0.35526315789473684,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6370148625146874
+        },
+        "G38_e69d817b": {
+          "group_id": "G38_e69d817b",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.18181818181818182,
+          "recovery_norm": 0.28380555196317614,
+          "valid_rate": 0.45454545454545453,
+          "uniqueness_rate": 0.4090909090909091,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6406434989043935
+        },
+        "G39_2b7ef4c7": {
+          "group_id": "G39_2b7ef4c7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2222222222222222,
+          "recovery_norm": 0.34582661556891364,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.4444444444444444,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G40_d96e1bd5": {
+          "group_id": "G40_d96e1bd5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3657142857142857,
+          "valid_rate": 0.25,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G41_98858760": {
+          "group_id": "G41_98858760",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_01",
+            "boolean_full_d2:n2_inputs_01_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21875,
+          "recovery_norm": 0.3397130172041075,
+          "valid_rate": 0.3125,
+          "uniqueness_rate": 0.59375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G42_33bed844": {
+          "group_id": "G42_33bed844",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_010",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38087049934097106,
+          "valid_rate": 0.4375,
+          "uniqueness_rate": 0.5625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G43_714523b1": {
+          "group_id": "G43_714523b1",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_011",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38087049934097106,
+          "valid_rate": 0.3125,
+          "uniqueness_rate": 0.625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G44_38006f34": {
+          "group_id": "G44_38006f34",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_00",
+            "boolean_full_d2:n2_inputs_10_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21153846153846156,
+          "recovery_norm": 0.33088518516606147,
+          "valid_rate": 0.5961538461538461,
+          "uniqueness_rate": 0.34615384615384615,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G45_05b212a6": {
+          "group_id": "G45_05b212a6",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_01",
+            "boolean_full_d2:n2_inputs_10_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2916666666666667,
+          "recovery_norm": 0.45009984388350655,
+          "valid_rate": 0.4583333333333333,
+          "uniqueness_rate": 0.625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G46_358fd373": {
+          "group_id": "G46_358fd373",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_1",
+            "boolean_full_d2:n1_inputs_10_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2962962962962963,
+          "recovery_norm": 0.46365826065317445,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.4444444444444444,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6390402618490858
+        },
+        "G47_3602ca90": {
+          "group_id": "G47_3602ca90",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.18181818181818182,
+          "recovery_norm": 0.27993298549929935,
+          "valid_rate": 0.18181818181818182,
+          "uniqueness_rate": 0.5454545454545454,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G48_6f7745f8": {
+          "group_id": "G48_6f7745f8",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G49_11a44642": {
+          "group_id": "G49_11a44642",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.375,
+          "recovery_norm": 0.5713057490114566,
+          "valid_rate": 0.375,
+          "uniqueness_rate": 0.75,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G50_07410573": {
+          "group_id": "G50_07410573",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_10",
+            "boolean_full_d2:n2_inputs_10_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.18181818181818182,
+          "recovery_norm": 0.27993298549929935,
+          "valid_rate": 0.3181818181818182,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G51_14a1d53c": {
+          "group_id": "G51_14a1d53c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_11",
+            "boolean_full_d2:n2_inputs_10_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.28125,
+          "recovery_norm": 0.43677387926242395,
+          "valid_rate": 0.4375,
+          "uniqueness_rate": 0.46875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G52_0ea3d755": {
+          "group_id": "G52_0ea3d755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2702702702702703,
+          "recovery_norm": 0.42418714751443604,
+          "valid_rate": 0.6216216216216216,
+          "uniqueness_rate": 0.35135135135135137,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6371486544416634
+        },
+        "G53_fd8e0b00": {
+          "group_id": "G53_fd8e0b00",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.35714285714285715,
+          "recovery_norm": 0.5590932976982733,
+          "valid_rate": 0.8214285714285714,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6387893731031578
+        }
+      }
+    },
+    {
+      "model_name": "validity_final",
+      "n_files": 1,
+      "n_tasks": 80,
+      "n_groups": 53,
+      "task_macro": {
+        "recovery_rate": 0.16194903162501845,
+        "recovery_norm": 0.24657296385139338,
+        "valid_rate": 0.5021391100124653,
+        "uniqueness_rate": 0.3228741750123329,
+        "parse_success_rate": 1.0,
+        "ceiling": 0.6676318366403078
+      },
+      "group_macro": {
+        "recovery_rate": {
+          "mean": 0.16210445058632741,
+          "std": 0.09566645624101912
+        },
+        "recovery_norm": {
+          "mean": 0.2465891073245586,
+          "std": 0.14374491497523761
+        },
+        "valid_rate": {
+          "mean": 0.4921749698859927,
+          "std": 0.3246256643514635
+        },
+        "uniqueness_rate": {
+          "mean": 0.316565334924322,
+          "std": 0.21097970116960948
+        },
+        "parse_success_rate": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ceiling": {
+          "mean": 0.6728241785947369,
+          "std": 0.06938765778605907
+        }
+      },
+      "by_bucket": {
+        "1": {
+          "n_tasks": 2,
+          "n_groups": 2,
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "2-4": {
+          "n_tasks": 12,
+          "n_groups": 9,
+          "recovery_rate": 0.14583333333333331,
+          "recovery_norm": 0.2098496240601504,
+          "valid_rate": 0.3888888888888889,
+          "uniqueness_rate": 0.4166666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.700858410493827
+        },
+        "5-8": {
+          "n_tasks": 27,
+          "n_groups": 16,
+          "recovery_rate": 0.16604938271604938,
+          "recovery_norm": 0.25048580903243195,
+          "valid_rate": 0.44043209876543205,
+          "uniqueness_rate": 0.3604938271604938,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6628606494086425
+        },
+        "9+": {
+          "n_tasks": 39,
+          "n_groups": 26,
+          "recovery_rate": 0.17237408196584988,
+          "recovery_norm": 0.267808327577282,
+          "valid_rate": 0.6054562940426639,
+          "uniqueness_rate": 0.23324617096546924,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6436668838785989
+        }
+      },
+      "per_group": {
+        "G01_6fdc9665": {
+          "group_id": "G01_6fdc9665",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.175,
+          "recovery_norm": 0.274825557962134,
+          "valid_rate": 0.825,
+          "uniqueness_rate": 0.175,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6367675601121197
+        },
+        "G02_028b55ab": {
+          "group_id": "G02_028b55ab",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_00",
+            "boolean_full_d2:n2_inputs_00_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21153846153846154,
+          "recovery_norm": 0.33088518516606147,
+          "valid_rate": 0.8653846153846154,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G03_558adfb7": {
+          "group_id": "G03_558adfb7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38824344823326573,
+          "valid_rate": 0.75,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G04_eae8b25a": {
+          "group_id": "G04_eae8b25a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.23076923076923078,
+          "recovery_norm": 0.35681834275937596,
+          "valid_rate": 0.6153846153846154,
+          "uniqueness_rate": 0.23076923076923078,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G05_571d7e22": {
+          "group_id": "G05_571d7e22",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.3333333333333333,
+          "recovery_norm": 0.4736842105263158,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G06_55a4d335": {
+          "group_id": "G06_55a4d335",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_001",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_010"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15000000000000002,
+          "recovery_norm": 0.23030098991814446,
+          "valid_rate": 0.65,
+          "uniqueness_rate": 0.30000000000000004,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6513215599
+        },
+        "G07_29ce7262": {
+          "group_id": "G07_29ce7262",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.6,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G08_abf4d42d": {
+          "group_id": "G08_abf4d42d",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.30000000000000004,
+          "uniqueness_rate": 0.4,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G09_3996dba2": {
+          "group_id": "G09_3996dba2",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_000",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38905494251502787,
+          "valid_rate": 0.5555555555555556,
+          "uniqueness_rate": 0.3055555555555556,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G10_315d5b21": {
+          "group_id": "G10_315d5b21",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_001",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_001"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2856528745057283,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.1875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G11_2941d150": {
+          "group_id": "G11_2941d150",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_01",
+            "boolean_full_d2:n2_inputs_00_10_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.17857142857142855,
+          "recovery_norm": 0.27656991531042985,
+          "valid_rate": 0.8214285714285714,
+          "uniqueness_rate": 0.17857142857142855,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.645664689780141
+        },
+        "G12_734b8400": {
+          "group_id": "G12_734b8400",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_011"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3657142857142857,
+          "valid_rate": 0.75,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G13_102fc755": {
+          "group_id": "G13_102fc755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0110"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G14_c0be0a11": {
+          "group_id": "G14_c0be0a11",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0111"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.3333333333333333,
+          "recovery_norm": 0.4736842105263158,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G15_fd558451": {
+          "group_id": "G15_fd558451",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_010",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_010"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25058812155586346,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.41666666666666663,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G16_6f6d9423": {
+          "group_id": "G16_6f6d9423",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_011",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_011"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2856528745057283,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.1875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G17_c1486caa": {
+          "group_id": "G17_c1486caa",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.20833333333333334,
+          "recovery_norm": 0.32556121782157826,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.20833333333333334,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6399206107144774
+        },
+        "G18_15210dba": {
+          "group_id": "G18_15210dba",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38824344823326573,
+          "valid_rate": 0.8125,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G19_5f5095c5": {
+          "group_id": "G19_5f5095c5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.12,
+          "recovery_norm": 0.1876162977314828,
+          "valid_rate": 0.28,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.639603283141982
+        },
+        "G20_9621f4a8": {
+          "group_id": "G20_9621f4a8",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_10",
+            "boolean_full_d2:n2_inputs_00_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.1928999330929314,
+          "valid_rate": 0.45833333333333337,
+          "uniqueness_rate": 0.33333333333333337,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G21_49e88d2a": {
+          "group_id": "G21_49e88d2a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G22_bbf07909": {
+          "group_id": "G22_bbf07909",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1000"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.4,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G23_009f3c16": {
+          "group_id": "G23_009f3c16",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1001"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G24_84664f46": {
+          "group_id": "G24_84664f46",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_101",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3758821823337952,
+          "valid_rate": 0.5833333333333333,
+          "uniqueness_rate": 0.5833333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G25_fc8b1aea": {
+          "group_id": "G25_fc8b1aea",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1100"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2368421052631579,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G26_04419a71": {
+          "group_id": "G26_04419a71",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.6666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G27_fb874547": {
+          "group_id": "G27_fb874547",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_100",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.3125,
+          "uniqueness_rate": 0.375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G28_2d78b3cd": {
+          "group_id": "G28_2d78b3cd",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_101",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.18285714285714286,
+          "valid_rate": 0.125,
+          "uniqueness_rate": 0.75,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G29_6e664a8c": {
+          "group_id": "G29_6e664a8c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_11",
+            "boolean_full_d2:n2_inputs_00_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.07692307692307693,
+          "recovery_norm": 0.11893944758645865,
+          "valid_rate": 0.07692307692307693,
+          "uniqueness_rate": 0.07692307692307693,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G30_3981ee5a": {
+          "group_id": "G30_3981ee5a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.660083322910886
+        },
+        "G31_0567948c": {
+          "group_id": "G31_0567948c",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.75
+        },
+        "G32_257dd985": {
+          "group_id": "G32_257dd985",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G33_21a35290": {
+          "group_id": "G33_21a35290",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_110",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.30000000000000004,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G34_f0103d1c": {
+          "group_id": "G34_f0103d1c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_111",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.0625,
+          "recovery_norm": 0.09521762483524276,
+          "valid_rate": 0.0625,
+          "uniqueness_rate": 0.125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G35_2b39d72e": {
+          "group_id": "G35_2b39d72e",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.07692307692307693,
+          "recovery_norm": 0.11893944758645865,
+          "valid_rate": 0.46153846153846156,
+          "uniqueness_rate": 0.15384615384615385,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G36_d5939d34": {
+          "group_id": "G36_d5939d34",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.08333333333333333,
+          "recovery_norm": 0.1285999553952876,
+          "valid_rate": 0.08333333333333333,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G37_54c6d655": {
+          "group_id": "G37_54c6d655",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_0",
+            "boolean_full_d2:n1_inputs_10_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.13157894736842105,
+          "recovery_norm": 0.20655553757254333,
+          "valid_rate": 0.6973684210526316,
+          "uniqueness_rate": 0.17105263157894735,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6370148625146874
+        },
+        "G38_e69d817b": {
+          "group_id": "G38_e69d817b",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.22727272727272727,
+          "recovery_norm": 0.3547569399539701,
+          "valid_rate": 0.7272727272727273,
+          "uniqueness_rate": 0.2727272727272727,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6406434989043935
+        },
+        "G39_2b7ef4c7": {
+          "group_id": "G39_2b7ef4c7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2222222222222222,
+          "recovery_norm": 0.34582661556891364,
+          "valid_rate": 0.7777777777777778,
+          "uniqueness_rate": 0.2777777777777778,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G40_d96e1bd5": {
+          "group_id": "G40_d96e1bd5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3657142857142857,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G41_98858760": {
+          "group_id": "G41_98858760",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_01",
+            "boolean_full_d2:n2_inputs_01_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15625,
+          "recovery_norm": 0.24265215514579108,
+          "valid_rate": 0.71875,
+          "uniqueness_rate": 0.28125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G42_33bed844": {
+          "group_id": "G42_33bed844",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_010",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38087049934097106,
+          "valid_rate": 0.5625,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G43_714523b1": {
+          "group_id": "G43_714523b1",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_011",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.3125,
+          "uniqueness_rate": 0.3125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G44_38006f34": {
+          "group_id": "G44_38006f34",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_00",
+            "boolean_full_d2:n2_inputs_10_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.17307692307692307,
+          "recovery_norm": 0.2707242424085957,
+          "valid_rate": 0.4807692307692307,
+          "uniqueness_rate": 0.23076923076923078,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G45_05b212a6": {
+          "group_id": "G45_05b212a6",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_01",
+            "boolean_full_d2:n2_inputs_10_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2571999107905752,
+          "valid_rate": 0.9583333333333333,
+          "uniqueness_rate": 0.20833333333333331,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G46_358fd373": {
+          "group_id": "G46_358fd373",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_1",
+            "boolean_full_d2:n1_inputs_10_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.12962962962962962,
+          "recovery_norm": 0.20285048903576383,
+          "valid_rate": 0.5925925925925926,
+          "uniqueness_rate": 0.12962962962962962,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6390402618490858
+        },
+        "G47_3602ca90": {
+          "group_id": "G47_3602ca90",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.36363636363636365,
+          "recovery_norm": 0.5598659709985987,
+          "valid_rate": 0.45454545454545453,
+          "uniqueness_rate": 0.45454545454545453,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G48_6f7745f8": {
+          "group_id": "G48_6f7745f8",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G49_11a44642": {
+          "group_id": "G49_11a44642",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.375,
+          "recovery_norm": 0.5713057490114566,
+          "valid_rate": 0.625,
+          "uniqueness_rate": 0.625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G50_07410573": {
+          "group_id": "G50_07410573",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_10",
+            "boolean_full_d2:n2_inputs_10_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.18181818181818182,
+          "recovery_norm": 0.27993298549929935,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.36363636363636365,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G51_14a1d53c": {
+          "group_id": "G51_14a1d53c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_11",
+            "boolean_full_d2:n2_inputs_10_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2911825861749493,
+          "valid_rate": 0.71875,
+          "uniqueness_rate": 0.21875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G52_0ea3d755": {
+          "group_id": "G52_0ea3d755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.13513513513513514,
+          "recovery_norm": 0.21209357375721802,
+          "valid_rate": 0.35135135135135137,
+          "uniqueness_rate": 0.13513513513513514,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6371486544416634
+        },
+        "G53_fd8e0b00": {
+          "group_id": "G53_fd8e0b00",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.14285714285714285,
+          "recovery_norm": 0.2236373190793093,
+          "valid_rate": 0.7857142857142857,
+          "uniqueness_rate": 0.14285714285714285,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6387893731031578
+        }
+      }
+    },
+    {
+      "model_name": "diversity",
+      "n_files": 1,
+      "n_tasks": 80,
+      "n_groups": 53,
+      "task_macro": {
+        "recovery_rate": 0.1765535250041829,
+        "recovery_norm": 0.2685952722251098,
+        "valid_rate": 0.4336315693420957,
+        "uniqueness_rate": 0.3778652687550713,
+        "parse_success_rate": 1.0,
+        "ceiling": 0.6676318366403078
+      },
+      "group_macro": {
+        "recovery_rate": {
+          "mean": 0.17856079029241892,
+          "std": 0.09191842152402108
+        },
+        "recovery_norm": {
+          "mean": 0.2712767425272395,
+          "std": 0.1367038039383784
+        },
+        "valid_rate": {
+          "mean": 0.4313825822254322,
+          "std": 0.2737989392652439
+        },
+        "uniqueness_rate": {
+          "mean": 0.3798044810420679,
+          "std": 0.19688205315935758
+        },
+        "parse_success_rate": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ceiling": {
+          "mean": 0.6728241785947369,
+          "std": 0.06938765778605907
+        }
+      },
+      "by_bucket": {
+        "1": {
+          "n_tasks": 2,
+          "n_groups": 2,
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "2-4": {
+          "n_tasks": 12,
+          "n_groups": 9,
+          "recovery_rate": 0.17361111111111113,
+          "recovery_norm": 0.24932330827067672,
+          "valid_rate": 0.3194444444444445,
+          "uniqueness_rate": 0.5625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.700858410493827
+        },
+        "5-8": {
+          "n_tasks": 27,
+          "n_groups": 16,
+          "recovery_rate": 0.18522927689594357,
+          "recovery_norm": 0.2796609439493351,
+          "valid_rate": 0.3664021164021164,
+          "uniqueness_rate": 0.3954585537918871,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6628606494086425
+        },
+        "9+": {
+          "n_tasks": 39,
+          "n_groups": 26,
+          "recovery_rate": 0.18050662027720057,
+          "recovery_norm": 0.280638374157144,
+          "valid_rate": 0.537547053107107,
+          "uniqueness_rate": 0.2769702704621733,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6436668838785989
+        }
+      },
+      "per_group": {
+        "G01_6fdc9665": {
+          "group_id": "G01_6fdc9665",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.31408635195672463,
+          "valid_rate": 0.55,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6367675601121197
+        },
+        "G02_028b55ab": {
+          "group_id": "G02_028b55ab",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_00",
+            "boolean_full_d2:n2_inputs_00_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.19230769230769232,
+          "recovery_norm": 0.30080471378732865,
+          "valid_rate": 0.7692307692307693,
+          "uniqueness_rate": 0.23076923076923078,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G03_558adfb7": {
+          "group_id": "G03_558adfb7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2911825861749493,
+          "valid_rate": 0.75,
+          "uniqueness_rate": 0.3125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G04_eae8b25a": {
+          "group_id": "G04_eae8b25a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15384615384615385,
+          "recovery_norm": 0.2378788951729173,
+          "valid_rate": 0.23076923076923078,
+          "uniqueness_rate": 0.38461538461538464,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G05_571d7e22": {
+          "group_id": "G05_571d7e22",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.3333333333333333,
+          "recovery_norm": 0.4736842105263158,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G06_55a4d335": {
+          "group_id": "G06_55a4d335",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_001",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_010"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.1,
+          "recovery_norm": 0.15353399327876296,
+          "valid_rate": 0.55,
+          "uniqueness_rate": 0.4,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6513215599
+        },
+        "G07_29ce7262": {
+          "group_id": "G07_29ce7262",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1,
+          "recovery_norm": 0.14873869585911473,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G08_abf4d42d": {
+          "group_id": "G08_abf4d42d",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.30000000000000004,
+          "uniqueness_rate": 0.6000000000000001,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G09_3996dba2": {
+          "group_id": "G09_3996dba2",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_000",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2222222222222222,
+          "recovery_norm": 0.34582661556891364,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.33333333333333337,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G10_315d5b21": {
+          "group_id": "G10_315d5b21",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_001",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_001"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.3125,
+          "recovery_norm": 0.4760881241762138,
+          "valid_rate": 0.875,
+          "uniqueness_rate": 0.3125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G11_2941d150": {
+          "group_id": "G11_2941d150",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_01",
+            "boolean_full_d2:n2_inputs_00_10_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21428571428571427,
+          "recovery_norm": 0.3318838983725158,
+          "valid_rate": 0.8571428571428572,
+          "uniqueness_rate": 0.2857142857142857,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.645664689780141
+        },
+        "G12_734b8400": {
+          "group_id": "G12_734b8400",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_011"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.3657142857142857,
+          "valid_rate": 0.75,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G13_102fc755": {
+          "group_id": "G13_102fc755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0110"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G14_c0be0a11": {
+          "group_id": "G14_c0be0a11",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_0111"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.3333333333333333,
+          "recovery_norm": 0.4736842105263158,
+          "valid_rate": 1.0,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G15_fd558451": {
+          "group_id": "G15_fd558451",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_010",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_010"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25058812155586346,
+          "valid_rate": 0.25,
+          "uniqueness_rate": 0.5833333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G16_6f6d9423": {
+          "group_id": "G16_6f6d9423",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_011",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_011"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.8125,
+          "uniqueness_rate": 0.125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G17_c1486caa": {
+          "group_id": "G17_c1486caa",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.20833333333333334,
+          "recovery_norm": 0.32556121782157826,
+          "valid_rate": 0.6666666666666666,
+          "uniqueness_rate": 0.2916666666666667,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6399206107144774
+        },
+        "G18_15210dba": {
+          "group_id": "G18_15210dba",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38824344823326573,
+          "valid_rate": 0.9375,
+          "uniqueness_rate": 0.3125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G19_5f5095c5": {
+          "group_id": "G19_5f5095c5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_00_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.12,
+          "recovery_norm": 0.1876162977314828,
+          "valid_rate": 0.48,
+          "uniqueness_rate": 0.24,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.639603283141982
+        },
+        "G20_9621f4a8": {
+          "group_id": "G20_9621f4a8",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_10",
+            "boolean_full_d2:n2_inputs_00_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2571999107905752,
+          "valid_rate": 0.5416666666666667,
+          "uniqueness_rate": 0.29166666666666663,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G21_49e88d2a": {
+          "group_id": "G21_49e88d2a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25058812155586346,
+          "valid_rate": 0.16666666666666666,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G22_bbf07909": {
+          "group_id": "G22_bbf07909",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1000"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.6,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G23_009f3c16": {
+          "group_id": "G23_009f3c16",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1001"
+          ],
+          "buckets": [
+            "1"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 1.0,
+          "parse_success_rate": 1.0,
+          "ceiling": 1.0
+        },
+        "G24_84664f46": {
+          "group_id": "G24_84664f46",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_101",
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25058812155586346,
+          "valid_rate": 0.41666666666666663,
+          "uniqueness_rate": 0.3333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6651020233196159
+        },
+        "G25_fc8b1aea": {
+          "group_id": "G25_fc8b1aea",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1010",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1100"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2368421052631579,
+          "valid_rate": 0.3333333333333333,
+          "uniqueness_rate": 0.8333333333333333,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G26_04419a71": {
+          "group_id": "G26_04419a71",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1011",
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2368421052631579,
+          "valid_rate": 0.16666666666666666,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G27_fb874547": {
+          "group_id": "G27_fb874547",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_100",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38087049934097106,
+          "valid_rate": 0.375,
+          "uniqueness_rate": 0.5625,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G28_2d78b3cd": {
+          "group_id": "G28_2d78b3cd",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_101",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_101"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.75,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G29_6e664a8c": {
+          "group_id": "G29_6e664a8c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_01_outputs_11",
+            "boolean_full_d2:n2_inputs_00_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15384615384615385,
+          "recovery_norm": 0.2378788951729173,
+          "valid_rate": 0.15384615384615385,
+          "uniqueness_rate": 0.15384615384615385,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G30_3981ee5a": {
+          "group_id": "G30_3981ee5a",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_10_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.14285714285714285,
+          "recovery_norm": 0.21642289374492976,
+          "valid_rate": 0.14285714285714285,
+          "uniqueness_rate": 0.2857142857142857,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.660083322910886
+        },
+        "G31_0567948c": {
+          "group_id": "G31_0567948c",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.75
+        },
+        "G32_257dd985": {
+          "group_id": "G32_257dd985",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n4_inputs_00_01_10_11_outputs_1111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.2,
+          "uniqueness_rate": 0.2,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G33_21a35290": {
+          "group_id": "G33_21a35290",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_110",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_110"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.2,
+          "recovery_norm": 0.29747739171822946,
+          "valid_rate": 0.30000000000000004,
+          "uniqueness_rate": 0.30000000000000004,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6723199999999999
+        },
+        "G34_f0103d1c": {
+          "group_id": "G34_f0103d1c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_00_01_11_outputs_111",
+            "boolean_full_d2:n3_inputs_00_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.125,
+          "recovery_norm": 0.19043524967048553,
+          "valid_rate": 0.1875,
+          "uniqueness_rate": 0.1875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G35_2b39d72e": {
+          "group_id": "G35_2b39d72e",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.15384615384615385,
+          "recovery_norm": 0.2378788951729173,
+          "valid_rate": 0.6153846153846154,
+          "uniqueness_rate": 0.3076923076923077,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6467415015288391
+        },
+        "G36_d5939d34": {
+          "group_id": "G36_d5939d34",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_00_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.2571999107905752,
+          "valid_rate": 0.16666666666666666,
+          "uniqueness_rate": 0.25,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G37_54c6d655": {
+          "group_id": "G37_54c6d655",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_0",
+            "boolean_full_d2:n1_inputs_10_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.17105263157894735,
+          "recovery_norm": 0.26852219884430634,
+          "valid_rate": 0.48684210526315785,
+          "uniqueness_rate": 0.22368421052631576,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6370148625146874
+        },
+        "G38_e69d817b": {
+          "group_id": "G38_e69d817b",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.22727272727272727,
+          "recovery_norm": 0.3547569399539701,
+          "valid_rate": 0.8636363636363636,
+          "uniqueness_rate": 0.2727272727272727,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6406434989043935
+        },
+        "G39_2b7ef4c7": {
+          "group_id": "G39_2b7ef4c7",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_000"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.16666666666666666,
+          "recovery_norm": 0.25936996167668525,
+          "valid_rate": 0.5555555555555556,
+          "uniqueness_rate": 0.2222222222222222,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6425827632053366
+        },
+        "G40_d96e1bd5": {
+          "group_id": "G40_d96e1bd5",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_001"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.5,
+          "recovery_norm": 0.7314285714285714,
+          "valid_rate": 0.75,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.68359375
+        },
+        "G41_98858760": {
+          "group_id": "G41_98858760",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_01",
+            "boolean_full_d2:n2_inputs_01_10_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.09375,
+          "recovery_norm": 0.14559129308747465,
+          "valid_rate": 0.46875,
+          "uniqueness_rate": 0.1875,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G42_33bed844": {
+          "group_id": "G42_33bed844",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_010",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_100"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2856528745057283,
+          "valid_rate": 0.5,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G43_714523b1": {
+          "group_id": "G43_714523b1",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_011",
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_101"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.1875,
+          "recovery_norm": 0.2856528745057283,
+          "valid_rate": 0.25,
+          "uniqueness_rate": 0.375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G44_38006f34": {
+          "group_id": "G44_38006f34",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_00",
+            "boolean_full_d2:n2_inputs_10_11_outputs_00"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21153846153846156,
+          "recovery_norm": 0.33088518516606147,
+          "valid_rate": 0.6153846153846154,
+          "uniqueness_rate": 0.28846153846153844,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6393107670634957
+        },
+        "G45_05b212a6": {
+          "group_id": "G45_05b212a6",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_01",
+            "boolean_full_d2:n2_inputs_10_11_outputs_01"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.29166666666666663,
+          "recovery_norm": 0.45009984388350655,
+          "valid_rate": 0.6666666666666667,
+          "uniqueness_rate": 0.375,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.648004371985863
+        },
+        "G46_358fd373": {
+          "group_id": "G46_358fd373",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_01_outputs_1",
+            "boolean_full_d2:n1_inputs_10_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.14814814814814814,
+          "recovery_norm": 0.23182913032658722,
+          "valid_rate": 0.37037037037037035,
+          "uniqueness_rate": 0.2222222222222222,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6390402618490858
+        },
+        "G47_3602ca90": {
+          "group_id": "G47_3602ca90",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_10_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.09090909090909091,
+          "recovery_norm": 0.13996649274964967,
+          "valid_rate": 0.18181818181818182,
+          "uniqueness_rate": 0.18181818181818182,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G48_6f7745f8": {
+          "group_id": "G48_6f7745f8",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_110"
+          ],
+          "buckets": [
+            "2-4"
+          ],
+          "recovery_rate": 0.0,
+          "recovery_norm": 0.0,
+          "valid_rate": 0.0,
+          "uniqueness_rate": 0.6666666666666666,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.7037037037037036
+        },
+        "G49_11a44642": {
+          "group_id": "G49_11a44642",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n3_inputs_01_10_11_outputs_111"
+          ],
+          "buckets": [
+            "5-8"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38087049934097106,
+          "valid_rate": 0.25,
+          "uniqueness_rate": 0.5,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6563910841941833
+        },
+        "G50_07410573": {
+          "group_id": "G50_07410573",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_10",
+            "boolean_full_d2:n2_inputs_10_11_outputs_10"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.09090909090909091,
+          "recovery_norm": 0.13996649274964967,
+          "valid_rate": 0.3181818181818182,
+          "uniqueness_rate": 0.36363636363636365,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6495061005186076
+        },
+        "G51_14a1d53c": {
+          "group_id": "G51_14a1d53c",
+          "n_tasks": 2,
+          "task_uids": [
+            "boolean_full_d2:n2_inputs_01_11_outputs_11",
+            "boolean_full_d2:n2_inputs_10_11_outputs_11"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.25,
+          "recovery_norm": 0.38824344823326573,
+          "valid_rate": 0.5625,
+          "uniqueness_rate": 0.28125,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6439258695482072
+        },
+        "G52_0ea3d755": {
+          "group_id": "G52_0ea3d755",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_0"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.21621621621621623,
+          "recovery_norm": 0.33934971801154884,
+          "valid_rate": 0.4594594594594595,
+          "uniqueness_rate": 0.21621621621621623,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6371486544416634
+        },
+        "G53_fd8e0b00": {
+          "group_id": "G53_fd8e0b00",
+          "n_tasks": 1,
+          "task_uids": [
+            "boolean_full_d2:n1_inputs_11_outputs_1"
+          ],
+          "buckets": [
+            "9+"
+          ],
+          "recovery_rate": 0.2857142857142857,
+          "recovery_norm": 0.4472746381586186,
+          "valid_rate": 0.7857142857142857,
+          "uniqueness_rate": 0.2857142857142857,
+          "parse_success_rate": 1.0,
+          "ceiling": 0.6387893731031578
+        }
+      }
+    }
+  ],
+  "pairwise": [
+    {
+      "pair": "diversity - sft",
+      "model_a": "diversity",
+      "model_b": "sft",
+      "n_common_tasks": 80,
+      "n_common_groups": 53,
+      "bootstrap_iters": 10000,
+      "bootstrap_seed": 33550336,
+      "metrics": {
+        "recovery_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.005473001244382822,
+            "wins": 27,
+            "ties": 22,
+            "losses": 31
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.011333811349948392,
+            "std_delta": 0.10316339899717196,
+            "wins": 16,
+            "ties": 18,
+            "losses": 19,
+            "sign_test_p": 0.7358788008568808,
+            "bootstrap_ci_95": [
+              -0.01574885686634693,
+              0.039666332143150636
+            ]
+          }
+        },
+        "recovery_norm": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.006387269924559831,
+            "wins": 27,
+            "ties": 22,
+            "losses": 31
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.015128322381247129,
+            "std_delta": 0.15422223348733982,
+            "wins": 16,
+            "ties": 18,
+            "losses": 19,
+            "sign_test_p": 0.7358788008568808,
+            "bootstrap_ci_95": [
+              -0.025431103728364178,
+              0.05737093722553759
+            ]
+          }
+        },
+        "valid_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.14502378132641291,
+            "wins": 51,
+            "ties": 13,
+            "losses": 16
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.148550352434414,
+            "std_delta": 0.20474161491773474,
+            "wins": 36,
+            "ties": 10,
+            "losses": 7,
+            "sign_test_p": 8.963039363152348e-06,
+            "bootstrap_ci_95": [
+              0.09621405536996402,
+              0.20548714545412655
+            ]
+          }
+        },
+        "uniqueness_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": -0.20222921440520122,
+            "wins": 5,
+            "ties": 8,
+            "losses": 67
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": -0.19500931651006131,
+            "std_delta": 0.24236397767037848,
+            "wins": 3,
+            "ties": 3,
+            "losses": 47,
+            "sign_test_p": 3.708322537931963e-11,
+            "bootstrap_ci_95": [
+              -0.25554512698728193,
+              -0.12551279419529793
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pair": "diversity - validity_final",
+      "model_a": "diversity",
+      "model_b": "validity_final",
+      "n_common_tasks": 80,
+      "n_common_groups": 53,
+      "bootstrap_iters": 10000,
+      "bootstrap_seed": 33550336,
+      "metrics": {
+        "recovery_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.014604493379164432,
+            "wins": 29,
+            "ties": 31,
+            "losses": 20
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.016456339706091443,
+            "std_delta": 0.09141953656333175,
+            "wins": 22,
+            "ties": 16,
+            "losses": 15,
+            "sign_test_p": 0.3240086000878364,
+            "bootstrap_ci_95": [
+              -0.007501164835139512,
+              0.04060119434964268
+            ]
+          }
+        },
+        "recovery_norm": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.022022308373716427,
+            "wins": 29,
+            "ties": 31,
+            "losses": 20
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.024687635202680767,
+            "std_delta": 0.13810016735567923,
+            "wins": 22,
+            "ties": 16,
+            "losses": 15,
+            "sign_test_p": 0.3240086000878364,
+            "bootstrap_ci_95": [
+              -0.011589677638086094,
+              0.06111634861750646
+            ]
+          }
+        },
+        "valid_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": -0.06850754067036961,
+            "wins": 24,
+            "ties": 16,
+            "losses": 40
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": -0.060792387660560436,
+            "std_delta": 0.183797496267511,
+            "wins": 17,
+            "ties": 12,
+            "losses": 24,
+            "sign_test_p": 0.34888887944907765,
+            "bootstrap_ci_95": [
+              -0.11098997024658021,
+              -0.013729331791490454
+            ]
+          }
+        },
+        "uniqueness_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.05499109374273849,
+            "wins": 39,
+            "ties": 23,
+            "losses": 18
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.0632391461177459,
+            "std_delta": 0.1589084812771913,
+            "wins": 30,
+            "ties": 13,
+            "losses": 10,
+            "sign_test_p": 0.0022214337732293643,
+            "bootstrap_ci_95": [
+              0.021412036599629702,
+              0.1074792391036805
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pair": "diversity - base",
+      "model_a": "diversity",
+      "model_b": "base",
+      "n_common_tasks": 80,
+      "n_common_groups": 53,
+      "bootstrap_iters": 10000,
+      "bootstrap_seed": 33550336,
+      "metrics": {
+        "recovery_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.1585089940057045,
+            "wins": 68,
+            "ties": 12,
+            "losses": 0
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.157656038997896,
+            "std_delta": 0.09699163976156476,
+            "wins": 46,
+            "ties": 7,
+            "losses": 0,
+            "sign_test_p": 2.842170943040401e-14,
+            "bootstrap_ci_95": [
+              0.13298065357232436,
+              0.18330234508812593
+            ]
+          }
+        },
+        "recovery_norm": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.24095963100463536,
+            "wins": 68,
+            "ties": 12,
+            "losses": 0
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.23932800327739248,
+            "std_delta": 0.14389525723335142,
+            "wins": 46,
+            "ties": 7,
+            "losses": 0,
+            "sign_test_p": 2.842170943040401e-14,
+            "bootstrap_ci_95": [
+              0.20281587257694453,
+              0.27741026949876035
+            ]
+          }
+        },
+        "valid_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.2434968693011456,
+            "wins": 55,
+            "ties": 11,
+            "losses": 14
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.2243789469434951,
+            "std_delta": 0.44735634800069224,
+            "wins": 37,
+            "ties": 6,
+            "losses": 10,
+            "sign_test_p": 9.848878492846325e-05,
+            "bootstrap_ci_95": [
+              0.10704472000828755,
+              0.34090609176147907
+            ]
+          }
+        },
+        "uniqueness_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.2822616359787412,
+            "wins": 72,
+            "ties": 8,
+            "losses": 0
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.27771920080758217,
+            "std_delta": 0.20266958552587291,
+            "wins": 48,
+            "ties": 5,
+            "losses": 0,
+            "sign_test_p": 7.105427357601002e-15,
+            "bootstrap_ci_95": [
+              0.2278109094134417,
+              0.3339242353098485
+            ]
+          }
+        }
+      }
+    },
+    {
+      "pair": "sft - base",
+      "model_a": "sft",
+      "model_b": "base",
+      "n_common_tasks": 80,
+      "n_common_groups": 53,
+      "bootstrap_iters": 10000,
+      "bootstrap_seed": 33550336,
+      "metrics": {
+        "recovery_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.1530359927613217,
+            "wins": 58,
+            "ties": 20,
+            "losses": 2
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.14632222764794758,
+            "std_delta": 0.12728357996399156,
+            "wins": 40,
+            "ties": 11,
+            "losses": 2,
+            "sign_test_p": 4.1109160520136356e-10,
+            "bootstrap_ci_95": [
+              0.11126881817720943,
+              0.17974669110542993
+            ]
+          }
+        },
+        "recovery_norm": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.23457236108007554,
+            "wins": 58,
+            "ties": 20,
+            "losses": 2
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.2241996808961453,
+            "std_delta": 0.19406317170523904,
+            "wins": 40,
+            "ties": 11,
+            "losses": 2,
+            "sign_test_p": 4.1109160520136356e-10,
+            "bootstrap_ci_95": [
+              0.17064997196264237,
+              0.27525297975346585
+            ]
+          }
+        },
+        "valid_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.0984730879747327,
+            "wins": 45,
+            "ties": 20,
+            "losses": 15
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.07582859450908111,
+            "std_delta": 0.4118653499780333,
+            "wins": 31,
+            "ties": 11,
+            "losses": 11,
+            "sign_test_p": 0.002887247974285856,
+            "bootstrap_ci_95": [
+              -0.03794082028162217,
+              0.18314842371210288
+            ]
+          }
+        },
+        "uniqueness_rate": {
+          "task_level_descriptive": {
+            "n_tasks": 80,
+            "mean_delta": 0.4844908503839426,
+            "wins": 77,
+            "ties": 3,
+            "losses": 0
+          },
+          "group_level": {
+            "n_groups": 53,
+            "mean_delta": 0.4727285173176434,
+            "std_delta": 0.20163431119269937,
+            "wins": 51,
+            "ties": 2,
+            "losses": 0,
+            "sign_test_p": 8.881784197001252e-16,
+            "bootstrap_ci_95": [
+              0.4201207384433551,
+              0.5272474453798622
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

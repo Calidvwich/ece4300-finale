@@ -1,0 +1,15 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "reward_mode": "diversity",
+  "total_opt_steps": 96,
+  "best_step": 80,
+  "best_val_recovery_group_mean": 0.4305555555555556,
+  "step0_val_recovery_group_mean": 0.27604166666666663,
+  "sampling": {
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "max_new_tokens": 64
+  },
+  "val_tasks_count": 14,
+  "val_tasks_per_group": 12
+}

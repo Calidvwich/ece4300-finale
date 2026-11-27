@@ -1,0 +1,690 @@
+{
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "train_examples_per_epoch": 330,
+  "epochs": 2,
+  "total_steps": 42,
+  "gt_coverage_summary": {
+    "n_tasks": 66,
+    "full_coverage_tasks": 62,
+    "mean_coverage_ratio": 0.9921568627450981,
+    "total_ground_truths": 394,
+    "total_covered_unique_gts": 384,
+    "large_space_k9plus_mean_coverage": 0.9630252100840336
+  },
+  "per_task_gt_coverage": [
+    {
+      "task_uid": "boolean_extended_d2:n1_inputs_00_outputs_0",
+      "observation_set_id": "n1_inputs_00_outputs_0",
+      "n_ground_truths": 20,
+      "covered_unique_gts": 16,
+      "coverage_ratio": 0.8
+    },
+    {
+      "task_uid": "boolean_extended_d2:n1_inputs_01_outputs_0",
+      "observation_set_id": "n1_inputs_01_outputs_0",
+      "n_ground_truths": 17,
+      "covered_unique_gts": 16,
+      "coverage_ratio": 0.9411764705882353
+    },
+    {
+      "task_uid": "boolean_extended_d2:n1_inputs_10_outputs_0",
+      "observation_set_id": "n1_inputs_10_outputs_0",
+      "n_ground_truths": 17,
+      "covered_unique_gts": 16,
+      "coverage_ratio": 0.9411764705882353
+    },
+    {
+      "task_uid": "boolean_extended_d2:n1_inputs_11_outputs_1",
+      "observation_set_id": "n1_inputs_11_outputs_1",
+      "n_ground_truths": 20,
+      "covered_unique_gts": 16,
+      "coverage_ratio": 0.8
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_01_outputs_00",
+      "observation_set_id": "n2_inputs_00_01_outputs_00",
+      "n_ground_truths": 12,
+      "covered_unique_gts": 12,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_01_outputs_01",
+      "observation_set_id": "n2_inputs_00_01_outputs_01",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_01_outputs_10",
+      "observation_set_id": "n2_inputs_00_01_outputs_10",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_10_outputs_00",
+      "observation_set_id": "n2_inputs_00_10_outputs_00",
+      "n_ground_truths": 12,
+      "covered_unique_gts": 12,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_10_outputs_01",
+      "observation_set_id": "n2_inputs_00_10_outputs_01",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_10_outputs_10",
+      "observation_set_id": "n2_inputs_00_10_outputs_10",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_11_outputs_00",
+      "observation_set_id": "n2_inputs_00_11_outputs_00",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_00_11_outputs_01",
+      "observation_set_id": "n2_inputs_00_11_outputs_01",
+      "n_ground_truths": 12,
+      "covered_unique_gts": 12,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_10_outputs_01",
+      "observation_set_id": "n2_inputs_01_10_outputs_01",
+      "n_ground_truths": 9,
+      "covered_unique_gts": 9,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_10_outputs_10",
+      "observation_set_id": "n2_inputs_01_10_outputs_10",
+      "n_ground_truths": 9,
+      "covered_unique_gts": 9,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_10_outputs_11",
+      "observation_set_id": "n2_inputs_01_10_outputs_11",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_11_outputs_00",
+      "observation_set_id": "n2_inputs_01_11_outputs_00",
+      "n_ground_truths": 9,
+      "covered_unique_gts": 9,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_11_outputs_01",
+      "observation_set_id": "n2_inputs_01_11_outputs_01",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_01_11_outputs_10",
+      "observation_set_id": "n2_inputs_01_11_outputs_10",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_10_11_outputs_00",
+      "observation_set_id": "n2_inputs_10_11_outputs_00",
+      "n_ground_truths": 9,
+      "covered_unique_gts": 9,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_10_11_outputs_01",
+      "observation_set_id": "n2_inputs_10_11_outputs_01",
+      "n_ground_truths": 8,
+      "covered_unique_gts": 8,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n2_inputs_10_11_outputs_10",
+      "observation_set_id": "n2_inputs_10_11_outputs_10",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_10_outputs_011",
+      "observation_set_id": "n3_inputs_00_01_10_outputs_011",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_10_outputs_100",
+      "observation_set_id": "n3_inputs_00_01_10_outputs_100",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_11_outputs_000",
+      "observation_set_id": "n3_inputs_00_01_11_outputs_000",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_11_outputs_001",
+      "observation_set_id": "n3_inputs_00_01_11_outputs_001",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_11_outputs_010",
+      "observation_set_id": "n3_inputs_00_01_11_outputs_010",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_01_11_outputs_111",
+      "observation_set_id": "n3_inputs_00_01_11_outputs_111",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_10_11_outputs_000",
+      "observation_set_id": "n3_inputs_00_10_11_outputs_000",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_10_11_outputs_001",
+      "observation_set_id": "n3_inputs_00_10_11_outputs_001",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_10_11_outputs_010",
+      "observation_set_id": "n3_inputs_00_10_11_outputs_010",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_00_10_11_outputs_111",
+      "observation_set_id": "n3_inputs_00_10_11_outputs_111",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_01_10_11_outputs_000",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_000",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_01_10_11_outputs_001",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_001",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_01_10_11_outputs_010",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_010",
+      "n_ground_truths": 3,
+      "covered_unique_gts": 3,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_01_10_11_outputs_100",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_100",
+      "n_ground_truths": 3,
+      "covered_unique_gts": 3,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n3_inputs_01_10_11_outputs_111",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_111",
+      "n_ground_truths": 6,
+      "covered_unique_gts": 6,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_0000",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0000",
+      "n_ground_truths": 4,
+      "covered_unique_gts": 4,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_0001",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0001",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_0010",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0010",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_0100",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0100",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_0111",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0111",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_1000",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_1000",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_1010",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_1010",
+      "n_ground_truths": 1,
+      "covered_unique_gts": 1,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_1100",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_1100",
+      "n_ground_truths": 1,
+      "covered_unique_gts": 1,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "boolean_extended_d2:n4_inputs_00_01_10_11_outputs_1110",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_1110",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n1_inputs_00_outputs_0",
+      "observation_set_id": "n1_inputs_00_outputs_0",
+      "n_ground_truths": 10,
+      "covered_unique_gts": 10,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n1_inputs_01_outputs_0",
+      "observation_set_id": "n1_inputs_01_outputs_0",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n1_inputs_10_outputs_0",
+      "observation_set_id": "n1_inputs_10_outputs_0",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n1_inputs_11_outputs_1",
+      "observation_set_id": "n1_inputs_11_outputs_1",
+      "n_ground_truths": 10,
+      "covered_unique_gts": 10,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_00_01_outputs_00",
+      "observation_set_id": "n2_inputs_00_01_outputs_00",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_00_01_outputs_01",
+      "observation_set_id": "n2_inputs_00_01_outputs_01",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_00_10_outputs_00",
+      "observation_set_id": "n2_inputs_00_10_outputs_00",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_00_10_outputs_01",
+      "observation_set_id": "n2_inputs_00_10_outputs_01",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_00_11_outputs_01",
+      "observation_set_id": "n2_inputs_00_11_outputs_01",
+      "n_ground_truths": 10,
+      "covered_unique_gts": 10,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_01_10_outputs_01",
+      "observation_set_id": "n2_inputs_01_10_outputs_01",
+      "n_ground_truths": 3,
+      "covered_unique_gts": 3,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_01_10_outputs_10",
+      "observation_set_id": "n2_inputs_01_10_outputs_10",
+      "n_ground_truths": 3,
+      "covered_unique_gts": 3,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_01_10_outputs_11",
+      "observation_set_id": "n2_inputs_01_10_outputs_11",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_01_11_outputs_01",
+      "observation_set_id": "n2_inputs_01_11_outputs_01",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n2_inputs_10_11_outputs_01",
+      "observation_set_id": "n2_inputs_10_11_outputs_01",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n3_inputs_00_01_10_outputs_011",
+      "observation_set_id": "n3_inputs_00_01_10_outputs_011",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n3_inputs_00_01_11_outputs_001",
+      "observation_set_id": "n3_inputs_00_01_11_outputs_001",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n3_inputs_00_10_11_outputs_001",
+      "observation_set_id": "n3_inputs_00_10_11_outputs_001",
+      "n_ground_truths": 5,
+      "covered_unique_gts": 5,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n3_inputs_01_10_11_outputs_001",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_001",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n3_inputs_01_10_11_outputs_111",
+      "observation_set_id": "n3_inputs_01_10_11_outputs_111",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n4_inputs_00_01_10_11_outputs_0001",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0001",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    },
+    {
+      "task_uid": "full_repo_boolean_basic_d2:n4_inputs_00_01_10_11_outputs_0111",
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0111",
+      "n_ground_truths": 2,
+      "covered_unique_gts": 2,
+      "coverage_ratio": 1.0
+    }
+  ],
+  "history": [
+    {
+      "step": 1,
+      "epoch": 1,
+      "loss": 2.2060978524386883
+    },
+    {
+      "step": 2,
+      "epoch": 1,
+      "loss": 3.310341365635395
+    },
+    {
+      "step": 3,
+      "epoch": 1,
+      "loss": 2.334704466164112
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "loss": 1.3317315321182832
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "loss": 0.9593772795051336
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "loss": 0.9686273410916328
+    },
+    {
+      "step": 7,
+      "epoch": 1,
+      "loss": 0.7195843383669853
+    },
+    {
+      "step": 8,
+      "epoch": 1,
+      "loss": 0.8674874175339937
+    },
+    {
+      "step": 9,
+      "epoch": 1,
+      "loss": 0.7242193883284926
+    },
+    {
+      "step": 10,
+      "epoch": 1,
+      "loss": 0.7773654535412788
+    },
+    {
+      "step": 11,
+      "epoch": 1,
+      "loss": 0.7024934031069279
+    },
+    {
+      "step": 12,
+      "epoch": 1,
+      "loss": 0.699587993323803
+    },
+    {
+      "step": 13,
+      "epoch": 1,
+      "loss": 0.6574315465986729
+    },
+    {
+      "step": 14,
+      "epoch": 1,
+      "loss": 0.593580181710422
+    },
+    {
+      "step": 15,
+      "epoch": 1,
+      "loss": 0.5966548090800643
+    },
+    {
+      "step": 16,
+      "epoch": 1,
+      "loss": 0.6527791256085038
+    },
+    {
+      "step": 17,
+      "epoch": 1,
+      "loss": 0.6205477770417929
+    },
+    {
+      "step": 18,
+      "epoch": 1,
+      "loss": 0.5854690857231617
+    },
+    {
+      "step": 19,
+      "epoch": 1,
+      "loss": 0.573743361979723
+    },
+    {
+      "step": 20,
+      "epoch": 1,
+      "loss": 0.53332787938416
+    },
+    {
+      "step": 21,
+      "epoch": 1,
+      "loss": 0.6839878484606743
+    },
+    {
+      "step": 22,
+      "epoch": 2,
+      "loss": 0.5315025132149458
+    },
+    {
+      "step": 23,
+      "epoch": 2,
+      "loss": 0.565133661031723
+    },
+    {
+      "step": 24,
+      "epoch": 2,
+      "loss": 0.6335024517029524
+    },
+    {
+      "step": 25,
+      "epoch": 2,
+      "loss": 0.5518599860370159
+    },
+    {
+      "step": 26,
+      "epoch": 2,
+      "loss": 0.6029395945370197
+    },
+    {
+      "step": 27,
+      "epoch": 2,
+      "loss": 0.5478886440396309
+    },
+    {
+      "step": 28,
+      "epoch": 2,
+      "loss": 0.5990953054279089
+    },
+    {
+      "step": 29,
+      "epoch": 2,
+      "loss": 0.5603058338165283
+    },
+    {
+      "step": 30,
+      "epoch": 2,
+      "loss": 0.5191109701991081
+    },
+    {
+      "step": 31,
+      "epoch": 2,
+      "loss": 0.5375181622803211
+    },
+    {
+      "step": 32,
+      "epoch": 2,
+      "loss": 0.4946352783590555
+    },
+    {
+      "step": 33,
+      "epoch": 2,
+      "loss": 0.5075833592563868
+    },
+    {
+      "step": 34,
+      "epoch": 2,
+      "loss": 0.5075458362698555
+    },
+    {
+      "step": 35,
+      "epoch": 2,
+      "loss": 0.5245350692421198
+    },
+    {
+      "step": 36,
+      "epoch": 2,
+      "loss": 0.5343405045568943
+    },
+    {
+      "step": 37,
+      "epoch": 2,
+      "loss": 0.5157505180686712
+    },
+    {
+      "step": 38,
+      "epoch": 2,
+      "loss": 0.5529624707996845
+    },
+    {
+      "step": 39,
+      "epoch": 2,
+      "loss": 0.5257136318832636
+    },
+    {
+      "step": 40,
+      "epoch": 2,
+      "loss": 0.49975897558033466
+    },
+    {
+      "step": 41,
+      "epoch": 2,
+      "loss": 0.5681207831948996
+    },
+    {
+      "step": 42,
+      "epoch": 2,
+      "loss": 0.5372189208865166
+    }
+  ]
+}

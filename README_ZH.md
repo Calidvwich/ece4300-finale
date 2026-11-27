@@ -84,6 +84,69 @@
 
 ---
 
+### 2.4 跨领域扩展评测：Boolean 基因交互与 3D 体素重建
+
+为检验两阶段 Diversity-Aware GRPO-LoRA 在因果图之外的通用性，我们按相同零同构泄露切分原则与统一 Qwen 采样口径（`T = 0.9, top_p = 0.95`），在 RTX 5090 上完成了 **Boolean** 与 **3D** 全套 `Base` / `SFT` / `Validity-Only` / `Diversity-GRPO` 消融实验。
+
+#### 2.4.1 Boolean 基因交互建模（[id_boolean_stats.md](results_analysis/id_boolean_stats.md)、[ood_boolean_stats.md](results_analysis/ood_boolean_stats.md)）
+
+- **零同构泄露切分（`x/y` 对称）**：`train`（66 题 / 30 组）、`val`（14 题 / 8 组）、**ID 测试集**（19 题 / 13 组，3 评测种子均值，参考上界 `69.03%`）及 **Full-NOR OOD 泛化集**（[boolean_full_d2.json](HypoSpace-release/causal/benchmark_obs_count/paper_scale/boolean_full_d2.json)，80 题 / 53 组，引入训练未见算子 `NOR`，单种子，参考上界 `66.76%`）。
+- **ID 未见等价类测试（19 题 / 13 组 / 3 评测种子均值）**：
+
+| 模型 / 方法 | 种子数 | Task Valid | Task Uniq | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** |
+|---|---:|---:|---:|---:|---:|---:|
+| `Qwen2.5-7B Base` | 3 | 20.70% | 24.22% | 7.64% | 11.38% | 7.97% ± 10.03% |
+| `SFT-LoRA` | 3 | 30.89% | **82.44%** | 22.90% | 34.52% | 25.31% ± 19.04% |
+| `Validity-Only (best / step 20)` | 3 | 38.94% | 79.42% | 24.36% | 36.70% | 27.32% ± 18.58% |
+| `Validity-Only (final)` | 3 | **59.12%** | 62.77% | 27.89% | 41.10% | 29.83% ± 14.21% |
+| **`Diversity-GRPO (best / step 80)`** | 3 | 54.16% | 73.50% | **31.16%** | **46.23%** | **32.98% ± 14.99%** |
+| `Diversity-GRPO (final / step 96)` | 3 | 48.78% | 73.00% | 26.37% | 39.75% | 30.11% ± 19.91% |
+
+- **Full-NOR OOD 泛化测试（80 题 / 53 组 / 单评测种子 `33550336`）**：
+
+| 模型 / 方法 | Task Valid | Task Uniq | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** |
+|---|---:|---:|---:|---:|---:|
+| `Qwen2.5-7B Base` | 19.01% | 9.56% | 1.80% | 2.76% | 2.09% ± 4.46% |
+| `SFT-LoRA` | 28.86% | **58.01%** | 17.11% | 26.22% | 16.72% ± 11.75% |
+| `Validity-Only (final)` | **50.21%** | 32.29% | 16.19% | 24.66% | 16.21% ± 9.57% |
+| **`Diversity-GRPO (best)`** | 43.36% | 37.79% | **17.66%** | **26.86%** | **17.86% ± 9.19%** |
+
+- **核心发现**：Boolean ID 上 `Diversity-GRPO` 将验证集组均值 Recovery 从 Step 0 的 `27.60%` 抬升至 Step 80 的 `43.06%`，在测试集上相对 `SFT-LoRA` 取得 **+8.26% Task / +7.66% Group Recovery**（聚类 95% CI **`[+1.65%, +13.74%]`**）及 **+23.27% Valid**（精确符号检验 **$p = 0.0005$**）。在 OOD 新算子集上，`Validity-Only` 出现明显“堆合法率、丢多样性”的坍缩（`Valid 50.21%`，但 `Uniqueness` 从 `58.01%` 跌至 `32.29%`，Recovery 反而低于 SFT）；而 `Diversity-GRPO` 在 **Uniqueness** 上显著优于 `Validity-Only final`（ID **+10.73%**, 95% CI `[+1.53%, +15.54%]`；OOD **+5.50% Task / +6.32% Group**, $p = 0.0022$, 95% CI **`[+2.14%, +10.75%]`**）。
+
+<p align="center">
+  <img src="results_analysis/figures_boolean/fig1_id_ablation.png" width="49%" alt="Boolean ID 消融对比"/>
+  <img src="results_analysis/figures_boolean/fig4_training_curves.png" width="49%" alt="Boolean 训练动态曲线"/>
+</p>
+
+#### 2.4.2 3D 重力约束体素重建（[id_3d_stats.md](results_analysis/id_3d_stats.md)、[ood_3d_b4_stats.md](results_analysis/ood_3d_b4_stats.md)）
+
+- **零同构泄露切分（$D_4$ 对称群）**：27 个 1–3 块结构类整组切分为 `train`（16 类 / 73 题）、`val`（4 类 / 16 题）、**ID 测试集**（38 题 / 7 类，3 评测种子均值，参考上界 `64.81%`）与 **4-Block OOD**（[3d_g3_h3_b4_ood.json](HypoSpace-release/3d/datasets/3d_g3_h3_b4_ood.json)，23 题 / 23 类，全部为 `9+` 解难题，单种子，参考上界 `63.44%`）。
+- **ID 测试集（38 题 / 7 组 / 3 种子）与 4-Block OOD 测试集（23 题 / 23 组）**：
+
+| 评测集 | 模型 / 方法 | Task Valid | **Task Macro Rec** | Task Norm Rec | **Group Rec (mean ± std)** | Group Norm Rec |
+|---|---|---:|---:|---:|---:|---:|
+| ID Test (`38` 题) | `Qwen2.5-7B Base` | 5.10% | 1.59% | 2.41% | 1.50% ± 1.99% | 2.23% ± 2.84% |
+| ID Test (`38` 题) | `SFT-LoRA`（`= Diversity best`, `best_step=0`） | 99.77% | 61.31% | 94.39% | **63.38% ± 7.95%** | **96.91% ± 8.78%** |
+| ID Test (`38` 题) | `Validity-Only (best / step 90)` | **100.00%** | 61.08% | 94.03% | 63.12% ± 8.17% | 96.50% ± 9.14% |
+| ID Test (`38` 题) | `Validity-Only (final)` | **100.00%** | 60.36% | 92.96% | 62.39% ± 7.43% | 95.42% ± 8.26% |
+| ID Test (`38` 题) | `Diversity-GRPO (final / step 95)` | **100.00%** | **61.70%** | **95.23%** | 61.82% ± 1.70% | 94.80% ± 2.62% |
+| 4-Block OOD (`23` 题) | `Qwen2.5-7B Base` | 35.59% | 3.92% | 6.18% | 3.92% ± 2.16% | 6.18% ± 3.40% |
+| 4-Block OOD (`23` 题) | `SFT-LoRA`（`= Diversity best`） | **100.00%** | 52.50% | 82.75% | 52.50% ± 2.63% | 82.75% ± 4.14% |
+| 4-Block OOD (`23` 题) | `Validity-Only (final)` | **100.00%** | **53.14%** | **83.76%** | **53.14% ± 4.51%** | **83.76% ± 7.10%** |
+
+- **饱和边界观察**：在 3D 任务上，Stage 1 SFT 仅用 2 个 epoch 即高度收敛，将 `Base 7B`（`1.59%`）直接推升至 `Valid = 99.77%`、**Group Norm Recovery = `96.91%`**（4-Block OOD 也达到理论参考上界的 **`82.75%`**），贴近理想 i.i.d. 均匀采样上限（`max KL = 0.0068`）。因此 Step 0 验证保护自动保留 SFT 作为 `best_policy`，而在 ID 评测上 `Diversity best (= SFT)` 仍显著高于 `Validity-Only final`（`+0.94%` Task / `+0.99%` Group，$p = 0.0312$，CI `[+0.40%, +1.72%]`），末步 `diversity_final` 在 ID 上达到 **61.70%（Norm `95.23%`）**（`9+` 大空间桶由 `59.37%` 提至 `61.44%`）。
+
+<p align="center">
+  <img src="results_analysis/figures_3d/fig1_id_ablation.png" width="49%" alt="3D ID 消融对比"/>
+  <img src="results_analysis/figures_3d/fig3_ood_transfer.png" width="49%" alt="3D OOD 迁移对比"/>
+</p>
+
+#### 2.4.3 三领域综合结论
+
+综合三领域实测可清晰界定两阶段方法的适用条件：当 Stage 1 SFT 尚未触及采样上限时（如 **Causal** 与 **Boolean**），纯合法性奖励的 `Validity-Only` 会加剧模式坍缩，而 **Stage 2 Diversity-GRPO** 能够协同推高合法率与覆盖率；当 Stage 1 SFT 已直接接近 ~97% 参考上界时（如 **3D**），Step 0 保底选优机制能稳妥防止 RL 过拟合波动。
+
+---
+
 ## 3. 方法架构（v2.1 核心设计）
 
 1. **Stage 1 — 轮换全覆盖去偏 SFT-LoRA Warm-up**（[train_sft.py](HypoSpace-release/causal/grpo_lora/train_sft.py)）：零样本 7B 合法率仅 29.47%，直接做 RL 易因全错陷入零方差梯度消失。Stage 1 采用 Prompt Loss Masking、边序随机打乱以及保持每题预算不变（$\min(K, 8)$）的 **Epoch 循环轮换抽样**，2 个 Epoch 即完成全部 275 题 `1,353` 个标准答案 **100.00% 覆盖**，既奠定稳健冷启动起点，又构成严格对齐的监督消融基线。
@@ -105,38 +168,55 @@
 - **未在测试集评测 `Validity-Only` 末步权重**：`Validity-Only GRPO` 在验证集出现模式坍缩（`55.82% → 52.17%`，见图 4）后触发 `best_step == 0` 保底回退，未对其最终坍缩 checkpoint 单独运行测试集评测。
 - **闭源对比基线温度不同**：队友已有 `DeepSeek-Flash` 评测采样温度为 `0.7`，而 Qwen 系列统一采用 `T = 0.9, top_p = 0.95`。
 - **`causal_n5_gt160` 缺少基线对照**：该 7 题 `|H_O|=160` 子集仅运行了本文 `Diversity-GRPO-LoRA`，仅作超大空间压力测试参考。
+- **3D 与 Boolean 的闭源 API 基线待队友补充**：对应零泄露测试集上的 `DeepSeek-Flash` Fixed-Prompt 基线正由队友另行补测，当前第 2.4 节仅展示开源 `Qwen2.5-7B-Instruct` 四组消融结果。
 
 ---
 
 ## 5. 仓库结构与快速复现
 
+> **当前项目进度**：**Causal v2.1**、**Boolean** 与 **3D** 三个领域的 RTX 5090 全量训练评测、同构组聚类统计报告及 300 DPI 图表均已整合完成（结果目录已回传并入库）。
+
 ```text
 .
-├── README.md / README_ZH.md                   # 中英文双语全局说明
+├── README.md / README_ZH.md                   # 中英文双语全局说明（覆盖三领域结果）
+├── docs/                                      # 项目开发日志、上下文交接与课程评分文档（本地整理目录）
 ├── results_analysis/
-│   ├── group_stats.py                         # 同构结构组统计、参考上界与聚类自助法显著性脚本
-│   ├── generate_charts.py                     # 基于 v2.1 结果直接重绘 4 张 300 DPI 图表
-│   ├── id_v2_stats.md / .json                 # 4 节点未见结构 ID 统计报告
-│   ├── ood_n5_v2_stats.md / .json             # 5 节点 OOD 统计报告
-│   └── figures/                               # fig1_id_ablation.png .. fig4_training_curves.png
-├── qwen7b_v2_results_and_logs/                # v2.1 零同构泄露全套 5090 评测 JSON 与训练日志
-├── qwen7b_results_and_logs/                   # v1.0 历史基线留档
-└── HypoSpace-release/causal/grpo_lora/        # 两阶段 Diversity-GRPO-LoRA 源码与 10 阶段流水线
+│   ├── group_stats.py / generate_charts.py    # Causal v2.1 统计与图表 -> figures/
+│   ├── stats_3d.py / generate_charts_3d.py    # 3D D4 群统计与图表 -> figures_3d/
+│   ├── stats_boolean.py / generate_charts_boolean.py  # Boolean 等价类统计与图表 -> figures_boolean/
+│   ├── id_v2_stats.md / ood_n5_v2_stats.md    # Causal v2.1 统计报告 (.md / .json)
+│   ├── id_3d_stats.md / ood_3d_b4_stats.md    # 3D 统计报告 (.md / .json)
+│   ├── id_boolean_stats.md / ood_boolean_stats.md  # Boolean 统计报告 (.md / .json)
+│   └── figures{,_3d,_boolean}/               # 三领域各 4 张 300 DPI 核心图表
+├── qwen7b_v2_results_and_logs/                # Causal v2.1 零同构泄露全套 5090 评测 JSON 与训练日志
+├── qwen7b_results_and_logs/                   # Causal v1.0 历史基线留档
+├── qwen7b_3d_results_and_logs/                # 3D RTX 5090 评测 JSON 与训练日志
+├── qwen7b_boolean_results_and_logs/           # Boolean RTX 5090 评测 JSON 与训练日志
+└── HypoSpace-release/
+    ├── causal/grpo_lora/                      # Causal Diversity-GRPO-LoRA 源码与 10 阶段流水线
+    ├── 3d/grpo_lora/                          # 3D 体素重建流水线与 10 阶段服务器脚本
+    └── boolean/grpo_lora/                     # Boolean 基因交互流水线与服务器脚本
 ```
 
 ```bash
-# 1. 单元测试与零同构泄露切分验证（CPU，约 1 秒）
+# 1. 三个领域的单元测试与零同构泄露切分校验（CPU 即可运行）
 python HypoSpace-release/causal/grpo_lora/tests/test_verifier_reward.py
 python HypoSpace-release/causal/grpo_lora/data_utils.py
+python -m unittest discover -s HypoSpace-release/3d/grpo_lora/tests -v
+python HypoSpace-release/3d/grpo_lora/data_utils.py
+python -m unittest discover -s HypoSpace-release/boolean/grpo_lora/tests -v
+python HypoSpace-release/boolean/grpo_lora/data_utils.py
 
-# 2. 重新生成 ID 与 OOD 结构组统计报告，以及全套 4 张图表
+# 2. 重新生成 Causal v2.1 ID 与 OOD 结构组统计报告，以及全套 4 张图表
 python results_analysis/group_stats.py --model diversity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_grpo_diversity_seed*.json --model validity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_grpo_validity_seed*.json --model sft=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_sft_seed*.json --model base=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_unseen_base_seed*.json --deepseek_baseline HypoSpace-release/causal/benchmark_obs_count/full_repo_causal_n4_obs3_deepseek.json --splits_path HypoSpace-release/causal/grpo_lora/splits/causal_splits.json --pairs diversity:sft --pairs diversity:validity --pairs diversity:deepseek --pairs sft:deepseek --pairs diversity:base --pairs sft:base --output_md results_analysis/id_v2_stats.md --output_json results_analysis/id_v2_stats.json
 
 python results_analysis/group_stats.py --model diversity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_grpo_diversity_seed33550336.json --model validity=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_grpo_validity_seed33550336.json --model sft=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_sft_seed33550336.json --model base=qwen7b_v2_results_and_logs/causal/grpo_lora/results/qwen7b_v2_ood_n5_base_seed33550336.json --dataset_path HypoSpace-release/causal/datasets/n5_obs5_hybrid80.json --pairs diversity:sft --pairs diversity:validity --pairs diversity:base --pairs sft:base --output_md results_analysis/ood_n5_v2_stats.md --output_json results_analysis/ood_n5_v2_stats.json
 
 python results_analysis/generate_charts.py
 
-# 3. RTX 5090 / 4090 全量 10 阶段训练与多种子评测流水线（位于 HypoSpace-release/）
+# 3. RTX 5090 全量训练与多种子评测流水线（位于 HypoSpace-release/，单卡请串行运行）
 bash causal/grpo_lora/run_server_all.sh
+bash 3d/grpo_lora/run_server_all.sh
+bash boolean/grpo_lora/run_server_all.sh
 ```
-完整服务器部署命令请参阅 [RUN_GUIDE.md](HypoSpace-release/causal/grpo_lora/RUN_GUIDE.md)。
+完整服务器部署命令请参阅 [causal/grpo_lora/RUN_GUIDE.md](HypoSpace-release/causal/grpo_lora/RUN_GUIDE.md)、[3d/grpo_lora/RUN_GUIDE.md](HypoSpace-release/3d/grpo_lora/RUN_GUIDE.md) 与 [boolean/grpo_lora/RUN_GUIDE.md](HypoSpace-release/boolean/grpo_lora/RUN_GUIDE.md)。
